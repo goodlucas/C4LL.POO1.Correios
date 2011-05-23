@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_eoOg4IPeEeCmlNzkYEiKIA" name="commands">
+  <elementImport xmi:id="_eo_V4IPeEeCmlNzkYEiKIA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_eo_V4YPeEeCmlNzkYEiKIA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_eo_88IPeEeCmlNzkYEiKIA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_eo_88YPeEeCmlNzkYEiKIA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_heT9MIPeEeCmlNzkYEiKIA" name="Command" clientDependency="_1NhuAISHEeCF8ab9z-9ckA">
+    <ownedAttribute xmi:id="_1TH8gISDEeCzoa4ji_BYaA" name="private OptionList" aggregation="composite"/>
+    <ownedOperation xmi:id="_mI9fcISDEeCzoa4ji_BYaA" name="getName">
+      <ownedParameter xmi:id="_m0Dq4ISDEeCzoa4ji_BYaA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pJKhEISDEeCzoa4ji_BYaA" name="getOption">
+      <ownedParameter xmi:id="_q26cUISDEeCzoa4ji_BYaA" direction="return"/>
+      <ownedParameter xmi:id="_q27DYISDEeCzoa4ji_BYaA" name="int n"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6hQOQISDEeCzoa4ji_BYaA" name="Option">
+    <ownedOperation xmi:id="_8rbm0ISDEeCzoa4ji_BYaA" name="getName">
+      <ownedParameter xmi:id="_9DZa4ISDEeCzoa4ji_BYaA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9es20ISDEeCzoa4ji_BYaA" name="hasParameter">
+      <ownedParameter xmi:id="_-vPRoISDEeCzoa4ji_BYaA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__M9vcISDEeCzoa4ji_BYaA" name="getParameter">
+      <ownedParameter xmi:id="_Akp7IISEEeCzoa4ji_BYaA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3hCowISHEeCF8ab9z-9ckA" name="Option">
+      <ownedParameter xmi:id="_5nCE4ISHEeCF8ab9z-9ckA" direction="return"/>
+      <ownedParameter xmi:id="_5nCE4YSHEeCF8ab9z-9ckA" name="name"/>
+      <ownedParameter xmi:id="_5nCE4oSHEeCF8ab9z-9ckA" name="acceptParameter"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7Fj4YISHEeCF8ab9z-9ckA" name="setParameter">
+      <ownedParameter xmi:id="_71IUIISHEeCF8ab9z-9ckA" direction="return"/>
+      <ownedParameter xmi:id="_71IUIYSHEeCF8ab9z-9ckA" name="value"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_1NhuAISHEeCF8ab9z-9ckA" supplier="_6hQOQISDEeCzoa4ji_BYaA" client="_heT9MIPeEeCmlNzkYEiKIA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_btPXkIS8EeCMGPPVXyqzHw" name="OptionParser" clientDependency="_iK1GEIS8EeCMGPPVXyqzHw">
+    <ownedOperation xmi:id="_lTXkUIS8EeCMGPPVXyqzHw" name="addOption">
+      <ownedParameter xmi:id="_oXEl4IS8EeCMGPPVXyqzHw" direction="return"/>
+      <ownedParameter xmi:id="_oXEl4YS8EeCMGPPVXyqzHw" name="arg"/>
+      <ownedParameter xmi:id="_oXFM8IS8EeCMGPPVXyqzHw" name="longArg"/>
+      <ownedParameter xmi:id="_oXFM8YS8EeCMGPPVXyqzHw" name="acceptParam"/>
+      <ownedParameter xmi:id="_oXF0AIS8EeCMGPPVXyqzHw" name="default"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pObEoIS8EeCMGPPVXyqzHw" name="parseString">
+      <ownedParameter xmi:id="_upj3oIS8EeCMGPPVXyqzHw" direction="return"/>
+      <ownedParameter xmi:id="_upj3oYS8EeCMGPPVXyqzHw" name="raw"/>
+      <ownedParameter xmi:id="_upkesIS8EeCMGPPVXyqzHw" name="optList"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_iK1GEIS8EeCMGPPVXyqzHw" supplier="_heT9MIPeEeCmlNzkYEiKIA" client="_btPXkIS8EeCMGPPVXyqzHw"/>
+</uml:Model>
