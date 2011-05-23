@@ -43,4 +43,19 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_1NhuAISHEeCF8ab9z-9ckA" supplier="_6hQOQISDEeCzoa4ji_BYaA" client="_heT9MIPeEeCmlNzkYEiKIA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_btPXkIS8EeCMGPPVXyqzHw" name="OptionParser" clientDependency="_iK1GEIS8EeCMGPPVXyqzHw">
+    <ownedOperation xmi:id="_lTXkUIS8EeCMGPPVXyqzHw" name="addOption">
+      <ownedParameter xmi:id="_oXEl4IS8EeCMGPPVXyqzHw" direction="return"/>
+      <ownedParameter xmi:id="_oXEl4YS8EeCMGPPVXyqzHw" name="arg"/>
+      <ownedParameter xmi:id="_oXFM8IS8EeCMGPPVXyqzHw" name="longArg"/>
+      <ownedParameter xmi:id="_oXFM8YS8EeCMGPPVXyqzHw" name="acceptParam"/>
+      <ownedParameter xmi:id="_oXF0AIS8EeCMGPPVXyqzHw" name="default"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pObEoIS8EeCMGPPVXyqzHw" name="parseString">
+      <ownedParameter xmi:id="_upj3oIS8EeCMGPPVXyqzHw" direction="return"/>
+      <ownedParameter xmi:id="_upj3oYS8EeCMGPPVXyqzHw" name="raw"/>
+      <ownedParameter xmi:id="_upkesIS8EeCMGPPVXyqzHw" name="optList"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_iK1GEIS8EeCMGPPVXyqzHw" supplier="_heT9MIPeEeCmlNzkYEiKIA" client="_btPXkIS8EeCMGPPVXyqzHw"/>
 </uml:Model>
