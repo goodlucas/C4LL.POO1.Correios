@@ -31,7 +31,6 @@ public class User {
 			return this.login.equals(u.getLogin());
 		}
 		return false;
-
 	}
 
 }
