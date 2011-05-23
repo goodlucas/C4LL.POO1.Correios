@@ -1,6 +1,6 @@
-package User;
+package Accounts;
 
-import User.User;
+import Accounts.User;
 
 public class User {
 	private String login;
