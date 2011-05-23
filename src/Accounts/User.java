@@ -22,7 +22,7 @@ public class User {
 	}
 
 	public int hashCode() {
-		return 23 * login.hashCode();
+		return 42 * login.hashCode();
 	}
 
 	public boolean equals(Object o) {
