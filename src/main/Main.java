@@ -1,8 +1,9 @@
 package main;
 
-import Accounts.Accounts;
-import Accounts.User;
-import Command.Command;
+import command.Command;
+
+import accounts.Accounts;
+import accounts.User;
 
 public final class Main {
 

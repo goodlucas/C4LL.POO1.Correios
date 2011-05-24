@@ -1,10 +1,11 @@
-package Accounts;
+package accounts;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Server.Message;
-import Server.Server;
+import server.Message;
+import server.Server;
+
 
 
 public class Accounts {
