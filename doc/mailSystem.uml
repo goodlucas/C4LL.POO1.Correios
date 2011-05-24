@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_WbAFAIWEEeCaGbqIADRCnA" name="mailSystem">
+  <elementImport xmi:id="_WcsHEIWEEeCaGbqIADRCnA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_Wc2fIIWEEeCaGbqIADRCnA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_Wc2fIYWEEeCaGbqIADRCnA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_Wc2fIoWEEeCaGbqIADRCnA">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YapBgIWEEeCaGbqIADRCnA" name="User"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YvvHwIWEEeCaGbqIADRCnA" name="Accounts" clientDependency="_m3hh0IWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZBNSQIWEEeCaGbqIADRCnA" name="Server" clientDependency="_rUe1UIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_m3hh0IWEEeCaGbqIADRCnA" supplier="_YapBgIWEEeCaGbqIADRCnA" client="_YvvHwIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qd7AwIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rUe1UIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZBNSQIWEEeCaGbqIADRCnA"/>
+</uml:Package>

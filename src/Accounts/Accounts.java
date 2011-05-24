@@ -3,6 +3,10 @@ package Accounts;
 import java.util.ArrayList;
 import java.util.List;
 
+import Server.Message;
+import Server.Server;
+
+
 public class Accounts {
 	private List<User> accounts;
 
@@ -14,12 +18,12 @@ public class Accounts {
 	}
 
 	/**
-	 * addUser method, use to add an user to the ArrayList of accounts, this
+	 * addUser method, use to add an user to the ArrayList of accounts, this also
 	 * checks if the user already exists.
 	 */
 	public void addUser(User user) {
 		if (userExists(user))
-			System.out.println("Sorry, but the user already exists!");
+			System.out.println("Sorry, but this user already exists!");
 		else {
 			this.accounts.add(user);
 			System.out.println("Account sucessfully created!");
@@ -27,10 +31,17 @@ public class Accounts {
 	}
 
 	public Boolean userExists(User user) {
-		if (this.accounts.contains(user))
+		if (accounts.contains(user))
 			return true;
 		else
 			return false;
+	}
+	
+	public void send(String to, String text) {
+		int i = 0; 
+		Message message = new Message((accounts.get(i).getLogin()), to, text, false);
+		Server.post(message);
+		i++;
 	}
 
 }

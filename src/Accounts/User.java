@@ -1,16 +1,17 @@
 package Accounts;
 
-import Accounts.User;
+
 
 public class User {
 	private String login;
+	
 
 	public User() {
 		this.login = "";
 	}
 
 	public User(String login) {
-		this.login = login;
+		setLogin(login);
 	}
 
 	public String getLogin() {

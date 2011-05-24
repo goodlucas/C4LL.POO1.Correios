@@ -4,19 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
-	private List<Messages> messages;
+	private List<Message> msgs;
+	private String serverName;
 
-	public Server() {
-		messages = new ArrayList<Messages>();
+	public Server(String serverName) {
+		setServerName(serverName);
+		msgs = new ArrayList<Message>();
 	}
 
-	public void send(Messages messages) {
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+	}
+
+	public String getServerName() {
+		return serverName;
+	}
+
+	public static void post(Message message) {
 		
-			
-			
 		
-			
+	}
+
 	
-	}
 
 }

@@ -1,12 +1,14 @@
 package Server;
 
-public class Messages {
+
+
+public class Message {
 	private String from;
 	private String to;
 	private String text;
 	private Boolean read;
 
-	public Messages(String from, String to, String text, Boolean read) {
+	public Message(String from, String to, String text, Boolean read) {
 		this.from = from;
 		this.to = to;
 		this.text = text;
@@ -44,6 +46,5 @@ public class Messages {
 	public void setRead(Boolean read) {
 		this.read = read;
 	}
-
 
 }
