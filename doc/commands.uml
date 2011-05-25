@@ -12,50 +12,77 @@
   <elementImport xmi:id="_eo_88YPeEeCmlNzkYEiKIA">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
   </elementImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_heT9MIPeEeCmlNzkYEiKIA" name="Command" clientDependency="_1NhuAISHEeCF8ab9z-9ckA">
-    <ownedAttribute xmi:id="_1TH8gISDEeCzoa4ji_BYaA" name="private OptionList" aggregation="composite"/>
-    <ownedOperation xmi:id="_mI9fcISDEeCzoa4ji_BYaA" name="getName">
-      <ownedParameter xmi:id="_m0Dq4ISDEeCzoa4ji_BYaA" direction="return"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jc7oYIaDEeC0KPC0sHolrQ" name="CommandCollection" clientDependency="_5oEewIaMEeCLio1ZPvROcQ _6GzpMIaMEeCLio1ZPvROcQ _7h4gEIaMEeCLio1ZPvROcQ _8ra7AIaMEeCLio1ZPvROcQ _95_m8IaMEeCLio1ZPvROcQ _-ikp4IaMEeCLio1ZPvROcQ">
+    <ownedAttribute xmi:id="_m-gRsIaDEeC0KPC0sHolrQ" name="TerminalCommand" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_7eEGIIaDEeC0KPC0sHolrQ" name="CommandName"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ArDvcIaEEeC0KPC0sHolrQ" name="Reader" clientDependency="_QemxoIaNEeCLio1ZPvROcQ _gc1v8IaNEeCLio1ZPvROcQ">
+    <ownedOperation xmi:id="_DcYnkIaEEeC0KPC0sHolrQ" name="public TerminalCommand readCommand">
+      <ownedParameter xmi:id="_KwFesIaEEeC0KPC0sHolrQ" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_pJKhEISDEeCzoa4ji_BYaA" name="getOption">
-      <ownedParameter xmi:id="_q26cUISDEeCzoa4ji_BYaA" direction="return"/>
-      <ownedParameter xmi:id="_q27DYISDEeCzoa4ji_BYaA" name="int n"/>
+    <ownedOperation xmi:id="_FUdjgIaEEeC0KPC0sHolrQ" name="operation1"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_b-3XgIaHEeC0KPC0sHolrQ" name="TerminalCommand"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_trGd0IaJEeC0KPC0sHolrQ" name="DeleteCommand" clientDependency="_JldvkIaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_0_aRkIaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_zaxWYIaJEeC0KPC0sHolrQ" name="List ids" aggregation="composite"/>
+    <ownedOperation xmi:id="_wWgUIIaJEeC0KPC0sHolrQ" name="operation"/>
+    <ownedOperation xmi:id="_RgpIUIaLEeC0KPC0sHolrQ" name="getName">
+      <ownedParameter xmi:id="_R3_4YIaLEeC0KPC0sHolrQ" direction="return"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_6hQOQISDEeCzoa4ji_BYaA" name="Option">
-    <ownedOperation xmi:id="_8rbm0ISDEeCzoa4ji_BYaA" name="getName">
-      <ownedParameter xmi:id="_9DZa4ISDEeCzoa4ji_BYaA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:id="_9es20ISDEeCzoa4ji_BYaA" name="hasParameter">
-      <ownedParameter xmi:id="_-vPRoISDEeCzoa4ji_BYaA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:id="__M9vcISDEeCzoa4ji_BYaA" name="getParameter">
-      <ownedParameter xmi:id="_Akp7IISEEeCzoa4ji_BYaA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:id="_3hCowISHEeCF8ab9z-9ckA" name="Option">
-      <ownedParameter xmi:id="_5nCE4ISHEeCF8ab9z-9ckA" direction="return"/>
-      <ownedParameter xmi:id="_5nCE4YSHEeCF8ab9z-9ckA" name="name"/>
-      <ownedParameter xmi:id="_5nCE4oSHEeCF8ab9z-9ckA" name="acceptParameter"/>
-    </ownedOperation>
-    <ownedOperation xmi:id="_7Fj4YISHEeCF8ab9z-9ckA" name="setParameter">
-      <ownedParameter xmi:id="_71IUIISHEeCF8ab9z-9ckA" direction="return"/>
-      <ownedParameter xmi:id="_71IUIYSHEeCF8ab9z-9ckA" name="value"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__8fVEIaKEeC0KPC0sHolrQ" name="InboxCommand" clientDependency="_KJK5kIaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_13P4gIaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_BV0fgIaLEeC0KPC0sHolrQ" name="boolean read" aggregation="composite"/>
+    <ownedAttribute xmi:id="_M4mmMIaLEeC0KPC0sHolrQ" name="boolean unread" aggregation="composite"/>
+    <ownedAttribute xmi:id="_S1KrQIaLEeC0KPC0sHolrQ" name="boolean all" aggregation="composite"/>
+    <ownedAttribute xmi:id="_lrjicIaLEeC0KPC0sHolrQ" name="List filtros" aggregation="composite"/>
+    <ownedOperation xmi:id="_PpRXAIaLEeC0KPC0sHolrQ" name="getName">
+      <ownedParameter xmi:id="_RFxxQIaLEeC0KPC0sHolrQ" direction="return"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_1NhuAISHEeCF8ab9z-9ckA" supplier="_6hQOQISDEeCzoa4ji_BYaA" client="_heT9MIPeEeCmlNzkYEiKIA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_btPXkIS8EeCMGPPVXyqzHw" name="OptionParser" clientDependency="_iK1GEIS8EeCMGPPVXyqzHw">
-    <ownedOperation xmi:id="_lTXkUIS8EeCMGPPVXyqzHw" name="addOption">
-      <ownedParameter xmi:id="_oXEl4IS8EeCMGPPVXyqzHw" direction="return"/>
-      <ownedParameter xmi:id="_oXEl4YS8EeCMGPPVXyqzHw" name="arg"/>
-      <ownedParameter xmi:id="_oXFM8IS8EeCMGPPVXyqzHw" name="longArg"/>
-      <ownedParameter xmi:id="_oXFM8YS8EeCMGPPVXyqzHw" name="acceptParam"/>
-      <ownedParameter xmi:id="_oXF0AIS8EeCMGPPVXyqzHw" name="default"/>
-    </ownedOperation>
-    <ownedOperation xmi:id="_pObEoIS8EeCMGPPVXyqzHw" name="parseString">
-      <ownedParameter xmi:id="_upj3oIS8EeCMGPPVXyqzHw" direction="return"/>
-      <ownedParameter xmi:id="_upj3oYS8EeCMGPPVXyqzHw" name="raw"/>
-      <ownedParameter xmi:id="_upkesIS8EeCMGPPVXyqzHw" name="optList"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uUXyYIaLEeC0KPC0sHolrQ" name="LoginCommand" clientDependency="_K1kFgIaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_2fcg8IaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_vHi7wIaLEeC0KPC0sHolrQ" name="String login" aggregation="composite"/>
+    <ownedAttribute xmi:id="_zAEsgIaLEeC0KPC0sHolrQ" name="String password" aggregation="composite"/>
+    <ownedOperation xmi:id="_0knocIaLEeC0KPC0sHolrQ" name="getName">
+      <ownedParameter xmi:id="_10QEUIaLEeC0KPC0sHolrQ" direction="return"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_iK1GEIS8EeCMGPPVXyqzHw" supplier="_heT9MIPeEeCmlNzkYEiKIA" client="_btPXkIS8EeCMGPPVXyqzHw"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cCkZgIaMEeCLio1ZPvROcQ" name="ReadCommand" clientDependency="_MjVO4IaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_3d2C4IaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_de-GEIaMEeCLio1ZPvROcQ" name="List ids" aggregation="composite"/>
+    <ownedOperation xmi:id="_eM6KIIaMEeCLio1ZPvROcQ" name="getname">
+      <ownedParameter xmi:id="_ekvbUIaMEeCLio1ZPvROcQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gF324IaMEeCLio1ZPvROcQ" name="SendCommand" clientDependency="_OBPXUIaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_3-8k0IaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_hflb0IaMEeCLio1ZPvROcQ" name="List destinations" aggregation="composite"/>
+    <ownedOperation xmi:id="_i1VGwIaMEeCLio1ZPvROcQ" name="getName">
+      <ownedParameter xmi:id="_jLLa8IaMEeCLio1ZPvROcQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_k3TlkIaMEeCLio1ZPvROcQ" name="TrashCommand" clientDependency="_OdxiUIaNEeCLio1ZPvROcQ">
+    <generalization xmi:id="_4eJCQIaMEeCLio1ZPvROcQ" general="_b-3XgIaHEeC0KPC0sHolrQ"/>
+    <ownedAttribute xmi:id="_myp38IaMEeCLio1ZPvROcQ" name="List filtros" aggregation="composite"/>
+    <ownedAttribute xmi:id="_njoB4IaMEeCLio1ZPvROcQ" name="boolean clear" aggregation="composite"/>
+    <ownedOperation xmi:id="_o0QjUIaMEeCLio1ZPvROcQ" name="getName">
+      <ownedParameter xmi:id="_pLySgIaMEeCLio1ZPvROcQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_5oEewIaMEeCLio1ZPvROcQ" supplier="_trGd0IaJEeC0KPC0sHolrQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_6GzpMIaMEeCLio1ZPvROcQ" supplier="__8fVEIaKEeC0KPC0sHolrQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_7h4gEIaMEeCLio1ZPvROcQ" supplier="_uUXyYIaLEeC0KPC0sHolrQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_8ra7AIaMEeCLio1ZPvROcQ" supplier="_cCkZgIaMEeCLio1ZPvROcQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_95_m8IaMEeCLio1ZPvROcQ" supplier="_gF324IaMEeCLio1ZPvROcQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_-ikp4IaMEeCLio1ZPvROcQ" supplier="_k3TlkIaMEeCLio1ZPvROcQ" client="_jc7oYIaDEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_JldvkIaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="_trGd0IaJEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_KJK5kIaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="__8fVEIaKEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_K1kFgIaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="_uUXyYIaLEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_MjVO4IaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="_cCkZgIaMEeCLio1ZPvROcQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_OBPXUIaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="_gF324IaMEeCLio1ZPvROcQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_OdxiUIaNEeCLio1ZPvROcQ" supplier="_7eEGIIaDEeC0KPC0sHolrQ" client="_k3TlkIaMEeCLio1ZPvROcQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_QemxoIaNEeCLio1ZPvROcQ" supplier="_b-3XgIaHEeC0KPC0sHolrQ" client="_ArDvcIaEEeC0KPC0sHolrQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_gc1v8IaNEeCLio1ZPvROcQ" supplier="_jc7oYIaDEeC0KPC0sHolrQ" client="_ArDvcIaEEeC0KPC0sHolrQ"/>
 </uml:Model>
