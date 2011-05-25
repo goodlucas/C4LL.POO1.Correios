@@ -12,11 +12,65 @@
   <elementImport xmi:id="_Wc2fIoWEEeCaGbqIADRCnA">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
   </elementImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_YapBgIWEEeCaGbqIADRCnA" name="User"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_YvvHwIWEEeCaGbqIADRCnA" name="Accounts" clientDependency="_m3hh0IWEEeCaGbqIADRCnA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ZBNSQIWEEeCaGbqIADRCnA" name="Server" clientDependency="_rUe1UIWEEeCaGbqIADRCnA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YapBgIWEEeCaGbqIADRCnA" name="User">
+    <ownedAttribute xmi:id="_I6sqAIY6EeCtRYeuIt1IaQ" name="private String login" aggregation="composite"/>
+    <ownedOperation xmi:id="_bIFAcIY6EeCtRYeuIt1IaQ" name="operation"/>
+    <ownedOperation xmi:id="_EgjIAIY8EeCW9uV22dMqXg" name="setLogin">
+      <ownedParameter xmi:id="_GgZf4IY8EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_GgZf4YY8EeCW9uV22dMqXg" name="String login"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_LSn4wIY8EeCW9uV22dMqXg" name="getLogin">
+      <ownedParameter xmi:id="_QxnRAIY8EeCW9uV22dMqXg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_PRgwMIY8EeCW9uV22dMqXg" name="operation2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YvvHwIWEEeCaGbqIADRCnA" name="Accounts" clientDependency="_m3hh0IWEEeCaGbqIADRCnA _rUe1UIWEEeCaGbqIADRCnA">
+    <ownedAttribute xmi:id="_peTNMIY8EeCW9uV22dMqXg" name="private ArrayLIst accounts" aggregation="composite"/>
+    <ownedOperation xmi:id="_uxgMMIY8EeCW9uV22dMqXg" name="addUser">
+      <ownedParameter xmi:id="_wN0ZMIY8EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_wN0ZMYY8EeCW9uV22dMqXg" name="User user"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_w1onIIY8EeCW9uV22dMqXg" name="userExists">
+      <ownedParameter xmi:id="_yGLpAIY8EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_yGLpAYY8EeCW9uV22dMqXg" name="User user"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZBNSQIWEEeCaGbqIADRCnA" name="Server"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA">
+    <ownedAttribute xmi:id="_UKzIcIY-EeCW9uV22dMqXg" name="private User from" aggregation="composite"/>
+    <ownedAttribute xmi:id="_X0fL8IY-EeCW9uV22dMqXg" name="private User to" aggregation="composite"/>
+    <ownedAttribute xmi:id="_YgqVcIY-EeCW9uV22dMqXg" name="private String text" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Y7Sb8IY-EeCW9uV22dMqXg" name="private Boolean read" aggregation="composite"/>
+    <ownedOperation xmi:id="_Vc968IY-EeCW9uV22dMqXg" name="getFrom">
+      <ownedParameter xmi:id="_38Jr8IY-EeCW9uV22dMqXg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uI30AIY-EeCW9uV22dMqXg" name="setFrom">
+      <ownedParameter xmi:id="_2kQr8IY-EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_2kRTAIY-EeCW9uV22dMqXg" name="User user"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uk9TEIY-EeCW9uV22dMqXg" name="getTo">
+      <ownedParameter xmi:id="_6JIg4IY-EeCW9uV22dMqXg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_6sOm4IY-EeCW9uV22dMqXg" name="setTo">
+      <ownedParameter xmi:id="_8TPA8IY-EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_8TPA8YY-EeCW9uV22dMqXg" name="User user"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_CyMBYIY_EeCW9uV22dMqXg" name="getText">
+      <ownedParameter xmi:id="_GdcLIIY_EeCW9uV22dMqXg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_C5JlAIY_EeCW9uV22dMqXg" name="setText">
+      <ownedParameter xmi:id="_JPp0EIY_EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_JPp0EYY_EeCW9uV22dMqXg" name="String text"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_DAh_YIY_EeCW9uV22dMqXg" name="getRead">
+      <ownedParameter xmi:id="_KooZMIY_EeCW9uV22dMqXg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_DEbA4IY_EeCW9uV22dMqXg" name="setReat">
+      <ownedParameter xmi:id="_MVQ6IIY_EeCW9uV22dMqXg" direction="return"/>
+      <ownedParameter xmi:id="_MVQ6IYY_EeCW9uV22dMqXg" name="Boolean read"/>
+    </ownedOperation>
+  </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_m3hh0IWEEeCaGbqIADRCnA" supplier="_YapBgIWEEeCaGbqIADRCnA" client="_YvvHwIWEEeCaGbqIADRCnA"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_qd7AwIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_rUe1UIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZBNSQIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rUe1UIWEEeCaGbqIADRCnA" supplier="_ZBNSQIWEEeCaGbqIADRCnA" client="_YvvHwIWEEeCaGbqIADRCnA"/>
 </uml:Package>

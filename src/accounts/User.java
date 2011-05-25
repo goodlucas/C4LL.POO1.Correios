@@ -1,7 +1,6 @@
 package accounts;
 
 
-
 public class User {
 	private String login;
 	

@@ -6,8 +6,6 @@ import java.util.List;
 import server.Message;
 import server.Server;
 
-
-
 public class Accounts {
 	private List<User> accounts;
 
@@ -24,7 +22,7 @@ public class Accounts {
 	 */
 	public void addUser(User user) {
 		if (userExists(user))
-			System.out.println("Sorry, but this user already exists!");
+			System.out.println("Sorry, but this user already exists dude!");
 		else {
 			this.accounts.add(user);
 			System.out.println("Account sucessfully created!");
@@ -38,11 +36,9 @@ public class Accounts {
 			return false;
 	}
 	
-	public void send(String to, String text) {
-		int i = 0; 
-		Message message = new Message((accounts.get(i).getLogin()), to, text, false);
-		Server.post(message);
-		i++;
+	public void send(Message message) {
+		 Server.post(message);
+		
 	}
 
 }
