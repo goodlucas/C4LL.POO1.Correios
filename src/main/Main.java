@@ -1,27 +1,29 @@
 package main;
 
+import command.InboxCommand;
+import command.Reader;
+import command.TerminalCommand;
+
 public final class Main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-//		new Command("inbox --read uh --lol");
-//		//new Command("inbox --read test");
+		Reader rd = new Reader();
 		
-//		//Just for testing
-//		Accounts acc = new Accounts();
-//		User a = new User("batman");
-//		User b = new User("Robim");
-//		acc.addUser(a);
-//		acc.addUser(b);
-//		
-//		String[] argv = { "--read" };
-//		InboxCommand ibx = new InboxCommand();
-//		JCommander jc = new JCommander(ibx, argv);
-//		
-//		System.out.println(ibx.unread);		
-
+		TerminalCommand recv = rd.readCommand();
+		
+		if (recv instanceof InboxCommand) {
+			InboxCommand	ic = (InboxCommand) recv;
+			
+			System.out.println("--all = " + ic.all);
+			System.out.println("--read = " + ic.read);
+			System.out.println("--unread = " + ic.unread);
+			System.out.println("Filtros: " + ic.filtros.toString());
+		} else {
+			System.out.println("Algo deu errado!");
+		}
 
 	}
 
