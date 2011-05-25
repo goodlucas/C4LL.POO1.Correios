@@ -6,6 +6,10 @@ import java.util.Scanner;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
 
+/**
+ * Reader class should be used to get a command line from user and
+ * process, returning a TerminalCommand child class instance.
+ */
 public class Reader {
 	private Scanner reader;
 	
