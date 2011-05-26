@@ -1,17 +1,17 @@
 package command;
 
 /**
- * Help command. Show all available commands in the terminal.
+ * Exit command. Finalize program.
  */
-public class HelpCommand extends TerminalCommand implements ICommandName {
+public class ExitCommand extends TerminalCommand implements ICommandName {
 	@Override
 	public String getName() {
-		return "help";
+		return "exit";
 	}
 
 	@Override
 	public String getHelp() {
-		return "Mostra esta mensagem.";
+		return "Sair do programa.";
 	}
 	
 	/**

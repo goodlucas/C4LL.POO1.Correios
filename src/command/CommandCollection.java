@@ -11,6 +11,7 @@ public final class CommandCollection {
 		new TrashCommand(),
 		new ReadCommand(), 
 		new SendCommand(),
-		new DeleteCommand() 
+		new DeleteCommand(),
+		new ExitCommand()
 	};
 }

@@ -15,6 +15,10 @@ public final class TextInterface {
 		this.server = server;  
 	}
 	
+	/**
+	 * Get a command line from the user and process.
+	 * @return	True ff the program should read a next line, false to exit.
+	 */
 	private boolean nextLine() {
 		TerminalCommand cmd = commandReader.readCommand();
 		
@@ -32,6 +36,7 @@ public final class TextInterface {
 		if (cmd instanceof HelpCommand) {
 			System.out.println("você digitou o comando help.");
 			ShowCommandHelper.showCommands();
+			return true;
 		}
 		
 		if (cmd instanceof LoginCommand) {
@@ -40,6 +45,9 @@ public final class TextInterface {
 		return true;
 	}
 	
+	/**
+	 * Main loop to process command line type from the user.
+	 */
 	public void mainLoop() {
 		boolean	resume = true;
 		

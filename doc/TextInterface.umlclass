@@ -132,7 +132,7 @@
   <children xmi:type="notation:Shape" xmi:id="_0_-rEIfFEeCPspAmOW-LxA" type="2018" fontName="Sans" fillColor="13369343" lineColor="6737151">
     <children xmi:type="notation:DecorationNode" xmi:id="_0__SIIfFEeCPspAmOW-LxA" type="5030"/>
     <element xmi:type="uml:Comment" href="TextInterface.uml#_0_9c8IfFEeCPspAmOW-LxA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_-rEYfFEeCPspAmOW-LxA" x="645" y="105" width="191" height="82"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_-rEYfFEeCPspAmOW-LxA" x="645" y="105" width="211" height="82"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_O-_nQYfFEeCPspAmOW-LxA"/>
   <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_O-_nQofFEeCPspAmOW-LxA"/>
