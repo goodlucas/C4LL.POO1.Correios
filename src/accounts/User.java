@@ -3,6 +3,7 @@ package accounts;
 
 public class User {
 	private String	loginName;
+	private	boolean	isLogged;
 
 	public User(String login) {
 		setLoginName(login);
@@ -14,6 +15,14 @@ public class User {
 
 	public void setLoginName(String login) {
 		this.loginName = login;
+	}
+
+	public void setLogged(boolean isLogged) {
+		this.isLogged = isLogged;
+	}
+
+	public boolean isLogged() {
+		return isLogged;
 	}
 
 //	public int hashCode() {

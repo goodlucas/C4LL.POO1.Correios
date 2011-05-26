@@ -5,7 +5,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal login command. Handle the login command, with password support.
  */
-public class LoginCommand extends TerminalCommand implements CommandName {
+public class LoginCommand extends TerminalCommand implements ICommandName {
 	public static final String	NAME = "login";
 	
 	@Parameter(names = {"-u", "--user"}, 

@@ -1,8 +1,6 @@
 package main;
 
-import command.InboxCommand;
-import command.Reader;
-import command.TerminalCommand;
+import textintf.TextInterface;
 
 public final class Main {
 
@@ -24,7 +22,9 @@ public final class Main {
 //		} else {
 //			System.out.println("Algo deu errado!");
 //		}
-
+		TextInterface	intf = new TextInterface();
+		
+		intf.mainLoop();
 	}
 
 }

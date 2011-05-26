@@ -8,7 +8,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal read command. Read a message by its ID.
  */
-public final class ReadCommand extends TerminalCommand implements CommandName {
+public final class ReadCommand extends TerminalCommand implements ICommandName {
 	public static final String	NAME = "read";
 	
 	@Parameter(description = "Número da mensagem. Aceita mais de um.")

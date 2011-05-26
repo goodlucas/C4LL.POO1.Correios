@@ -3,7 +3,6 @@ package server;
 import java.util.ArrayList;
 import java.util.Date;
 
-import accounts.User;
 
 /**
  * Message information.

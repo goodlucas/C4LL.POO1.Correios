@@ -8,7 +8,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal send command. Send a message for one or more accounts.
  */
-public final class SendCommand extends TerminalCommand implements CommandName {
+public final class SendCommand extends TerminalCommand implements ICommandName {
 	public static final String	NAME = "send";
 	
 	@Parameter(description = "Lista de contas para enviar.")

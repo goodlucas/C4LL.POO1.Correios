@@ -49,7 +49,7 @@ public class Reader {
 		
 		list.remove(0);
 		for (TerminalCommand tc: CommandCollection.COMMANDS) {
-			if (((CommandName) tc).getName().equals(command)) {
+			if (((ICommandName) tc).getName().equals(command)) {
 				String[]	arg = new String[list.size()];
 				
 				try {
