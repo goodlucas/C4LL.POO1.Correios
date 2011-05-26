@@ -1,4 +1,4 @@
-package command;
+package textintf.command;
 
 import java.util.ArrayList;
 import java.util.Scanner;

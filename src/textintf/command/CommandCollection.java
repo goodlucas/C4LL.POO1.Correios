@@ -1,4 +1,4 @@
-package command;
+package textintf.command;
 
 /**
  * Store all command instances.

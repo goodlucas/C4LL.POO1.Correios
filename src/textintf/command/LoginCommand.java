@@ -1,4 +1,4 @@
-package command;
+package textintf.command;
 
 import com.beust.jcommander.Parameter;
 

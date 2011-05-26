@@ -1,7 +1,7 @@
 package textintf;
 
+import textintf.command.*;
 import server.Server;
-import command.*;
 
 /**
  * End-user text interface. This class translate a command line into an
@@ -54,7 +54,7 @@ public final class TextInterface {
 		}
 		/* Received --help option */
 		if (cmd.help) {
-			ShowCommandHelper.showHelp(((ICommandName) cmd).getName());
+			ShowCommandHelper.showHelp(cmd.getCommand().getName());
 			return true;
 		}
 		/* Help command */

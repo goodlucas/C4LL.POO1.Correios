@@ -1,4 +1,4 @@
-package command;
+package textintf.command;
 
 /**
  * Base interface for a command. Every command class must implement this

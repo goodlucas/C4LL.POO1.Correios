@@ -1,17 +1,17 @@
-package command;
+package textintf.command;
 
 /**
- * Exit command. Finalize program.
+ * Help command. Show all available commands in the terminal.
  */
-public class ExitCommand extends TerminalCommand implements ICommandName {
+public class HelpCommand extends TerminalCommand implements ICommandName {
 	@Override
 	public String getName() {
-		return "exit";
+		return "help";
 	}
 
 	@Override
 	public String getHelp() {
-		return "Sair do programa.";
+		return "Mostra esta mensagem.";
 	}
 	
 	/**
