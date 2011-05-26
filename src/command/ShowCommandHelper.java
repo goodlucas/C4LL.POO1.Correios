@@ -37,5 +37,6 @@ public final class ShowCommandHelper {
 			if (help != null)
 				System.out.println("\t" + name + "\t" + help);
 		}
+		// TODO : Should print an empty line at end? Just like usage()
 	}
 }
