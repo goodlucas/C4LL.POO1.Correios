@@ -1,11 +1,11 @@
-package Util;
+package util;
 
 public class Date {
 	public static String diffDate(Date a, Date b){
 		
 		
 		
-		return diff;
+		return null;//diff;
 	}
 
 }

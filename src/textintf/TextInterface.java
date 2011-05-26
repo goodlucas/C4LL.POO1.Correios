@@ -1,5 +1,6 @@
 package textintf;
 
+import server.Server;
 import command.*;
 
 /**
@@ -8,9 +9,10 @@ import command.*;
  */
 public final class TextInterface {
 	Reader	commandReader = new Reader();
+	Server	server;
 	
-	public TextInterface() {
-		
+	public TextInterface(Server server) {
+		this.server = server;  
 	}
 	
 	private boolean nextLine() {

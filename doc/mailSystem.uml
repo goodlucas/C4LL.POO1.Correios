@@ -65,8 +65,8 @@
       <ownedParameter xmi:id="_vus0MIcAEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_vus0MYcAEeCQ3NvXKx6KbA" name="String serverName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_ysCIAIcAEeCQ3NvXKx6KbA" name="String getServerName">
-      <ownedParameter xmi:id="_y2azEIcAEeCQ3NvXKx6KbA" direction="return"/>
+    <ownedOperation xmi:id="_ysCIAIcAEeCQ3NvXKx6KbA" name="getServerName">
+      <ownedParameter xmi:id="_uLSzYIeSEeCDHLH1FWRyFg" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_0Z8bUIcAEeCQ3NvXKx6KbA" name="createAccount">
       <ownedParameter xmi:id="_0ivyAIcAEeCQ3NvXKx6KbA" direction="return"/>

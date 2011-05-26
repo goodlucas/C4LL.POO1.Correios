@@ -1,5 +1,6 @@
 package main;
 
+import server.Server;
 import textintf.TextInterface;
 
 public final class Main {
@@ -22,7 +23,8 @@ public final class Main {
 //		} else {
 //			System.out.println("Algo deu errado!");
 //		}
-		TextInterface	intf = new TextInterface();
+		Server			server = new Server("unicentro.br");		
+		TextInterface	intf = new TextInterface(server);
 		
 		intf.mainLoop();
 	}
