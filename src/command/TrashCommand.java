@@ -9,8 +9,6 @@ import com.beust.jcommander.Parameter;
  * Text terminal trash command. Handle messages in the trash.
  */
 public final class TrashCommand extends TerminalCommand implements ICommandName {
-	public static final String	NAME = "trash";
-	
 	@Parameter(description = "Filtro de mensagem")
 	public List<String> filtros = new ArrayList<String>();
 
@@ -19,7 +17,12 @@ public final class TrashCommand extends TerminalCommand implements ICommandName 
 
 	@Override
 	public String getName() {
-		return NAME;
+		return "trash";
+	}
+
+	@Override
+	public String getHelp() {
+		return "Listar (ou deletar) mensagens na lixeira.";
 	}
 }
 

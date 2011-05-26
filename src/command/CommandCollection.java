@@ -5,11 +5,12 @@ package command;
  */
 public final class CommandCollection {
 	public static final	TerminalCommand[]	COMMANDS = {
-		new DeleteCommand(), 
-		new InboxCommand(), 
+		new HelpCommand(),
 		new LoginCommand(), 
+		new InboxCommand(), 
+		new TrashCommand(),
 		new ReadCommand(), 
 		new SendCommand(),
-		new TrashCommand()
+		new DeleteCommand() 
 	};
 }

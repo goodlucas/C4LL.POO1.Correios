@@ -9,8 +9,6 @@ import com.beust.jcommander.Parameter;
  * Text terminal inbox command. Handle messages in the inbox.
  */
 public final class InboxCommand extends TerminalCommand implements ICommandName {
-	public static final String	NAME = "inbox";
-	
 	@Parameter(description = "Definir um filtro para a listagem")
 	public List<String> filtros = new ArrayList<String>();
 	
@@ -28,6 +26,11 @@ public final class InboxCommand extends TerminalCommand implements ICommandName 
 
 	@Override
 	public String getName() {
-		return NAME;
+		return "inbox";
+	}
+
+	@Override
+	public String getHelp() {
+		return "Listar mensagens na caixa de entrada.";
 	}
 }

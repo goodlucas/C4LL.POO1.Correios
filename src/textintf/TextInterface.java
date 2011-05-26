@@ -18,14 +18,20 @@ public final class TextInterface {
 	private boolean nextLine() {
 		TerminalCommand cmd = commandReader.readCommand();
 		
+		/* Command not found in CommandCollection */
 		if (cmd == null) {
 			System.out.println("O comando não existe. Digite help para ajuda.");
 			return true;
 		}
-		
+		/* Received --help option */
 		if (cmd.help) {
 			ShowCommandHelper.showHelp(((ICommandName) cmd).getName());
 			return true;
+		}
+		
+		if (cmd instanceof HelpCommand) {
+			System.out.println("você digitou o comando help.");
+			ShowCommandHelper.showCommands();
 		}
 		
 		if (cmd instanceof LoginCommand) {
