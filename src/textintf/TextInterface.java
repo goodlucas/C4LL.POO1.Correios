@@ -23,6 +23,14 @@ public final class TextInterface {
 		this.server = server;  
 	}
 	
+	public Reader getReader() {
+		return commandReader;
+	}
+	
+	public Server getServer() {
+		return server;
+	}
+	
 	/**
 	 * Print on the stdout the welcome message.
 	 */
@@ -72,6 +80,16 @@ public final class TextInterface {
 			return false;
 		}
 		
+		if (cmd instanceof CreateUserCommand) {
+			new CreateUser(this);
+			return true;
+		}
+		
+		
+		if (cmd instanceof LoginCommand) {
+			
+		}
+		
 		/* From here, all commands are only accepted when the user
 		 * is logged into an account. */
 		if (!isLogged()) {
@@ -81,8 +99,11 @@ public final class TextInterface {
 			return true;
 		}
 		
-		if (cmd instanceof LoginCommand) {
-			
+		if (cmd instanceof LogoutCommand) {
+			System.out.println("Você saiu da conta " + account.getLoginName() 
+					+ ".");
+			account = null;
+			return true;
 		}
 		return true;
 	}
@@ -95,7 +116,7 @@ public final class TextInterface {
 		TerminalCommand	cmd; 
 		
 		printPrompt();
-		cmd = commandReader.readCommand();		
+		cmd = getReader().readCommand();		
 		/* Command not found in CommandCollection */
 		if (cmd == null) {
 			System.out.println("O comando não existe.");

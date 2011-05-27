@@ -13,6 +13,7 @@ public final class CommandCollection {
 		new ReadCommand(), 
 		new SendCommand(),
 		new DeleteCommand(),
+		new LogoutCommand(),
 		new ExitCommand()
 	};
 }

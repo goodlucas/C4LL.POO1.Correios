@@ -21,12 +21,20 @@ public class Reader {
 	}
 	
 	/**
+	 * This method can be accessed from outside.
+	 * @return	String with a new line from the input.
+	 */
+	public String getNextLine() {
+		return reader.nextLine();
+	}
+	
+	/**
 	 * Read a command line and parse it by the command.
 	 * @return TerminalCommand instance of the parsed line. Will be returned
 	 * 		null in case of error like command not found of invalid parameter.
 	 */
 	public TerminalCommand readCommand() {
-		String				raw = reader.nextLine();
+		String				raw = getNextLine();
 		ArrayList<String> 	tokens = new ArrayList<String>();
 		
 		Scanner lineParser = new Scanner(raw);
