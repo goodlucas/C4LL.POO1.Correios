@@ -1,5 +1,6 @@
 package textintf;
 
+import accounts.Account;
 import textintf.command.*;
 import server.Server;
 
@@ -8,8 +9,12 @@ import server.Server;
  * action in the post office program.
  */
 public final class TextInterface {
-	Reader	commandReader = new Reader();
-	Server	server;
+	/* When a user is not logged, guest will be used instead. */
+	private final String	GUEST_USER = "convidado";
+	
+	private Reader	commandReader = new Reader();
+	private Server	server;
+	private Account	account = null;
 	
 	/**
 	 * @param server	Server instance to be used.
@@ -34,8 +39,52 @@ public final class TextInterface {
 	 * If there is not user, 'guest' should be used instead.
 	 */
 	private void printPrompt() {
-		System.out.print("TODO" + "@" + server.getServerName() + " $ ");
-		// TODO : Get user name
+		System.out.print(getPromptUser() + "@" + server.getServerName() + 
+				" $ ");
+	}
+	
+	private void suggestHelp() {
+		System.out.println("Digite " + new HelpCommand().getName() + 
+				" para ajuda.");
+	}
+	
+	private String getPromptUser() {
+		if (isLogged()) {
+			return account.getLoginName();
+		} else {
+			return GUEST_USER;
+		}
+	}
+	
+	private boolean isLogged() {
+		return (account != null);
+	}
+	
+	private boolean processCommand(TerminalCommand cmd) {
+		/* Help command */
+		if (cmd instanceof HelpCommand) {
+			ShowCommandHelper.showCommands();
+			return true;
+		}
+		/* Exit command */
+		if (cmd instanceof ExitCommand) {
+			System.out.println("Tchau!");
+			return false;
+		}
+		
+		/* From here, all commands are only accepted when the user
+		 * is logged into an account. */
+		if (!isLogged()) {
+			System.out.println("Você precisa estar logado para executar " + 
+					"esta operação.");
+			suggestHelp();
+			return true;
+		}
+		
+		if (cmd instanceof LoginCommand) {
+			
+		}
+		return true;
 	}
 	
 	/**
@@ -49,7 +98,8 @@ public final class TextInterface {
 		cmd = commandReader.readCommand();		
 		/* Command not found in CommandCollection */
 		if (cmd == null) {
-			System.out.println("O comando não existe. Digite help para ajuda.");
+			System.out.println("O comando não existe.");
+			suggestHelp();
 			return true;
 		}
 		/* Received --help option */
@@ -57,21 +107,8 @@ public final class TextInterface {
 			ShowCommandHelper.showHelp(cmd.getCommand().getName());
 			return true;
 		}
-		/* Help command */
-		if (cmd instanceof HelpCommand) {
-			ShowCommandHelper.showCommands();
-			return true;
-		}
-		/* Exit command */
-		if (cmd instanceof ExitCommand) {
-			System.out.println("Tchau!");
-			return false;
-		}
-		
-		if (cmd instanceof LoginCommand) {
-			
-		}
-		return true;
+		/* When reached here, the command should be processed */
+		return processCommand(cmd);
 	}
 	
 	/**

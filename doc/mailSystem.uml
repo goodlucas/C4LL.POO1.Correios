@@ -14,15 +14,23 @@
   </elementImport>
   <packagedElement xmi:type="uml:Class" xmi:id="_YapBgIWEEeCaGbqIADRCnA" name="User">
     <ownedAttribute xmi:id="_I6sqAIY6EeCtRYeuIt1IaQ" name="private String login" aggregation="composite"/>
+    <ownedAttribute xmi:id="_OuzfQIf-EeCPspAmOW-LxA" name="private String password" aggregation="composite"/>
     <ownedOperation xmi:id="_bIFAcIY6EeCtRYeuIt1IaQ" name="operation"/>
-    <ownedOperation xmi:id="_EgjIAIY8EeCW9uV22dMqXg" name="setLogin">
-      <ownedParameter xmi:id="_GgZf4IY8EeCW9uV22dMqXg" direction="return"/>
-      <ownedParameter xmi:id="_GgZf4YY8EeCW9uV22dMqXg" name="String login"/>
+    <ownedOperation xmi:id="_EgjIAIY8EeCW9uV22dMqXg" name="setLoginName">
+      <ownedParameter xmi:id="_TkIPcIf-EeCPspAmOW-LxA" direction="return"/>
+      <ownedParameter xmi:id="_TkIPcYf-EeCPspAmOW-LxA" name="String loginName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_LSn4wIY8EeCW9uV22dMqXg" name="getLogin">
-      <ownedParameter xmi:id="_QxnRAIY8EeCW9uV22dMqXg" direction="return"/>
+    <ownedOperation xmi:id="_LSn4wIY8EeCW9uV22dMqXg" name="getLoginName">
+      <ownedParameter xmi:id="_UgRuoIf-EeCPspAmOW-LxA" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_PRgwMIY8EeCW9uV22dMqXg" name="operation2"/>
+    <ownedOperation xmi:id="_PvRdwIf-EeCPspAmOW-LxA" name="getPassword">
+      <ownedParameter xmi:id="_Q0y7YIf-EeCPspAmOW-LxA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Rc4PEIf-EeCPspAmOW-LxA" name="setPassword">
+      <ownedParameter xmi:id="_STmbsIf-EeCPspAmOW-LxA" direction="return"/>
+      <ownedParameter xmi:id="_STmbsYf-EeCPspAmOW-LxA" name="String password"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_YvvHwIWEEeCaGbqIADRCnA" name="Account" clientDependency="_m3hh0IWEEeCaGbqIADRCnA _rUe1UIWEEeCaGbqIADRCnA _kaMIIIcCEeCpr8axwzlp1A _RAwY0IcDEeCjT73z3qyq-w">
     <ownedAttribute xmi:id="_peTNMIY8EeCW9uV22dMqXg" name="private User loggedUser" aggregation="composite"/>

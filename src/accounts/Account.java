@@ -5,31 +5,74 @@ import server.Server;
 import server.ServerException;
 
 public class Account {
-	private	User		loggedUser;
-	private	Messages	inbox;
-	private	Messages	trash;
+	private	Messages	inbox = new Messages();
+	private	Messages	trash = new Messages();
 	private Server		server;
+	private	User		loggedUser;
 	
-	public Account(Server server, User user) throws ServerException {
-		inbox = new Messages();
-		trash = new Messages();
-		this.server = server;
+	/**
+	 * @param server	Server which the account should be registered.
+	 * @param user		User information of the account.
+	 * @throws ServerException	
+	 * @throws AccountException
+	 */
+	public Account(Server server, User user) throws ServerException, 
+				AccountException {
 		setUser(user);
+		setServer(server);
+	}
+	/**
+	 * @return	The login name of associated user to the account.
+	 */
+	public String getLoginName() {
+		return this.getUser().getLoginName();
+	}
+	
+	/**
+	 * Set server to the account be registered.
+	 * Note: this method should be called just once, because it will register
+	 * the account into the server.
+	 * @param server	Server instance to the account be registered.
+	 * @throws AccountException	The server is null.
+	 * @throws ServerException 
+	 */
+	private void setServer(Server server) throws AccountException, 
+			ServerException {
+		if (server == null)
+			throw new AccountException("Não há servidor para a nova conta.");
+		this.server = server;
 		server.createAccount(this);
 	}
 	
-	public void send(Message message) throws ServerException {
-		 server.post(message);		
-	}
-	
+	/**
+	 * @return The instance to the user information.
+	 */
 	public User getUser() {
 		return loggedUser;
 	}
 
-	public void setUser(User user) {
+	/**
+	 * Set user is a private method to set which user own the account.
+	 * Should not be changed after one call.
+	 * @param user	User information.
+	 * @throws AccountException The user is null.
+	 */
+	private void setUser(User user) throws AccountException {
+		if (user == null)
+			throw new AccountException("Nenhum usuário está definido " + 
+					"para a conta.");
 		this.loggedUser = user;
 	}
 	
+	/**
+	 * Send a message to the server.
+	 * @param message	Message instance.
+	 * @throws ServerException Some server problem. See Server.post()
+	 */
+	public void send(Message message) throws ServerException {
+		 server.post(message);		
+	}
+
 	/**
 	 * Add a message to the inbox. This method is called from the server.
 	 */
@@ -49,32 +92,39 @@ public class Account {
 	}
 	
 	// TODO: Add 'getInbox(read/unread,[filter])', 'getTrash(..)'
-	// TODO: Add 'clearTrash()'
+	// TODO: Create accessors for trash and inbox. Like getcount
+	
+	public void clearTrash() {
+		// TODO: Should this function return some value?
+		trash.clear();
+	}
 
-//	/**
-//	 * An account should be equal when the other object is equal, if not,
-//	 * when the login name is the same.
-//	 */
-//	public boolean equals(Object o) {
-//		Account	objAccount;
-//		
-//		if (this == o)
-//			return true;
-//	    if (!(o instanceof Account))
-//	    	return false;
-//	    objAccount = (Account) o;
-//	    return (this.getLoginName().equals(objAccount.getLoginName()));
-//	}
-//	
-//	/**
-//	 * Get the Hash Code of the account based on the login name information.
-//	 */
-//	public int hashCode() {
-//		final int	SALT = 42;
-//		int 		hashResult = 1;
-//		
-//		hashResult *= SALT;
-//		hashResult += loginName.hashCode();
-//		return hashResult;
-//	}
+	/**
+	 * An account should be equal when the other object is equal, if not,
+	 * when the login name is the same.
+	 */
+	public boolean equals(Object o) {
+		Account	objAccount;
+		
+		if (this == o)
+			return true;
+	    if (o instanceof Account) {
+		    objAccount = (Account) o;
+		    return getLoginName().equals(objAccount.getLoginName());
+	    }
+	    return false;
+	}
+	
+	/**
+	 * Get the Hash Code of the account based on the login name information.
+	 * @return	The hash times 42.
+	 */
+	public int hashCode() {
+		/* 42 = Answer to the Ultimate Question of Life, 
+		 * 		the Universe, and Everything */
+		final int	HASH_SALT = 42;
+		int 		hashResult = HASH_SALT * getLoginName().hashCode();
+		
+		return hashResult;
+	}
 }

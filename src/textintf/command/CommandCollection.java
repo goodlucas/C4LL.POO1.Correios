@@ -6,6 +6,7 @@ package textintf.command;
 public final class CommandCollection {
 	public static final	TerminalCommand[]	COMMANDS = {
 		new HelpCommand(),
+		new CreateUserCommand(),
 		new LoginCommand(), 
 		new InboxCommand(), 
 		new TrashCommand(),
