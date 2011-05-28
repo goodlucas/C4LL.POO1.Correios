@@ -40,13 +40,18 @@ public final class InboxCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-//		Messages msgs;
-//		
-//		msgs = core.getAccount().getInbox(filtros.toString(), read, unread);
-//		for (Message m: msgs) {
-//			System.out.println("De: " + m.getFrom());
-//			System.out.println("Para: " + m.getDestinations().toString());
-//		}
+		Messages msgs;
+		
+		msgs = core.getAccount().getInbox(filtros.toString(), read, unread);
+		if (msgs.isEmpty()) {
+			System.out.println("\tCaixa de entrada vazia.");
+			return;
+		}
+		System.out.println(msgs.size() 
+				+ " mensage" + (msgs.size() == 1? "m": "ns"));
+		for (Message m: msgs) {
+			System.out.println("%id - %from - %subject - %date - [%read]");
+		}
 	}
 
 	@Override

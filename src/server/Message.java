@@ -1,6 +1,5 @@
 package server;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -10,6 +9,10 @@ import java.util.Date;
  */
 public class Message {
 	/**
+	 * Message id. The id is the identification of the message in an account.
+	 */
+	private int			messageId;
+	/**
 	 * Sender user's login name.
 	 */
 	private String		from;
@@ -18,6 +21,10 @@ public class Message {
 	 * destination.
 	 */
 	private DestinationList	to;
+	/**
+	 * Message subject.
+	 */
+	private String		subject;
 	/**
 	 * Message content.
 	 */
@@ -40,14 +47,16 @@ public class Message {
 	 * @param content	Message content.
 	 * @param read		Whether the message should be marked as read or not.
 	 */
-	public Message(String from, String to, String content, Boolean read) 
-			throws ServerException {
-		this.from = from;
+	public Message(String from, String to, String content, String subject, 
+			Boolean read) throws ServerException {
 		this.to = new DestinationList();
 		if (to != null)
 			this.addDestination(to);
-		this.content = content;
-		this.isRead = read;
+		setFrom(from);
+		setContent(content);
+		setIsRead(read);
+		setSubject(subject);
+		setMessageId(0);
 	}
 
 	/**
@@ -81,6 +90,20 @@ public class Message {
 			throw new ServerException("Destino duplicado: " + loginName);
 		this.to.add(loginName);
 	}
+
+	/**
+	 * @return	the new message subject. 
+	 */
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	/**
+	 * @return	the message subject. 
+	 */
+	public String getSubject() {
+		return subject;
+	}	
 
 	/**
 	 * @return	the text message. 
@@ -125,4 +148,18 @@ public class Message {
 		this.postDate = postDate.getTime();
 	}
 
+	/**
+	 * Set message identification for an account.
+	 * @param messageId	The new message id.
+	 */
+	public void setMessageId(int messageId) {
+		this.messageId = messageId;
+	}
+
+	/**
+	 * @return Account message identification. Zero when not defined.
+	 */
+	public int getMessageId() {
+		return messageId;
+	}
 }
