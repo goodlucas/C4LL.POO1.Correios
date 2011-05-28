@@ -18,6 +18,10 @@ public final class Core {
 		this.server = server;
 	}
 	
+	public String getProgramName() {
+		return "PostOffice";
+	}
+	
 	/**
 	 * @return	Currentely logged user. Null when the user is not logged.
 	 */

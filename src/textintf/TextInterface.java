@@ -1,6 +1,5 @@
 package textintf;
 
-import accounts.Account;
 import textintf.command.*;
 import server.Server;
 
@@ -24,7 +23,7 @@ public final class TextInterface {
 	 * Print into the console the welcome message.
 	 */
 	private void showWelcomeMessage() {
-		System.out.println("Bem vindo ao PostOffice!");
+		System.out.println("Bem vindo ao " + core.getProgramName() + "!");
 		System.out.println("Para ajuda digite " + new HelpCommand().getName());
 		System.out.println("");
 	}
@@ -55,13 +54,12 @@ public final class TextInterface {
 	}
 	
 	private void processCommand(TerminalCommand cmd) {
-		/* From here, all commands are only accepted when the user
-		 * is logged into an account. */
-		if (!core.isLogged()) {
+		if (!core.isLogged() && !cmd.allowUnloggedUser()) {
 			System.out.println("Você precisa estar logado para executar " + 
 					"esta operação.");
 			suggestHelp();
-			return;
+		} else {
+			cmd.getCommand().execute(core);
 		}
 	}
 	

@@ -26,7 +26,6 @@ public final class ReadCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		// TODO Auto-generated method stub
-		
+		// TODO read a messsage
 	}
 }

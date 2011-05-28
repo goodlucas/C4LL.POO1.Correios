@@ -31,7 +31,7 @@ public class ExitCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		System.out.println("Tchau!");
+		System.out.println("Obrigado por usar o " + core.getProgramName() + "!");
 		core.stopExecution();
 	}
 }
