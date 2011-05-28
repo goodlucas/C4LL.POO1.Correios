@@ -5,7 +5,8 @@ import java.util.Date;
 
 
 /**
- * Message information.
+ * Message information. It will store information about from where and to whom
+ * the message is, the content, the post date, and if the message was read.
  */
 public class Message {
 	/**
@@ -49,10 +50,16 @@ public class Message {
 		this.isRead = read;
 	}
 
+	/**
+	 * @return	The server user name.
+	 */
 	public String getFrom() {
 		return from;
 	}
 
+	/**
+	 * @param loginName	Set the sender user name.
+	 */
 	public void setFrom(String loginName) {
 		this.from = loginName;
 	}
@@ -75,26 +82,45 @@ public class Message {
 		this.to.add(loginName);
 	}
 
+	/**
+	 * @return	the text message. 
+	 */
 	public String getGetContent() {
 		return content;
 	}
 
+	/**
+	 * @param content	The new text message.
+	 */
 	public void setContent(String content) {
 		this.content = content;
 	}
 
+	/**
+	 * @return Whether the message has been marked as read or not.
+	 */
 	public Boolean getIsRead() {
 		return isRead;
 	}
 
+	/**
+	 * Mark a message as read or unread.
+	 * @param read	true if the message was read.
+	 */
 	public void setIsRead(Boolean read) {
 		this.isRead = read;
 	}
 	
+	/**
+	 * @return	Date when message was posted.
+	 */
 	public long getPostDate() {
 		return postDate;
 	}
 
+	/**
+	 * @param postDate	Date when message was posted.
+	 */
 	public void setPostDate(Date postDate) {
 		this.postDate = postDate.getTime();
 	}

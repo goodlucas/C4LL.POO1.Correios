@@ -4,6 +4,9 @@ import server.Message;
 import server.Server;
 import server.ServerException;
 
+/**
+ * Account class. Store messages of the account.
+ */
 public class Account {
 	private	Messages	inbox = new Messages();
 	private	Messages	trash = new Messages();
@@ -94,6 +97,9 @@ public class Account {
 	// TODO: Add 'getInbox(read/unread,[filter])', 'getTrash(..)'
 	// TODO: Create accessors for trash and inbox. Like getcount
 	
+	/**
+	 * Clear messages in trash.
+	 */
 	public void clearTrash() {
 		// TODO: Should this function return some value?
 		trash.clear();

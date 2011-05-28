@@ -18,6 +18,9 @@ public final class Core {
 		this.server = server;
 	}
 	
+	/**
+	 * @return	The program title.
+	 */
 	public String getProgramName() {
 		return "PostOffice";
 	}

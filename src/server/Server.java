@@ -4,19 +4,35 @@ import java.util.ArrayList;
 
 import accounts.Account;
 
+/**
+ * Server to accounts and message traffic.
+ */
 public class Server {
 	private AccountMap	accounts;
 	private String		serverName;
 
+	/**
+	 * Server constructor receives the server name, and it will not be able
+	 * to be changed afterwards.
+	 * @param serverName	The server name.
+	 */
 	public Server(String serverName) {
 		setServerName(serverName);
 		accounts = new AccountMap();
 	}
 
-	public void setServerName(String serverName) {
+	/**
+	 * Set server name. This method should be private to avoid the name to be
+	 * changed.
+	 * @param serverName	The server name.
+	 */
+	private void setServerName(String serverName) {
 		this.serverName = serverName;
 	}
 
+	/**
+	 * @return	The server name.
+	 */
 	public String getServerName() {
 		return serverName;
 	}
