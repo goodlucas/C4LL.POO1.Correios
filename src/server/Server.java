@@ -93,6 +93,7 @@ public class Server {
 				acc.addToInbox(message);
 			} else {
 				errors.add("Conta " + dest + " não encontrada.");
+				// TODO : Not found account should be delivered by message.
 			}		
 		}
 		if (!errors.isEmpty())

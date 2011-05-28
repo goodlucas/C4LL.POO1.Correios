@@ -1,7 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
 import textintf.Core;
 import textintf.command.*;
 
@@ -13,7 +11,7 @@ import com.beust.jcommander.Parameter;
 public final class TrashCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Filtro de mensagem")
-	public List<String> filtros = new ArrayList<String>();
+	public StringParameter filtros = new StringParameter();
 
 	@Parameter(names = {"-c", "--clear"}, description = "Esvaziar lixeira.")
 	public boolean clear;

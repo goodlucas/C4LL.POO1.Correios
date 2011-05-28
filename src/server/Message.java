@@ -17,7 +17,7 @@ public class Message {
 	 * Destination users' login names. A message can have one or more
 	 * destination.
 	 */
-	private ArrayList<String>	to;
+	private DestinationList	to;
 	/**
 	 * Message content.
 	 */
@@ -43,7 +43,7 @@ public class Message {
 	public Message(String from, String to, String content, Boolean read) 
 			throws ServerException {
 		this.from = from;
-		this.to = new ArrayList<String>();
+		this.to = new DestinationList();
 		if (to != null)
 			this.addDestination(to);
 		this.content = content;
@@ -67,7 +67,7 @@ public class Message {
 	/**
 	 * @return	A list of the message's destination.
 	 */
-	public ArrayList<String> getDestinations() {
+	public DestinationList getDestinations() {
 		return to;
 	}
 

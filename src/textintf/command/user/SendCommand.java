@@ -1,8 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import textintf.Core;
 
 import com.beust.jcommander.Parameter;
@@ -14,7 +11,7 @@ import textintf.command.*;
 public final class SendCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Lista de contas para enviar.")
-	public List<String> destinations = new ArrayList<String>();
+	public StringParameter destinations = new StringParameter();
 
 	@Override
 	public String getName() {

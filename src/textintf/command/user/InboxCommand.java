@@ -1,10 +1,10 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import server.Message;
 import textintf.Core;
 import textintf.command.*;
+
+import accounts.Messages;
 
 import com.beust.jcommander.Parameter;
 
@@ -14,7 +14,7 @@ import com.beust.jcommander.Parameter;
 public final class InboxCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Definir um filtro para a listagem")
-	public List<String> filtros = new ArrayList<String>();
+	public StringParameter filtros = new StringParameter();
 	
 	@Parameter(names = {"-u", "--unread"}, 
 			description = "Mostrar mensagens não lidas da caixa de entrada.")
@@ -40,7 +40,13 @@ public final class InboxCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-		// TODO show inbox.
+//		Messages msgs;
+//		
+//		msgs = core.getAccount().getInbox(filtros.toString(), read, unread);
+//		for (Message m: msgs) {
+//			System.out.println("De: " + m.getFrom());
+//			System.out.println("Para: " + m.getDestinations().toString());
+//		}
 	}
 
 	@Override

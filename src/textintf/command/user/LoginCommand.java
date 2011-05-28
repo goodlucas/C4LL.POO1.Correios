@@ -1,8 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import server.ServerException;
 import textintf.Core;
 
@@ -17,7 +14,7 @@ import com.beust.jcommander.Parameter;
 public class LoginCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Nome do usuário")
-	public List<String> loginName = new ArrayList<String>();
+	public StringParameter loginName = new StringParameter();
 	
 	@Override
 	public String getName() {

@@ -1,8 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.beust.jcommander.Parameter;
 
 import accounts.Account;
@@ -18,7 +15,7 @@ import textintf.command.*;
 public final class CreateUserCommand extends TerminalCommand implements
 		ICommand, IHasParameters {
 	@Parameter(description = "Nome do usuário")
-	public List<String> newName = new ArrayList<String>();
+	public StringParameter newName = new StringParameter();
 	
 	@Override
 	public String getName() {

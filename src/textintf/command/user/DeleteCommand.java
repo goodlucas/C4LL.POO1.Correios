@@ -1,8 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import textintf.Core;
 import textintf.command.*;
 
@@ -15,7 +12,7 @@ public final class DeleteCommand extends TerminalCommand implements
 		ICommand, IHasParameters {
 	@Parameter(description = 
 				"Número das mensagens separados por espaço. Exemplo: del 2 3")
-	public List<String> ids = new ArrayList<String>();
+	public StringParameter ids = new StringParameter();
 
 	@Override
 	public String getName() {

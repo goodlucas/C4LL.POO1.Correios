@@ -1,8 +1,5 @@
 package textintf.command.user;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import textintf.Core;
 import textintf.command.*;
 
@@ -14,7 +11,7 @@ import com.beust.jcommander.Parameter;
 public final class ReadCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Número da mensagem. Aceita mais de um.")
-	public List<String> ids = new ArrayList<String>();
+	public StringParameter ids = new StringParameter();
 
 	@Override
 	public String getName() {
