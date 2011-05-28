@@ -43,10 +43,13 @@ public class Reader {
 	 * @param message	Message to be printed.
 	 * @return	Return non empty response.
 	 */
-	public String askNotEmpty(String message) {
+	public String askNotEmpty(String message, String errorMessage) {
 		String	response = "";
-		while (response.isEmpty())
+		while (response.isEmpty()) {
 			response = ask(message);
+			if (message.isEmpty() && errorMessage != null)
+				System.out.println(errorMessage);
+		}
 		return response;
 	}
 	

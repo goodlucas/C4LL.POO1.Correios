@@ -3,6 +3,8 @@ package textintf.command.user;
 import textintf.Core;
 import textintf.command.*;
 
+import accounts.Messages;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -11,7 +13,7 @@ import com.beust.jcommander.Parameter;
 public final class TrashCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
 	@Parameter(description = "Filtro de mensagem")
-	public StringParameter filtros = new StringParameter();
+	public StringParameter filter = new StringParameter();
 
 	@Parameter(names = {"-c", "--clear"}, description = "Esvaziar lixeira.")
 	public boolean clear;
@@ -28,12 +30,32 @@ public final class TrashCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-		// TODO trash command
+		/* Clear trash */
+		if (this.clear) {
+			int	count = core.getAccount().getTrash(null, true, true).size();
+			if (count == 0) {
+				System.out.println("Não há mensagens na lixeira.");
+				return;
+			}
+			core.getAccount().clearTrash();
+			if (count == 1)
+				System.out.print("\tFoi apagada uma mensagem.");
+			else
+				System.out.print("\tForam apagadas " + count + " mensagens");
+			return;
+		}
+		/* See trash */
+		Messages msgs;
+		
+		msgs = core.getAccount().getTrash(filter.toString(), true, true);
+		for (Message m: msgs) {
+			//
+		}
 	}
 
 	@Override
 	public void setDefaultParameters() {
-		filtros.clear();
+		filter.clear();
 		clear = false;
 	}
 }

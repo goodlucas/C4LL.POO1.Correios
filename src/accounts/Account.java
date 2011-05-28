@@ -128,8 +128,11 @@ public class Account {
 	 */
 	private Messages getMessages(Messages list, boolean read, boolean unread,
 			String filter) {
-		Messages	filteredMessages = new Messages();
+		/* Optimization: if no filter, just return the list */
+		if ((list == null || list.isEmpty()) && read && unread)
+			return list;
 		
+		Messages	filteredMessages = new Messages();		
 		for (Message msg: list) {
 			boolean	canAdd;
 			

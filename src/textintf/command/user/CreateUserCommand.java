@@ -40,6 +40,7 @@ public final class CreateUserCommand extends TerminalCommand implements
 	@Override
 	public void execute(Core core) {
 		final String USER_NAME = "Nome do usuário: ";
+		final String USER_ERROR = "O nome do usuário não pode ser vazio.";
 		String	name = "";
 
 		System.out.println("Digite as informações do novo usuário a seguir.");
@@ -48,11 +49,7 @@ public final class CreateUserCommand extends TerminalCommand implements
 			name = newName.get(0);
 			System.out.println(USER_NAME + name);
 		} else {
-			while (name.isEmpty()) {
-				name = core.getReader().ask(USER_NAME);
-				if (name.isEmpty())
-					System.out.println("O nome do usuário não pode ser vazio.");
-			}
+			name = core.getReader().askNotEmpty(USER_NAME, USER_ERROR);
 		}
 		/* Get new password */
 		String	password = core.getReader().ask("Senha: ");

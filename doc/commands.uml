@@ -90,7 +90,7 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_SVKw0IjhEeCfIPu_T2vwCQ" name="ExitCommand"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_ThQJcIjhEeCfIPu_T2vwCQ" name="HelpCommand"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_UeQkQIjhEeCfIPu_T2vwCQ" name="InboxCommand" clientDependency="_MYUicIjiEeCfIPu_T2vwCQ">
-    <ownedAttribute xmi:id="_tNkWoIjhEeCfIPu_T2vwCQ" name="List filtros" aggregation="composite"/>
+    <ownedAttribute xmi:id="_tNkWoIjhEeCfIPu_T2vwCQ" name="List filter" aggregation="composite"/>
     <ownedAttribute xmi:id="_uj7FkIjhEeCfIPu_T2vwCQ" name="boolean unread" aggregation="composite"/>
     <ownedAttribute xmi:id="_v1VDEIjhEeCfIPu_T2vwCQ" name="boolean read" aggregation="composite"/>
     <ownedAttribute xmi:id="_wXMaAIjhEeCfIPu_T2vwCQ" name="boolean all" aggregation="composite"/>
@@ -106,7 +106,7 @@
     <ownedAttribute xmi:id="_1mzScIjhEeCfIPu_T2vwCQ" name="List destinations" aggregation="composite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_a0zPkIjhEeCfIPu_T2vwCQ" name="TrashCommand" clientDependency="_L2dLgIjiEeCfIPu_T2vwCQ">
-    <ownedAttribute xmi:id="_32ePAIjhEeCfIPu_T2vwCQ" name="List filtros" aggregation="composite"/>
+    <ownedAttribute xmi:id="_32ePAIjhEeCfIPu_T2vwCQ" name="List filter" aggregation="composite"/>
     <ownedAttribute xmi:id="_5cYc4IjhEeCfIPu_T2vwCQ" name="boolean clear" aggregation="composite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_LNVWAIjiEeCfIPu_T2vwCQ" supplier="_2yZ00IjfEeCfIPu_T2vwCQ" client="_ZNM_oIjhEeCfIPu_T2vwCQ"/>
