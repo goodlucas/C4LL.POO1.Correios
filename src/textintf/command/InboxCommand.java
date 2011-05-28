@@ -3,6 +3,8 @@ package textintf.command;
 import java.util.ArrayList;
 import java.util.List;
 
+import textintf.Core;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -32,5 +34,11 @@ public final class InboxCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getHelp() {
 		return "Listar mensagens na caixa de entrada.";
+	}
+
+	@Override
+	public void execute(Core core) {
+		// TODO Auto-generated method stub
+		
 	}
 }

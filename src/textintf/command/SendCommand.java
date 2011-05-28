@@ -3,6 +3,8 @@ package textintf.command;
 import java.util.ArrayList;
 import java.util.List;
 
+import textintf.Core;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -20,5 +22,11 @@ public final class SendCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getHelp() {
 		return "Escrever uma mensagem para um ou mais destinatários";
+	}
+
+	@Override
+	public void execute(Core core) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.Core;
+
 /**
  * Help command. Show all available commands in the terminal.
  */
@@ -25,5 +27,10 @@ public class HelpCommand extends TerminalCommand implements ICommand {
 	@Override
 	public boolean allowUnloggedUser() {
 		return true;
+	}
+
+	@Override
+	public void execute(Core core) {
+		ShowCommandHelper.showCommands();
 	}
 }

@@ -3,6 +3,8 @@ package textintf.command;
 import java.util.ArrayList;
 import java.util.List;
 
+import textintf.Core;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -20,5 +22,11 @@ public final class ReadCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getHelp() {
 		return "Ler uma mensagem pelo seu id.";
+	}
+
+	@Override
+	public void execute(Core core) {
+		// TODO Auto-generated method stub
+		
 	}
 }

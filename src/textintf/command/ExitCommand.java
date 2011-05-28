@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.Core;
+
 /**
  * Exit command. Finalize program.
  */
@@ -25,5 +27,11 @@ public class ExitCommand extends TerminalCommand implements ICommand {
 	@Override
 	public boolean allowUnloggedUser() {
 		return true;
+	}
+
+	@Override
+	public void execute(Core core) {
+		System.out.println("Tchau!");
+		core.stopExecution();
 	}
 }

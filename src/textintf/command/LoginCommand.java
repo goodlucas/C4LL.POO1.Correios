@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.Core;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -28,5 +30,11 @@ public class LoginCommand extends TerminalCommand implements ICommand {
 	@Override
 	public boolean allowUnloggedUser() {
 		return true;
+	}
+
+	@Override
+	public void execute(Core core) {
+		// TODO Auto-generated method stub
+		
 	}
 }

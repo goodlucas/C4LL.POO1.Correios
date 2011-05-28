@@ -2,6 +2,7 @@ package textintf.command;
 
 import java.util.ArrayList;
 import java.util.List;
+import textintf.Core;
 
 import com.beust.jcommander.Parameter;
 
@@ -23,6 +24,12 @@ public final class TrashCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getHelp() {
 		return "Listar (ou deletar) mensagens na lixeira.";
+	}
+
+	@Override
+	public void execute(Core core) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

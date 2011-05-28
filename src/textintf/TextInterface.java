@@ -12,23 +12,13 @@ public final class TextInterface {
 	/* When a user is not logged, guest will be used instead. */
 	private final String	GUEST_USER = "convidado";
 	
-	private Reader	commandReader = new Reader();
-	private Server	server;
-	private Account	account = null;
-	
+	private Core	core;
+		
 	/**
 	 * @param server	Server instance to be used.
 	 */
 	public TextInterface(Server server) {
-		this.server = server;  
-	}
-	
-	public Reader getReader() {
-		return commandReader;
-	}
-	
-	public Server getServer() {
-		return server;
+		core = new Core(server);  
 	}
 	
 	/**
@@ -47,99 +37,65 @@ public final class TextInterface {
 	 * If there is not user, 'guest' should be used instead.
 	 */
 	private void printPrompt() {
-		System.out.print(getPromptUser() + "@" + server.getServerName() + 
-				" $ ");
+		String prompt = getPromptUser() + 
+						"@" + core.getServer().getServerName() + " $ ";
+		System.out.print(prompt);
 	}
 	
 	private void suggestHelp() {
-		System.out.println("Digite " + new HelpCommand().getName() + 
-				" para ajuda.");
+		String help = "Digite " + new HelpCommand().getName() + " para ajuda.";
+		System.out.println(help);
 	}
 	
 	private String getPromptUser() {
-		if (isLogged()) {
-			return account.getLoginName();
+		if (core.isLogged()) {
+			return core.getAccount().getLoginName();
 		} else {
 			return GUEST_USER;
 		}
 	}
 	
-	private boolean isLogged() {
-		return (account != null);
-	}
-	
-	private boolean processCommand(TerminalCommand cmd) {
-		/* Help command */
-		if (cmd instanceof HelpCommand) {
-			ShowCommandHelper.showCommands();
-			return true;
-		}
-		/* Exit command */
-		if (cmd instanceof ExitCommand) {
-			System.out.println("Tchau!");
-			return false;
-		}
-		
-		if (cmd instanceof CreateUserCommand) {
-			new CreateUser(this);
-			return true;
-		}
-		
-		
-		if (cmd instanceof LoginCommand) {
-			
-		}
-		
+	private void processCommand(TerminalCommand cmd) {
 		/* From here, all commands are only accepted when the user
 		 * is logged into an account. */
-		if (!isLogged()) {
+		if (!core.isLogged()) {
 			System.out.println("Você precisa estar logado para executar " + 
 					"esta operação.");
 			suggestHelp();
-			return true;
+			return;
 		}
-		
-		if (cmd instanceof LogoutCommand) {
-			System.out.println("Você saiu da conta " + account.getLoginName() 
-					+ ".");
-			account = null;
-			return true;
-		}
-		return true;
 	}
 	
 	/**
 	 * Get a command line from the user and process.
 	 * @return	True ff the program should read a next line, false to exit.
 	 */
-	private boolean nextLine() {
+	private void nextLine() {
 		TerminalCommand	cmd; 
 		
 		printPrompt();
-		cmd = getReader().readCommand();		
+		cmd = core.getReader().readCommand();		
 		/* Command not found in CommandCollection */
 		if (cmd == null) {
 			System.out.println("O comando não existe.");
 			suggestHelp();
-			return true;
+			return;
 		}
 		/* Received --help option */
 		if (cmd.help) {
 			ShowCommandHelper.showHelp(cmd.getCommand().getName());
-			return true;
+			return;
 		}
 		/* When reached here, the command should be processed */
-		return processCommand(cmd);
+		processCommand(cmd);
 	}
 	
 	/**
 	 * Main loop to process command line type from the user.
 	 */
 	public void mainLoop() {
-		boolean	resume = true;
-		
 		showWelcomeMessage();
-		while (resume)
-			resume = nextLine();
+		while (core.resumeExecution())
+			nextLine();
 	}
 }
