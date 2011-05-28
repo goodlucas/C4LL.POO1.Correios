@@ -10,7 +10,8 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal delete command. Delete one or more messages by its IDs.
  */
-public final class DeleteCommand extends TerminalCommand implements ICommand {
+public final class DeleteCommand extends TerminalCommand implements 
+		ICommand, IHasParameters {
 	@Parameter(description = 
 				"Número das mensagens separados por espaço. Exemplo: del 2 3")
 	public List<String> ids = new ArrayList<String>();
@@ -28,5 +29,10 @@ public final class DeleteCommand extends TerminalCommand implements ICommand {
 	@Override
 	public void execute(Core core) {
 		// TODO delete a message
+	}
+
+	@Override
+	public void setDefaultParameters() {
+		ids.clear();
 	}
 }

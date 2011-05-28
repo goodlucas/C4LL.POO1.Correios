@@ -1,5 +1,10 @@
 package textintf.command;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beust.jcommander.Parameter;
+
 import accounts.Account;
 import accounts.AccountException;
 import accounts.User;
@@ -10,7 +15,10 @@ import textintf.Core;
  *  Text terminal create user command. Create a new account and user.
  */
 public final class CreateUserCommand extends TerminalCommand implements
-		ICommand {
+		ICommand, IHasParameters {
+	@Parameter(description = "Nome do usuário")
+	public List<String> newName = new ArrayList<String>();
+	
 	@Override
 	public String getName() {
 		return "newuser";
@@ -33,14 +41,22 @@ public final class CreateUserCommand extends TerminalCommand implements
 
 	@Override
 	public void execute(Core core) {
-		System.out.println("Digite as informações do novo usuário a seguir.");
+		final String USER_NAME = "Nome do usuário: ";
 		String	name = "";
-		while (name.isEmpty()) {
-			name = core.getReader().ask("Nome de usuário: ");
-			if (name.isEmpty())
-				System.out.println("O nome do usuário não pode ser vazio.");
+
+		System.out.println("Digite as informações do novo usuário a seguir.");
+		/* Get new login name */
+		if (newName.isEmpty() == false) {
+			name = newName.get(0);
+			System.out.println(USER_NAME + name);
+		} else {
+			while (name.isEmpty()) {
+				name = core.getReader().ask(USER_NAME);
+				if (name.isEmpty())
+					System.out.println("O nome do usuário não pode ser vazio.");
+			}
 		}
-		
+		/* Get new password */
 		String	password = core.getReader().ask("Senha: ");
 		
 		User	user = new User(name, password);
@@ -52,5 +68,10 @@ public final class CreateUserCommand extends TerminalCommand implements
 		} catch (AccountException e) {
 			System.out.println("Erro ao criar conta: " + e.getMessage());
 		}	
+	}
+
+	@Override
+	public void setDefaultParameters() {
+		newName.clear();
 	}
 }

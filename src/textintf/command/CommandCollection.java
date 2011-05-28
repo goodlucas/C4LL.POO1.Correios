@@ -1,7 +1,9 @@
 package textintf.command;
 
 /**
- * Store all command instances.
+ * Store all command instances. When the help command is received, and help
+ * of all command will be shown. These commands will be printed in the same
+ * order of the COMMANDS array.
  */
 public final class CommandCollection {
 	public static final	TerminalCommand[]	COMMANDS = {

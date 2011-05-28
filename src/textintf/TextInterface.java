@@ -40,11 +40,18 @@ public final class TextInterface {
 		System.out.print(prompt);
 	}
 	
+	/**
+	 * Print a suggest to how to get help of program usage.
+	 */
 	private void suggestHelp() {
 		String help = "Digite " + new HelpCommand().getName() + " para ajuda.";
 		System.out.println(help);
 	}
 	
+	/**
+	 * @return Current logged user. GUEST_USER const will be returned when
+	 * 			no user is logged.
+	 */
 	private String getPromptUser() {
 		if (core.isLogged()) {
 			return core.getAccount().getLoginName();
@@ -53,6 +60,11 @@ public final class TextInterface {
 		}
 	}
 	
+	/**
+	 * Dispatch a command. This dispatch is make by calling execute() method
+	 * from the command.
+	 * @param cmd	The received command.
+	 */
 	private void processCommand(TerminalCommand cmd) {
 		if (!core.isLogged() && !cmd.allowUnloggedUser()) {
 			System.out.println("Você precisa estar logado para executar " + 

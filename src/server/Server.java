@@ -35,6 +35,26 @@ public class Server {
         }
         accounts.put(loginName, a);
 	}
+	
+	/**
+	 * Get an registered account in server.
+	 * @param loginName	User login name
+	 * @param password	User password
+	 * @return	the Account in the server. Null if no login matches.
+	 * @throws ServerException	When login and password does not match.
+	 */
+	public Account getAccount(String loginName, String password) 
+			throws ServerException {
+		Account	toRet = accounts.get(loginName);
+		
+		if (toRet == null)
+			return null;
+		if (toRet.getUser().getPassword().equals(password)) {
+			return toRet;
+		} else {
+			throw new ServerException("Usuário e senha incorretos.");
+		}
+	}
 
 	/**
 	 * Post a message into the destination accounts. If one or more destination

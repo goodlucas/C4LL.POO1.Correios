@@ -66,6 +66,8 @@ public class Reader {
 				String[]	arg = new String[list.size()];
 				
 				try {
+					if (tc instanceof IHasParameters)
+						((IHasParameters) tc).setDefaultParameters();
 					new JCommander(tc, list.toArray(arg));
 				} catch (ParameterException p) {
 					System.out.println("** Erro ** " + p.getMessage());

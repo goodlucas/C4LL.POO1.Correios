@@ -10,7 +10,8 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal read command. Read a message by its ID.
  */
-public final class ReadCommand extends TerminalCommand implements ICommand {
+public final class ReadCommand extends TerminalCommand 
+	implements ICommand, IHasParameters {
 	@Parameter(description = "Número da mensagem. Aceita mais de um.")
 	public List<String> ids = new ArrayList<String>();
 
@@ -27,5 +28,10 @@ public final class ReadCommand extends TerminalCommand implements ICommand {
 	@Override
 	public void execute(Core core) {
 		// TODO read a messsage
+	}
+
+	@Override
+	public void setDefaultParameters() {
+		ids.clear();
 	}
 }
