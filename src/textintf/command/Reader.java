@@ -28,9 +28,26 @@ public class Reader {
 		return reader.nextLine();
 	}
 	
+	/**
+	 * Print message before read a line.
+	 * @param message	Message to be printed.
+	 * @return	Readed line. Can result an empty line if user just press enter.
+	 */
 	public String ask(String message) {
 		System.out.print(message);
 		return getNextLine();
+	}
+	
+	/**
+	 * Print message and read a line until the response is not empty.
+	 * @param message	Message to be printed.
+	 * @return	Return non empty response.
+	 */
+	public String askNotEmpty(String message) {
+		String	response = "";
+		while (response.isEmpty())
+			response = ask(message);
+		return response;
 	}
 	
 	/**

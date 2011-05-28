@@ -20,7 +20,8 @@ public final class SendCommand extends TerminalCommand
 
 	@Override
 	public String getHelp() {
-		return "Escrever uma mensagem para um ou mais destinatários";
+		return "Escrever uma mensagem para um ou mais destinatários "
+				+ "(separe com espaço)";
 	}
 
 	@Override
