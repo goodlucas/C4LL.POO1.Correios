@@ -47,10 +47,14 @@ public final class InboxCommand extends TerminalCommand
 			System.out.println("\tCaixa de entrada vazia.");
 			return;
 		}
-		System.out.println(msgs.size() 
+		System.out.println("\t" + msgs.size() 
 				+ " mensage" + (msgs.size() == 1? "m": "ns"));
 		for (Message m: msgs) {
-			System.out.println("%id - %from - %subject - %date - [%read]");
+			/* %id - %from - %subject - %date - [%read] */
+			System.out.println("\t" + m.getMessageId() + " - "
+					+ m.getFrom() + " - " + m.getSubject() + " - " 
+					+ m.getPostDate() + " - "
+					+ "[" + (m.getIsRead()? "lida": "não lida") + "]");
 		}
 	}
 

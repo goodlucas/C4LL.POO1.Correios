@@ -81,7 +81,7 @@ public class Account {
 	 * Add a message to the inbox. This method is called from the server.
 	 */
 	public void addToInbox(Message message) {
-		//message.
+		message.setMessageId(nextId++);
 		inbox.add(message);
 	}
 
