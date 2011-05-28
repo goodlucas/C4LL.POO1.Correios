@@ -10,9 +10,8 @@ import server.Server;
  */
 public final class TextInterface {
 	/* When a user is not logged, guest will be used instead. */
-	private final String	GUEST_USER = "convidado";
-	
-	private Core	core;
+	private final	String	GUEST_USER = "convidado";
+	private 		Core	core;
 		
 	/**
 	 * @param server	Server instance to be used.
@@ -22,7 +21,7 @@ public final class TextInterface {
 	}
 	
 	/**
-	 * Print on the stdout the welcome message.
+	 * Print into the console the welcome message.
 	 */
 	private void showWelcomeMessage() {
 		System.out.println("Bem vindo ao PostOffice!");
@@ -31,7 +30,7 @@ public final class TextInterface {
 	}
 	
 	/**
-	 * Print on the stdout the prompt message.
+	 * Print into the console the prompt message.
 	 * The format is:
 	 * 		user@server.name $ 
 	 * If there is not user, 'guest' should be used instead.

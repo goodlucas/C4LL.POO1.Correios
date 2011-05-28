@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_O-PZUIfFEeCPspAmOW-LxA" name="TextInterface">
   <ownedComment xmi:id="_0_9c8IfFEeCPspAmOW-LxA" annotatedElement="_rJDpQIfFEeCPspAmOW-LxA">
-    <body>As classes de comando são acessadas pela TextInterface através da interface ICommandName.</body>
+    <body>As classes de comando são acessadas pela TextInterface através da interface ICommand.</body>
   </ownedComment>
   <elementImport xmi:id="_O-_AMIfFEeCPspAmOW-LxA">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -15,16 +15,30 @@
   <elementImport xmi:id="_O-_AM4fFEeCPspAmOW-LxA">
     <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
   </elementImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_QbbwEIfFEeCPspAmOW-LxA" name="TextInterface" clientDependency="_vWtVcIfFEeCPspAmOW-LxA _wSx8IIfFEeCPspAmOW-LxA _xSz1wIfFEeCPspAmOW-LxA"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_X2TmMIfFEeCPspAmOW-LxA" name="command">
+  <packagedElement xmi:type="uml:Package" xmi:id="_X2TmMIfFEeCPspAmOW-LxA" name="textintf">
     <packagedElement xmi:type="uml:Class" xmi:id="_Z7YcUIfFEeCPspAmOW-LxA" name="Reader"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_bYq5sIfFEeCPspAmOW-LxA" name="ShowCommandHelper"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_k3VzkIfFEeCPspAmOW-LxA" name="TerminalCommand">
       <generalization xmi:id="_z63dIIfFEeCPspAmOW-LxA" general="_rJDpQIfFEeCPspAmOW-LxA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_tfq8oIjIEeCfIPu_T2vwCQ" name="Core" clientDependency="_0bUgIIjIEeCfIPu_T2vwCQ _CdKDMIjJEeCfIPu_T2vwCQ _PH9h4IjJEeCfIPu_T2vwCQ _ULgUQIjJEeCfIPu_T2vwCQ"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_QbbwEIfFEeCPspAmOW-LxA" name="TextInterface" clientDependency="_xSz1wIfFEeCPspAmOW-LxA _zJsgMIjIEeCfIPu_T2vwCQ _01ZNAIjIEeCfIPu_T2vwCQ _BVl-MIjJEeCfIPu_T2vwCQ _ByShQIjJEeCfIPu_T2vwCQ _CHpGMIjJEeCfIPu_T2vwCQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_BVl-MIjJEeCfIPu_T2vwCQ" supplier="_bYq5sIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ByShQIjJEeCfIPu_T2vwCQ" supplier="_k3VzkIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_CHpGMIjJEeCfIPu_T2vwCQ" supplier="_tfq8oIjIEeCfIPu_T2vwCQ" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_CdKDMIjJEeCfIPu_T2vwCQ" supplier="_Z7YcUIfFEeCPspAmOW-LxA" client="_tfq8oIjIEeCfIPu_T2vwCQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_PH9h4IjJEeCfIPu_T2vwCQ" supplier="_Ndcg0IjJEeCfIPu_T2vwCQ" client="_tfq8oIjIEeCfIPu_T2vwCQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ULgUQIjJEeCfIPu_T2vwCQ" supplier="_Sxd_MIjJEeCfIPu_T2vwCQ" client="_tfq8oIjIEeCfIPu_T2vwCQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_rJDpQIfFEeCPspAmOW-LxA" name="ICommandName"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_vWtVcIfFEeCPspAmOW-LxA" supplier="_Z7YcUIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_wSx8IIfFEeCPspAmOW-LxA" supplier="_bYq5sIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_rJDpQIfFEeCPspAmOW-LxA" name="ICommand"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_xSz1wIfFEeCPspAmOW-LxA" supplier="_k3VzkIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_zJsgMIjIEeCfIPu_T2vwCQ" supplier="_tfq8oIjIEeCfIPu_T2vwCQ" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_0bUgIIjIEeCfIPu_T2vwCQ" supplier="_Z7YcUIfFEeCPspAmOW-LxA" client="_tfq8oIjIEeCfIPu_T2vwCQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_01ZNAIjIEeCfIPu_T2vwCQ" supplier="_bYq5sIfFEeCPspAmOW-LxA" client="_QbbwEIfFEeCPspAmOW-LxA"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LcLMoIjJEeCfIPu_T2vwCQ" name="accounts">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ndcg0IjJEeCfIPu_T2vwCQ" name="Account"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ReIIAIjJEeCfIPu_T2vwCQ" name="server">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Sxd_MIjJEeCfIPu_T2vwCQ" name="Server"/>
+  </packagedElement>
 </uml:Package>
