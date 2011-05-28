@@ -3,6 +3,7 @@ package textintf.command.user;
 import textintf.Core;
 import textintf.command.*;
 
+import accounts.Message;
 import accounts.Messages;
 
 import com.beust.jcommander.Parameter;

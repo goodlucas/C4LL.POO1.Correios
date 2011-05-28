@@ -1,6 +1,8 @@
-package server;
+package accounts;
 
 import java.util.Date;
+
+import server.ServerException;
 
 
 /**

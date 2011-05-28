@@ -1,6 +1,5 @@
 package accounts;
 
-import server.Message;
 import server.Server;
 import server.ServerException;
 

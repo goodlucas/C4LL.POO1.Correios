@@ -3,6 +3,7 @@ package server;
 import java.util.ArrayList;
 
 import accounts.Account;
+import accounts.Message;
 
 /**
  * Server to accounts and message traffic.

@@ -1,4 +1,4 @@
-package server;
+package accounts;
 
 import java.util.ArrayList;
 import util.StringUtils;
