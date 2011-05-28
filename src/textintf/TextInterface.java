@@ -36,8 +36,8 @@ public final class TextInterface {
 	 * If there is not user, 'guest' should be used instead.
 	 */
 	private void printPrompt() {
-		String prompt = getPromptUser() + 
-						"@" + core.getServer().getServerName() + " $ ";
+		String	user = getPromptUser();
+		String	prompt = core.getServer().getUserAddress(user) + " $ ";
 		System.out.print(prompt);
 	}
 	

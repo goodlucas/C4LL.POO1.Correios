@@ -38,6 +38,15 @@ public class Server {
 	}
 	
 	/**
+	 * Get the user adress to the server. 
+	 * @param loginName	User name
+	 * @return	Format: loginName@server.name
+	 */
+	public String getUserAddress(String loginName) {
+		return loginName + "@" + getServerName();
+	}
+	
+	/**
 	 * Create an account into the server.
 	 * @param a	The account to be created.
 	 * @throws ServerException If an account with the same name already was
@@ -76,10 +85,9 @@ public class Server {
 	 * Post a message into the destination accounts. If one or more destination
 	 * does not exists, they are ignored and a error is throwed at the end.
 	 * If the message does not have at least one destination, an error is
-	 * throwed.
+	 * sent to the sender as notification failure.
 	 * @param message			The message to be sent.
-	 * @throws ServerException	When at least one destination was not found,
-	 * 							and when the message has no destinations.
+	 * @throws ServerException 	No destination defined.
 	 */
 	public void post(Message message) throws ServerException {
 		ArrayList<String>	destinations = message.getDestinations();
@@ -87,16 +95,43 @@ public class Server {
 		
 		if (destinations.isEmpty())
 			throw new ServerException("A mensagem não possui destinatários.");
+		/* Send message for read destination */
 		for (String dest: destinations) {
 			if (accounts.containsKey(dest)) {
 				Account acc = accounts.get(dest);
 				acc.addToInbox(message);
 			} else {
-				errors.add("Conta " + dest + " não encontrada.");
-				// TODO : Not found account should be delivered by message.
+				errors.add(dest);
 			}		
 		}
-		if (!errors.isEmpty())
-			throw new ServerException(errors.toString());
+		/* Notify errors */
+		for (String userFailure: errors) {
+			notificationFailure(message.getFrom(), userFailure);
+		}
+	}
+	
+	/**
+	 * Notify an user the failure to post a message for one or more inexistent
+	 * users. If the sender does not exist in the server, the notification
+	 * will not be executed, otherwise a infinte loop would happen.
+	 * @param sender			Who will be notificated.
+	 * @param userNameFailure	Which user does not exists.
+	 */
+	private void notificationFailure(String sender, String userNameFailure) {
+		if (!accounts.containsKey(sender))
+			return;
+		String msg = "A mensagem que você tentou enviar para " +
+					getUserAddress(userNameFailure) + ", não pode ser entregue"
+					+ " pois o endereço não existe.";
+		try {
+			Message message = new Message("notification", 
+						getUserAddress("notification"),
+						"Notificação de status de entrada (falha)",
+						msg,
+						false);
+			post(message);
+		} catch (ServerException e) {
+			// Ignore exceptions.
+		}
 	}
 }
