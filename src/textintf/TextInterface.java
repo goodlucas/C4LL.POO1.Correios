@@ -1,6 +1,7 @@
 package textintf;
 
 import textintf.command.*;
+import textintf.command.user.*;
 import server.Server;
 
 /**

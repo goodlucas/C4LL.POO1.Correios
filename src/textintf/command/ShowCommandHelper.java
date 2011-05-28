@@ -1,6 +1,7 @@
 package textintf.command;
 
 import textintf.Core;
+import textintf.command.user.*;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;

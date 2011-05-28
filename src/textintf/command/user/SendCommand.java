@@ -1,4 +1,4 @@
-package textintf.command;
+package textintf.command.user;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import textintf.Core;
 
 import com.beust.jcommander.Parameter;
+import textintf.command.*;
 
 /**
  * Text terminal send command. Send a message for one or more accounts.

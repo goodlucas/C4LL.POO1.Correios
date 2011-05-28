@@ -1,6 +1,7 @@
-package textintf.command;
+package textintf.command.user;
 
 import textintf.Core;
+import textintf.command.*;
 
 public final class LogoutCommand extends TerminalCommand implements ICommand {
 	@Override

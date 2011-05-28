@@ -1,4 +1,4 @@
-package textintf.command;
+package textintf.command.user;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import server.ServerException;
 import textintf.Core;
 
 import accounts.Account;
+import textintf.command.*;
 
 import com.beust.jcommander.Parameter;
 

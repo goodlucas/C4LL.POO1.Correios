@@ -1,4 +1,4 @@
-package textintf.command;
+package textintf.command.user;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import accounts.AccountException;
 import accounts.User;
 import server.ServerException;
 import textintf.Core;
+import textintf.command.*;
 
 /**
  *  Text terminal create user command. Create a new account and user.

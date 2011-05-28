@@ -1,8 +1,9 @@
-package textintf.command;
+package textintf.command.user;
 
 import java.util.ArrayList;
 import java.util.List;
 import textintf.Core;
+import textintf.command.*;
 
 import com.beust.jcommander.Parameter;
 

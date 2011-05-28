@@ -14,6 +14,15 @@ public abstract class TerminalCommand {
 	public boolean help;
 	
 	/**
+	 * Initialize que help parameter value. This method is called every
+	 * command line reading.
+	 */
+	public void initHelpParameter() {
+		help = false;
+	}
+	
+	
+	/**
 	 * Get instance as ICommandName to allow get information about the class.
 	 * @return The instance with Interface casting.
 	 */

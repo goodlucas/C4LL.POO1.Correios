@@ -1,19 +1,20 @@
-package textintf.command;
+package textintf.command.user;
 
 import textintf.Core;
+import textintf.command.*;
 
 /**
- * Exit command. Finalize program.
+ * Help command. Show all available commands in the terminal.
  */
-public class ExitCommand extends TerminalCommand implements ICommand {
+public class HelpCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getName() {
-		return "exit";
+		return "help";
 	}
 
 	@Override
 	public String getHelp() {
-		return "Sair do programa.";
+		return "Mostra esta mensagem.";
 	}
 	
 	/**
@@ -31,7 +32,6 @@ public class ExitCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		System.out.println("Obrigado por usar o " + core.getProgramName() + "!");
-		core.stopExecution();
+		ShowCommandHelper.showCommands(core);
 	}
 }

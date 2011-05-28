@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.command.user.*;
+
 /**
  * Store all command instances. When the help command is received, and help
  * of all command will be shown. These commands will be printed in the same
