@@ -28,6 +28,11 @@ public class Reader {
 		return reader.nextLine();
 	}
 	
+	public String ask(String message) {
+		System.out.print(message);
+		return getNextLine();
+	}
+	
 	/**
 	 * Read a command line and parse it by the command.
 	 * @return TerminalCommand instance of the parsed line. Will be returned

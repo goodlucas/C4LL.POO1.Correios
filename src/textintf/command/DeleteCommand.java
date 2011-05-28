@@ -27,7 +27,6 @@ public final class DeleteCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		// TODO Auto-generated method stub
-		
+		// TODO delete a message
 	}
 }

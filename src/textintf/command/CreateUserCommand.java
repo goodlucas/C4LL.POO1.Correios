@@ -22,6 +22,11 @@ public final class CreateUserCommand extends TerminalCommand implements
 	}
 	
 	@Override
+	public boolean allowHelpOption() {
+		return false;
+	}	
+	
+	@Override
 	public boolean allowUnloggedUser() {
 		return true;
 	}
@@ -29,12 +34,14 @@ public final class CreateUserCommand extends TerminalCommand implements
 	@Override
 	public void execute(Core core) {
 		System.out.println("Digite as informações do novo usuário a seguir.");
-		System.out.print("Nome de usuário: ");
-		String	name = core.getReader().getNextLine();
-		// TODO: Do not allow an empty user
+		String	name = "";
+		while (name.isEmpty()) {
+			name = core.getReader().ask("Nome de usuário: ");
+			if (name.isEmpty())
+				System.out.println("O nome do usuário não pode ser vazio.");
+		}
 		
-		System.out.print("Senha: ");		
-		String	password = core.getReader().getNextLine();
+		String	password = core.getReader().ask("Senha: ");
 		
 		User	user = new User(name, password);
 		try {

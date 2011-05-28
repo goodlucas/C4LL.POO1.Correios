@@ -34,7 +34,6 @@ public class LoginCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		// TODO Auto-generated method stub
-		
+		// TODO login
 	}
 }
