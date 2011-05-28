@@ -14,8 +14,8 @@
   </elementImport>
   <packagedElement xmi:type="uml:Activity" xmi:id="_JaRZwIjeEeCfIPu_T2vwCQ" name="Main Execution">
     <node xmi:type="uml:InitialNode" xmi:id="_M_-8MIjeEeCfIPu_T2vwCQ" outgoing="_df2A4IjeEeCfIPu_T2vwCQ"/>
-    <node xmi:type="uml:CreateObjectAction" xmi:id="_W4He8IjeEeCfIPu_T2vwCQ" name="Server" outgoing="_d8TTYIjeEeCfIPu_T2vwCQ" incoming="_df2A4IjeEeCfIPu_T2vwCQ"/>
-    <node xmi:type="uml:CreateObjectAction" xmi:id="_bMW7UIjeEeCfIPu_T2vwCQ" name="TextInterface" outgoing="_kjfp0IjeEeCfIPu_T2vwCQ" incoming="_d8TTYIjeEeCfIPu_T2vwCQ"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_W4He8IjeEeCfIPu_T2vwCQ" name="new Server" outgoing="_d8TTYIjeEeCfIPu_T2vwCQ" incoming="_df2A4IjeEeCfIPu_T2vwCQ"/>
+    <node xmi:type="uml:CreateObjectAction" xmi:id="_bMW7UIjeEeCfIPu_T2vwCQ" name="new TextInterface" outgoing="_kjfp0IjeEeCfIPu_T2vwCQ" incoming="_d8TTYIjeEeCfIPu_T2vwCQ"/>
     <node xmi:type="uml:CallOperationAction" xmi:id="_i63fIIjeEeCfIPu_T2vwCQ" name="mainLoop()" outgoing="_ttO1gIjeEeCfIPu_T2vwCQ" incoming="_kjfp0IjeEeCfIPu_T2vwCQ"/>
     <node xmi:type="uml:CallOperationAction" xmi:id="_rdBGYIjeEeCfIPu_T2vwCQ" name="showWelcomeMessage()" outgoing="_18yQ4IjeEeCfIPu_T2vwCQ" incoming="_ttO1gIjeEeCfIPu_T2vwCQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_df2A4IjeEeCfIPu_T2vwCQ" source="_M_-8MIjeEeCfIPu_T2vwCQ" target="_W4He8IjeEeCfIPu_T2vwCQ"/>
@@ -23,14 +23,17 @@
     <edge xmi:type="uml:ControlFlow" xmi:id="_kjfp0IjeEeCfIPu_T2vwCQ" source="_bMW7UIjeEeCfIPu_T2vwCQ" target="_i63fIIjeEeCfIPu_T2vwCQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_ttO1gIjeEeCfIPu_T2vwCQ" source="_i63fIIjeEeCfIPu_T2vwCQ" target="_rdBGYIjeEeCfIPu_T2vwCQ"/>
     <edge xmi:type="uml:ControlFlow" xmi:id="_18yQ4IjeEeCfIPu_T2vwCQ" source="_rdBGYIjeEeCfIPu_T2vwCQ" target="_vlq90IjeEeCfIPu_T2vwCQ"/>
-    <group xmi:type="uml:LoopNode" xmi:id="_vlq90IjeEeCfIPu_T2vwCQ" name="while core.resumeExecution()" incoming="_18yQ4IjeEeCfIPu_T2vwCQ">
+    <group xmi:type="uml:LoopNode" xmi:id="_vlq90IjeEeCfIPu_T2vwCQ" name="while resumeExecution()" incoming="_18yQ4IjeEeCfIPu_T2vwCQ">
       <edge xmi:type="uml:ControlFlow" xmi:id="_Ope0IIjfEeCfIPu_T2vwCQ" source="_DRvf0IjfEeCfIPu_T2vwCQ" target="_FkEHwIjfEeCfIPu_T2vwCQ"/>
       <edge xmi:type="uml:ControlFlow" xmi:id="_PBnAQIjfEeCfIPu_T2vwCQ" source="_FkEHwIjfEeCfIPu_T2vwCQ" target="_Kl2moIjfEeCfIPu_T2vwCQ"/>
       <edge xmi:type="uml:ControlFlow" xmi:id="_PiQPMIjfEeCfIPu_T2vwCQ" source="_Kl2moIjfEeCfIPu_T2vwCQ" target="_MNX-EIjfEeCfIPu_T2vwCQ"/>
-      <node xmi:type="uml:CallOperationAction" xmi:id="_DRvf0IjfEeCfIPu_T2vwCQ" name="nextLine()" outgoing="_Ope0IIjfEeCfIPu_T2vwCQ"/>
-      <node xmi:type="uml:CallOperationAction" xmi:id="_FkEHwIjfEeCfIPu_T2vwCQ" name="core.getReader().getCommand()" outgoing="_PBnAQIjfEeCfIPu_T2vwCQ" incoming="_Ope0IIjfEeCfIPu_T2vwCQ"/>
-      <node xmi:type="uml:CallOperationAction" xmi:id="_Kl2moIjfEeCfIPu_T2vwCQ" name="processCommand()" outgoing="_PiQPMIjfEeCfIPu_T2vwCQ" incoming="_PBnAQIjfEeCfIPu_T2vwCQ"/>
-      <node xmi:type="uml:CallOperationAction" xmi:id="_MNX-EIjfEeCfIPu_T2vwCQ" name="command.getCommand().execute()" incoming="_PiQPMIjfEeCfIPu_T2vwCQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_PnfiQIjkEeCfIPu_T2vwCQ" source="_DRvf0IjfEeCfIPu_T2vwCQ" target="_FkEHwIjfEeCfIPu_T2vwCQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_QHc0sIjkEeCfIPu_T2vwCQ" source="_FkEHwIjfEeCfIPu_T2vwCQ" target="_Kl2moIjfEeCfIPu_T2vwCQ"/>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_QgaHQIjkEeCfIPu_T2vwCQ" source="_Kl2moIjfEeCfIPu_T2vwCQ" target="_MNX-EIjfEeCfIPu_T2vwCQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_DRvf0IjfEeCfIPu_T2vwCQ" name="nextLine()" outgoing="_Ope0IIjfEeCfIPu_T2vwCQ _PnfiQIjkEeCfIPu_T2vwCQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_FkEHwIjfEeCfIPu_T2vwCQ" name="getCommand()" outgoing="_PBnAQIjfEeCfIPu_T2vwCQ _QHc0sIjkEeCfIPu_T2vwCQ" incoming="_Ope0IIjfEeCfIPu_T2vwCQ _PnfiQIjkEeCfIPu_T2vwCQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_Kl2moIjfEeCfIPu_T2vwCQ" name="processCommand()" outgoing="_PiQPMIjfEeCfIPu_T2vwCQ _QgaHQIjkEeCfIPu_T2vwCQ" incoming="_PBnAQIjfEeCfIPu_T2vwCQ _QHc0sIjkEeCfIPu_T2vwCQ"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_MNX-EIjfEeCfIPu_T2vwCQ" name="command.getCommand().execute()" incoming="_PiQPMIjfEeCfIPu_T2vwCQ _QgaHQIjkEeCfIPu_T2vwCQ"/>
     </group>
   </packagedElement>
 </uml:Package>
