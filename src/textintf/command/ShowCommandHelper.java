@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.Core;
+
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
 
@@ -26,7 +28,7 @@ public final class ShowCommandHelper {
 		return new InboxCommand().getName() + " --help";
 	}
 	
-	public static void showCommands() {
+	public static void showCommands(Core core) {
 		System.out.println("Ajuda do programa PostOffice");
 		System.out.println("Para ver a ajuda de um comando, use a opção --help");
 		System.out.println("Exemplo: " + getExample());
@@ -34,8 +36,15 @@ public final class ShowCommandHelper {
 			String	name = tc.getCommand().getName();
 			String	help = tc.getCommand().getHelp();
 			
-			if (help != null)
-				System.out.println("\t" + name + "\t" + help);
+			if (help != null) {
+				/* If user is not logged, will be printed only commands that
+				 * the user can actually execute.
+				 */
+				if (core.isLogged() 
+						|| (!core.isLogged() && tc.allowUnloggedUser())) {
+					System.out.println("\t" + name + "\t" + help);
+				}
+			}
 		}
 		// TODO : Should print an empty line at end? Just like usage()
 	}

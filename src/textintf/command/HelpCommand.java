@@ -31,6 +31,6 @@ public class HelpCommand extends TerminalCommand implements ICommand {
 
 	@Override
 	public void execute(Core core) {
-		ShowCommandHelper.showCommands();
+		ShowCommandHelper.showCommands(core);
 	}
 }

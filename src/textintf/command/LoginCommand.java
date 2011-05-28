@@ -1,5 +1,8 @@
 package textintf.command;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import server.ServerException;
 import textintf.Core;
 
@@ -12,10 +15,9 @@ import com.beust.jcommander.Parameter;
  */
 public class LoginCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
-	@Parameter(names = {"-u", "--user"}, 
-			description = "Definir com qual usuário deseja logar.")
-	public String login;
-
+	@Parameter(description = "Nome do usuário")
+	public List<String> loginName = new ArrayList<String>();
+	
 	@Override
 	public String getName() {
 		return "login";
@@ -36,8 +38,8 @@ public class LoginCommand extends TerminalCommand
 		String	login = "", password;
 		
 		/* Get login name */
-		if (this.login != null)
-			login = this.login;
+		if (loginName.isEmpty() == false)
+			login = loginName.get(0);
 		else {
 			while (login.isEmpty())
 				login = core.getReader().ask("Nome do usuário: ");
@@ -53,12 +55,12 @@ public class LoginCommand extends TerminalCommand
 				System.out.println("Usuário não cadastrado.");
 			}
 		} catch (ServerException e) {
-			System.out.println("Erro: ");
+			System.out.println("Erro: " + e.getMessage());
 		}
 	}
 
 	@Override
 	public void setDefaultParameters() {
-		login = null;
+		loginName.clear();
 	}
 }
