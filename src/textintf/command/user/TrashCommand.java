@@ -30,8 +30,7 @@ public final class TrashCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-		// TODO Auto-generated method stub
-		
+		// TODO trash command
 	}
 
 	@Override

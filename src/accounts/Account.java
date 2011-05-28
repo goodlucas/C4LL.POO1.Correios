@@ -104,7 +104,65 @@ public class Account {
 		// TODO: Should this function return some value?
 		trash.clear();
 	}
+	
+	/**
+	 * Test if a contains b.
+	 * @param a Complete string
+	 * @param b Partial string
+	 * @return true when b is inside a.
+	 */
+	private boolean matchFilter(String a, String b) {
+		return a.toLowerCase().contains(b.toLowerCase());
+	}
+	
+	/**
+	 * Get messages from the list filtering by read, unread and the filter 
+	 * string.
+	 * @param list	Which message list filter. Pass either inbox or trash.
+	 * @param read		If should return read messages.
+	 * @param unread	If should return unread messages.
+	 * @param filter	Filter string. Null to no filter.
+	 * @return	The filtered message list. Empty list if no results.
+	 */
+	private Messages getMessages(Messages list, boolean read, boolean unread,
+			String filter) {
+		Messages	filteredMessages = new Messages();
+		
+		for (Message msg: list) {
+			boolean	canAdd;
+			
+			canAdd = (msg.getIsRead() && read) || (!msg.getIsRead() && unread);
+			if (canAdd && (filter != null && !filter.isEmpty())) {
+				canAdd = matchFilter(msg.getFrom(), filter);
+			}
+			if (canAdd)
+				filteredMessages.add(msg);
+		}
+		return filteredMessages;
+	}
+	
+	/**
+	 * Get messages from the inbox with filtering options.
+	 * @param filter	Filter string. Null or empty for skip.
+	 * @param read		Should return read messages.
+	 * @param unread	Should return unread messages.
+	 * @return	Message list of filter result.
+	 */
+	public Messages getInbox(String filter, boolean read, boolean unread) {
+		return getMessages(this.inbox, read, unread, filter);
+	}
 
+	/**
+	 * Get messages from the trash with filtering options.
+	 * @param filter	Filter string. Null or empty for skip.
+	 * @param read		Should return read messages.
+	 * @param unread	Should return unread messages.
+	 * @return	Message list of filter result.
+	 */	
+	public Messages getTrash(String filter, boolean read, boolean unread) {
+		return getMessages(this.inbox, read, unread, filter);
+	}
+	
 	/**
 	 * An account should be equal when the other object is equal, if not,
 	 * when the login name is the same.
