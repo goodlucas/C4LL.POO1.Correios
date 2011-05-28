@@ -124,11 +124,8 @@ public class Server {
 					getUserAddress(userNameFailure) + ", não pode ser entregue"
 					+ " pois o endereço não existe.";
 		try {
-			Message message = new Message("notification", 
-						getUserAddress("notification"),
-						"Notificação de status de entrada (falha)",
-						msg,
-						false);
+			Message message = new Message("notification", sender,
+						"Notificação de status de entrega (falha)",	msg, false);
 			post(message);
 		} catch (ServerException e) {
 			// Ignore exceptions.
