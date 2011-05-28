@@ -8,7 +8,7 @@ import server.Server;
  * action in the post office program.
  */
 public final class TextInterface {
-	/* When a user is not logged, guest will be used instead. */
+	/* When an user is not logged, guest will be used instead. */
 	private final	String	GUEST_USER = "convidado";
 	private 		Core	core;
 		
@@ -61,8 +61,8 @@ public final class TextInterface {
 	}
 	
 	/**
-	 * Dispatch a command. This dispatch is make by calling execute() method
-	 * from the command.
+	 * Dispatch a command. This dispatch is did by calling execute() method
+	 * on the command instance.
 	 * @param cmd	The received command.
 	 */
 	private void processCommand(TerminalCommand cmd) {
