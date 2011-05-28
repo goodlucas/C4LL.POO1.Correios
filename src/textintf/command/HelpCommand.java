@@ -3,7 +3,7 @@ package textintf.command;
 /**
  * Help command. Show all available commands in the terminal.
  */
-public class HelpCommand extends TerminalCommand implements ICommandName {
+public class HelpCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getName() {
 		return "help";
@@ -20,5 +20,10 @@ public class HelpCommand extends TerminalCommand implements ICommandName {
 	@Override
 	public boolean allowHelpOption() {
 		return false;
+	}
+	
+	@Override
+	public boolean allowUnloggedUser() {
+		return true;
 	}
 }

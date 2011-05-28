@@ -5,7 +5,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal login command. Handle the login command, with password support.
  */
-public class LoginCommand extends TerminalCommand implements ICommandName {
+public class LoginCommand extends TerminalCommand implements ICommand {
 	@Parameter(names = {"-u", "--user"}, 
 			description = "Definir com qual usuário deseja logar.")
 	public String login = null;
@@ -23,5 +23,10 @@ public class LoginCommand extends TerminalCommand implements ICommandName {
 	@Override
 	public String getHelp() {
 		return "Logar em uma conta de usuário.";
+	}
+	
+	@Override
+	public boolean allowUnloggedUser() {
+		return true;
 	}
 }

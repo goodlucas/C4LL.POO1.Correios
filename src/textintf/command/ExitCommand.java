@@ -3,7 +3,7 @@ package textintf.command;
 /**
  * Exit command. Finalize program.
  */
-public class ExitCommand extends TerminalCommand implements ICommandName {
+public class ExitCommand extends TerminalCommand implements ICommand {
 	@Override
 	public String getName() {
 		return "exit";
@@ -20,5 +20,10 @@ public class ExitCommand extends TerminalCommand implements ICommandName {
 	@Override
 	public boolean allowHelpOption() {
 		return false;
+	}
+	
+	@Override
+	public boolean allowUnloggedUser() {
+		return true;
 	}
 }

@@ -17,8 +17,8 @@ public abstract class TerminalCommand {
 	 * Get instance as ICommandName to allow get information about the class.
 	 * @return The instance with Interface casting.
 	 */
-	public ICommandName getCommand() {
-		return (ICommandName) this;
+	public ICommand getCommand() {
+		return (ICommand) this;
 	}
 	
 	/**
@@ -29,5 +29,14 @@ public abstract class TerminalCommand {
 	 */
 	public boolean allowHelpOption() {
 		return true;
+	}
+	
+	/**
+	 * Allow the command be called from an unlogged user. Override this method
+	 * returning true to allow a command be called.
+	 * @return	Whether the command can be used for an unlogged user.
+	 */
+	public boolean allowUnloggedUser() {
+		return false;
 	}
 }

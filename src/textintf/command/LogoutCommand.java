@@ -1,7 +1,7 @@
 package textintf.command;
 
 public final class LogoutCommand extends TerminalCommand implements
-		ICommandName {
+		ICommand {
 	@Override
 	public String getName() {
 		return "logout";

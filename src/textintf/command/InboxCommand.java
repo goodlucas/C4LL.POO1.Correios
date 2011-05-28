@@ -8,7 +8,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal inbox command. Handle messages in the inbox.
  */
-public final class InboxCommand extends TerminalCommand implements ICommandName {
+public final class InboxCommand extends TerminalCommand implements ICommand {
 	@Parameter(description = "Definir um filtro para a listagem")
 	public List<String> filtros = new ArrayList<String>();
 	
