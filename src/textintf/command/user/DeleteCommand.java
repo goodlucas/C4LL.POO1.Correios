@@ -1,7 +1,12 @@
 package textintf.command.user;
 
+import java.util.ArrayList;
+
 import textintf.Core;
 import textintf.command.*;
+
+import accounts.AccountException;
+import accounts.Message;
 
 import com.beust.jcommander.Parameter;
 
@@ -12,7 +17,7 @@ public final class DeleteCommand extends TerminalCommand implements
 		ICommand, IHasParameters {
 	@Parameter(description = 
 				"Número das mensagens separados por espaço. Exemplo: del 2 3")
-	public StringParameter ids = new StringParameter();
+	public ArrayList<Integer> ids = new ArrayList<Integer>();
 
 	@Override
 	public String getName() {
@@ -26,7 +31,22 @@ public final class DeleteCommand extends TerminalCommand implements
 
 	@Override
 	public void execute(Core core) {
-		// TODO delete a message
+		if (ids.isEmpty()) {
+			System.out.print("\tDefina o id da mensagem a ser lida.");
+			return;
+		}
+		for (Integer id: ids) {
+			Message m = core.getAccount().getMessage(id);
+			
+			try {
+				core.getAccount().moveToTrash(m);
+				System.out.println("\tMensagem com id " + id + " movida para"
+						+ " a lixeira.");
+			} catch (AccountException e) {
+				System.out.println("\tErro ao deletar mensagem com id " + id
+						+ ": " + e.getMessage());
+			}
+		}
 	}
 
 	@Override

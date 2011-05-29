@@ -8,7 +8,7 @@ import textintf.TextInterface;
 public final class Main {
 
 	/**
-	 * Main executation.
+	 * Main execution.
 	 */
 	public static void main(String[] args) {
 		Server			server = new Server("unicentro.br");		

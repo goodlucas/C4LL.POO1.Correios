@@ -149,7 +149,7 @@ public class Server {
 	 * 		The new user signed
 	 */
 	private void notificationWelcome(String a) {
-		String msg = ("Bem vindo ao PostOffice! Esperamos que desfrute das"
+		String msg = ("Bem vindo ao PostOffice! Esperamos que desfrute das "
 				+ "várias funcionalidades do sistema!");
 
 		Message message;

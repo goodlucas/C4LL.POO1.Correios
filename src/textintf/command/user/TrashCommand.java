@@ -34,17 +34,23 @@ public final class TrashCommand extends TerminalCommand
 		if (this.clear) {
 			int	count = core.getAccount().getTrash(null, true, true).size();
 			if (count == 0) {
-				System.out.println("Não há mensagens na lixeira.");
+				System.out.println("\tNão há mensagens na lixeira.");
 				return;
 			}
 			core.getAccount().clearTrash();
 			if (count == 1)
-				System.out.print("\tFoi apagada uma mensagem.");
+				System.out.println("\tFoi apagada uma mensagem.");
 			else
-				System.out.print("\tForam apagadas " + count + " mensagens");
+				System.out.println("\tForam apagadas " + count + " mensagens");
 			return;
 		}
 		/* See trash */
+		Messages	msgs;
+		msgs = core.getAccount().getTrash(filter.toString(), true, true);
+		if (msgs.isEmpty()) {
+			System.out.println("\tLixeira vazia.");
+			return;
+		}		
 		Messages.printHeaders(core.getAccount().getTrash(filter.toString(), true, true));
 	}
 

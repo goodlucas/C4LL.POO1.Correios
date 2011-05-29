@@ -6,6 +6,9 @@ import java.util.List;
 import textintf.Core;
 import textintf.command.*;
 
+import accounts.Message;
+import accounts.Messages;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -32,7 +35,17 @@ public final class ReadCommand extends TerminalCommand
 			System.out.print("Defina o id da mensagem a ser lida.");
 			return;
 		}
-		
+		for (Integer id: ids) {
+			Message m = core.getAccount().getMessage(id);
+			
+			if (m != null) {
+				Messages.print(m);
+				m.setIsRead(true);
+			} else {
+				System.out.println("\tErro: Mensagem com id " + id +
+						" não encontrada.");				
+			}
+		}
 	}
 
 	@Override

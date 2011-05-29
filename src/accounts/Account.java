@@ -91,12 +91,10 @@ public class Account {
 	 */
 	public void moveToTrash(Message message) throws AccountException {
 		if (!inbox.remove(message))
-			throw new AccountException("Mensagem não encontrada na entrada.");
+			throw new AccountException("Mensagem não encontrada na " 
+					+ "caixa de entrada.");
 		trash.add(message);
 	}
-	
-	// TODO: Add 'getInbox(read/unread,[filter])', 'getTrash(..)'
-	// TODO: Create accessors for trash and inbox. Like getcount
 	
 	/**
 	 * Clear messages in trash.
@@ -104,6 +102,18 @@ public class Account {
 	public void clearTrash() {
 		// TODO: Should this function return some value?
 		trash.clear();
+	}
+	
+	/**
+	 * Get a message from the inbox.
+	 * @param id	Message id
+	 * @return	The message when found, otherwise null.
+	 */
+	public Message getMessage(Integer id) {
+		for (Message m: inbox)
+			if (m.getMessageId() == id)
+				return m;
+		return null;
 	}
 	
 	/**
@@ -137,7 +147,9 @@ public class Account {
 			
 			canAdd = (msg.getIsRead() && read) || (!msg.getIsRead() && unread);
 			if (canAdd && (filter != null && !filter.isEmpty())) {
-				canAdd = matchFilter(msg.getFrom(), filter);
+				canAdd = matchFilter(msg.getFrom(), filter)
+						|| matchFilter(msg.getContent(), filter)
+						|| matchFilter(msg.getSubject(), filter);
 			}
 			if (canAdd)
 				filteredMessages.add(msg);
@@ -164,7 +176,7 @@ public class Account {
 	 * @return	Message list of filter result.
 	 */	
 	public Messages getTrash(String filter, boolean read, boolean unread) {
-		return getMessages(this.inbox, read, unread, filter);
+		return getMessages(this.trash, read, unread, filter);
 	}
 	
 	/**

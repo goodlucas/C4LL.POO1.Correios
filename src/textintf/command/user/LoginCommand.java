@@ -50,10 +50,10 @@ public class LoginCommand extends TerminalCommand
 			if (a != null) {
 				core.setAccount(a);
 			} else {
-				System.out.println("Usuário não cadastrado.");
+				System.out.println("\tUsuário não cadastrado.");
 			}
 		} catch (ServerException e) {
-			System.out.println("Erro: " + e.getMessage());
+			System.out.println("\tErro: " + e.getMessage());
 		}
 	}
 

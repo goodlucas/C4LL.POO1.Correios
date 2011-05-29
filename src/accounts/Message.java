@@ -120,7 +120,7 @@ public class Message {
 	/**
 	 * @return	the text message. 
 	 */
-	public String getGetContent() {
+	public String getContent() {
 		return content;
 	}
 
@@ -192,6 +192,6 @@ public class Message {
 				"Assunto: " + this.getSubject() + "\n\t" + 
 				"Recebimento: " + "\n\t" + // TODO : post date.
 				"Tempo Decorrido: " + "\n\t" + // TODO : date diff
-				"Conteúdo: \n\t" + this.getGetContent() + "\n"; 
+				"Conteúdo: \n\t" + this.getContent() + "\n"; 
 	}
 }
