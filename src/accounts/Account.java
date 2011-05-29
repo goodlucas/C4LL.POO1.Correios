@@ -98,10 +98,19 @@ public class Account {
 	
 	/**
 	 * Clear messages in trash.
+	 * @return How many messages were removed.
 	 */
-	public void clearTrash() {
-		// TODO: Should this function return some value?
+	public int clearTrash() {
+		int	toRet = trash.size();
 		trash.clear();
+		return toRet;
+	}
+	
+	/**
+	 * @return	Whether the trash has no items.
+	 */
+	public boolean isTrashEmpty() {
+		return (trash.size() == 0);
 	}
 	
 	/**

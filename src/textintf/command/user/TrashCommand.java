@@ -31,13 +31,12 @@ public final class TrashCommand extends TerminalCommand
 	@Override
 	public void execute(Core core) {
 		/* Clear trash */
-		if (this.clear) {
-			int	count = core.getAccount().getTrash(null, true, true).size();
-			if (count == 0) {
+		if (clear) {
+			if (core.getAccount().isTrashEmpty()) {
 				System.out.println("\tNão há mensagens na lixeira.");
 				return;
 			}
-			core.getAccount().clearTrash();
+			int count = core.getAccount().clearTrash();
 			if (count == 1)
 				System.out.println("\tFoi apagada uma mensagem.");
 			else
