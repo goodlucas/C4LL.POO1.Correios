@@ -131,7 +131,7 @@ public class Server {
 		if (!accounts.containsKey(sender))
 			return;
 		String msg = "A mensagem que você tentou enviar para " +
-					getUserAddress(userNameFailure) + ", não pode ser entregue"
+					getUserAddress(userNameFailure) + " não pôde ser entregue"
 					+ " pois o endereço não existe.";
 		try {
 			Message message = new Message(getNotificationName(), sender,
