@@ -1,5 +1,7 @@
 package accounts;
 
+import java.util.Date;
+
 import server.Server;
 import server.ServerException;
 
@@ -81,6 +83,7 @@ public class Account {
 	 */
 	public void addToInbox(Message message) {
 		message.setMessageId(nextId++);
+		message.setPostDate(new Date());
 		inbox.add(message);
 	}
 

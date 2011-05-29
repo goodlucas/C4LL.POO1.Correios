@@ -1,8 +1,11 @@
 package accounts;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import server.ServerException;
+import util.DateDiff;
+import util.DateString;
 
 
 /**
@@ -34,7 +37,7 @@ public class Message {
 	/**
 	 * Sent date.
 	 */
-	private long		postDate;
+	private Date		postDate;
 	/**
 	 * Store whether the message is marked as read or not.
 	 */
@@ -149,7 +152,7 @@ public class Message {
 	/**
 	 * @return	Date when message was posted.
 	 */
-	public long getPostDate() {
+	public Date getPostDate() {
 		return postDate;
 	}
 
@@ -157,7 +160,24 @@ public class Message {
 	 * @param postDate	Date when message was posted.
 	 */
 	public void setPostDate(Date postDate) {
-		this.postDate = postDate.getTime();
+		this.postDate = postDate;
+	}
+	
+	/**
+	 * @return	The date the message was received.
+	 */
+	private String getPostDateString() {
+		return DateString.DateToString(getPostDate());
+	}
+	
+	/**
+	 * @return	Elapsed time since the message was received.
+	 */
+	private String getPostDateElapsedTime() {
+		int value = DateDiff.getDateDiff(Calendar.SECOND, 
+				getPostDate(), new Date());
+		return String.valueOf(value) + " segundos.";
+		// TODO : retornar minutos.. horas..
 	}
 
 	/**
@@ -181,7 +201,7 @@ public class Message {
 	 */
 	public String toStringHeader() {
 		return "\t" + getMessageId() + " - " + getFrom() + " - " + getSubject() 
-				+ " - "	+ getPostDate() + " - "
+				+ " - "	+ getPostDateString() + " - "
 				+ "[" + (getIsRead()? "lida": "não lida") + "]";
 	}
 
@@ -190,11 +210,11 @@ public class Message {
 	 */
 	@Override
 	public String toString() {
-		return "\tDe: " + this.getFrom() + "\n\t" +
-				"Para: " + this.getDestinations().toString() + "\n\t" + 
-				"Assunto: " + this.getSubject() + "\n\t" + 
-				"Recebimento: " + "\n\t" + // TODO : post date.
-				"Tempo Decorrido: " + "\n\t" + // TODO : date diff
-				"Conteúdo: \n\t" + this.getContent() + "\n"; 
+		return "\tDe: " + getFrom() + "\n\t" +
+				"Para: " + getDestinations().toString() + "\n\t" + 
+				"Assunto: " + getSubject() + "\n\t" + 
+				"Recebimento: " + getPostDateString() + "\n\t" +
+				"Tempo Decorrido: " + getPostDateElapsedTime() + "\n\t" + // TODO : date diff
+				"Conteúdo: \n\t" + getContent() + "\n"; 
 	}
 }
