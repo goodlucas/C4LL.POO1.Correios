@@ -165,11 +165,23 @@ public class Message {
 		return messageId;
 	}
 	
-	@Override
-	public String toString() {
-		/* %id - %from - %subject - %date - [%read] */
+	/**
+	 * Construct a string with message header.
+	 *  %id - %from - %subject - %date - [%read] 
+	 */
+	public String toStringHeader() {
 		return "\t" + getMessageId() + " - " + getFrom() + " - " + getSubject() 
 				+ " - "	+ getPostDate() + " - "
 				+ "[" + (getIsRead()? "lida": "não lida") + "]";
+	}
+
+	@Override
+	public String toString() {
+		return "\tDe: " + this.getFrom() + "\n\t" +
+				"Para: " + this.getDestinations().toString() + "\n\t" + 
+				"Assunto: " + this.getSubject() + "\n\t" + 
+				"Recebimento: " + "\n\t" + // TODO : post date.
+				"Tempo Decorrido: " + "\n\t" + // TODO : date diff
+				"Conteúdo: \n\t" + this.getGetContent() + "\n"; 
 	}
 }

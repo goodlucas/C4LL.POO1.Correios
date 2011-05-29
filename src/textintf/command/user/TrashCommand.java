@@ -46,7 +46,7 @@ public final class TrashCommand extends TerminalCommand
 			return;
 		}
 		/* See trash */
-		Messages.print(core.getAccount().getTrash(filter.toString(), true, true));
+		Messages.printHeaders(core.getAccount().getTrash(filter.toString(), true, true));
 	}
 
 	@Override

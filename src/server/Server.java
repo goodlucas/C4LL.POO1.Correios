@@ -3,6 +3,7 @@ package server;
 import java.util.ArrayList;
 
 import accounts.Account;
+import accounts.DestinationList;
 import accounts.Message;
 
 /**
@@ -91,7 +92,7 @@ public class Server {
 	 * @throws ServerException 	No destination defined.
 	 */
 	public void post(Message message) throws ServerException {
-		ArrayList<String>	destinations = message.getDestinations();
+		DestinationList		destinations = message.getDestinations();
 		ArrayList<String>	errors = new ArrayList<String>();
 		
 		if (destinations.isEmpty())

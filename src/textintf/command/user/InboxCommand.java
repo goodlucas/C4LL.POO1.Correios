@@ -3,7 +3,6 @@ package textintf.command.user;
 import textintf.Core;
 import textintf.command.*;
 
-import accounts.Message;
 import accounts.Messages;
 
 import com.beust.jcommander.Parameter;
@@ -51,7 +50,7 @@ public final class InboxCommand extends TerminalCommand
 			System.out.print("\t1 mensagem");
 		else
 			System.out.println("\t" + msgs.size() + " mensagens");
-		Messages.print(msgs);
+		Messages.printHeaders(msgs);
 	}
 
 	@Override
