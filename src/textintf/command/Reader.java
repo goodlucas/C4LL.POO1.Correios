@@ -86,13 +86,13 @@ public class Reader {
 				String[]	arg = new String[list.size()];
 				
 				try {
-					tc.initHelpParameter();
+					tc.init();
 					if (tc instanceof IHasParameters)
 						((IHasParameters) tc).setDefaultParameters();
 					new JCommander(tc, list.toArray(arg));
 				} catch (ParameterException p) {
-					System.out.println("** Erro ** " + p.getMessage());
-					return null;
+					System.out.println("** Erro  " + p.getMessage());
+					tc.invalidade();
 				}
 				return tc;
 			}

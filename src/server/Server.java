@@ -40,6 +40,13 @@ public class Server {
 	}
 	
 	/**
+	 * @return	The 'user name' of the server to notificate users.
+	 */
+	private String getNotificationName() {
+		return "servidor";
+	}
+	
+	/**
 	 * Get the user adress to the server. 
 	 * @param loginName	User name
 	 * @return	Format: loginName@server.name
@@ -61,7 +68,7 @@ public class Server {
 			throw new ServerException("Conta com mesmo login já existe.");
         }
         accounts.put(loginName, a);
-        welcomeNotification(a.getLoginName());
+        notificationWelcome(loginName);
 	}
 	
 	/**
@@ -127,7 +134,7 @@ public class Server {
 					getUserAddress(userNameFailure) + ", não pode ser entregue"
 					+ " pois o endereço não existe.";
 		try {
-			Message message = new Message("notification", sender,
+			Message message = new Message(getNotificationName(), sender,
 						"Notificação de status de entrega (falha)",	msg, false);
 			post(message);
 		} catch (ServerException e) {
@@ -141,17 +148,17 @@ public class Server {
 	 * @param a
 	 * 		The new user signed
 	 */
-	private void welcomeNotification(String a) {
+	private void notificationWelcome(String a) {
 		String msg = ("Bem vindo ao PostOffice! Esperamos que desfrute das"
 				+ "várias funcionalidades do sistema!");
 
 		Message message;
 		try {
-			message = new Message("Servidor", a, 
-					msg, "Boas Vindas", false);
+			message = new Message(getNotificationName(), a, 
+					"Boas Vindas", msg, false);
 			post(message);
 		} catch (ServerException e) {
-			//igonre exception
+			// Ignore exception
 		}
 
 	}

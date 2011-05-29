@@ -13,14 +13,24 @@ public abstract class TerminalCommand {
 	@Parameter(names = {"--help"}, hidden = true)
 	public boolean help;
 	
+	private boolean isValid;
+	
 	/**
-	 * Initialize que help parameter value. This method is called every
+	 * Initialize parameter values. This method is called every
 	 * command line reading.
 	 */
-	public void initHelpParameter() {
+	public void init() {
 		help = false;
+		isValid = true;
 	}
 	
+	public void invalidade() {
+		isValid = false;
+	}
+	
+	public boolean isValid() {
+		return isValid;
+	}
 	
 	/**
 	 * Get instance as ICommandName to allow get information about the class.

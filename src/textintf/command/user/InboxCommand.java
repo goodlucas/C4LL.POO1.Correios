@@ -35,9 +35,11 @@ public final class InboxCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-		Messages msgs;
+		Messages	msgs;
+		boolean		all = !read && !unread;
 		
-		msgs = core.getAccount().getInbox(filtros.toString(), read, unread);
+		msgs = core.getAccount().getInbox(filtros.toString(), read || all, 
+				unread || all);
 		if (msgs.isEmpty()) {
 			System.out.println("\tCaixa de entrada vazia.");
 			return;

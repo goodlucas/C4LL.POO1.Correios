@@ -91,6 +91,9 @@ public final class TextInterface {
 			suggestHelp();
 			return;
 		}
+		/* Check if there was any error to get the parameters. */
+		if (!cmd.isValid())
+			return;
 		/* Received --help option */
 		if (cmd.help) {
 			ShowCommandHelper.showHelp(cmd.getCommand().getName());
