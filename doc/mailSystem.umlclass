@@ -84,6 +84,10 @@
         <element xmi:type="uml:Property" href="mailSystem.uml#_BhOboIb2EeCQ3NvXKx6KbA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Bhux8Yb2EeCQ3NvXKx6KbA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_1PAVEImzEeCXL8QzrnolOQ" type="3001">
+        <element xmi:type="uml:Property" href="mailSystem.uml#_1NBYEImzEeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_1PA8IImzEeCXL8QzrnolOQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_YwVktoWEEeCaGbqIADRCnA" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_YwVkt4WEEeCaGbqIADRCnA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_YwVkuIWEEeCaGbqIADRCnA"/>
@@ -114,6 +118,38 @@
         <element xmi:type="uml:Operation" href="mailSystem.uml#_rGXisIb2EeCQ3NvXKx6KbA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_rGp2kYb2EeCQ3NvXKx6KbA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_7JpHgImzEeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_7JR7IImzEeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7JpHgYmzEeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_-niKsImzEeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_-nJJIImzEeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-niKsYmzEeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AY3lcIm0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_AYDtIIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_AY3lcYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_B5bZQIm0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_B5GpIIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B5bZQYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_FcgecIm0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_FcOKkIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FcgecYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_HLS7gIm0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_HLAAkIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HLS7gYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_IWHI0Im0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_IV2DEIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IWHv4Im0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_JfgZ0Im0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_JfPUEIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JfgZ0Ym0EeCXL8QzrnolOQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_YwWLwoWEEeCaGbqIADRCnA" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_YwWLw4WEEeCaGbqIADRCnA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_YwWLxIWEEeCaGbqIADRCnA"/>
@@ -127,7 +163,7 @@
     </children>
     <styles xmi:type="notation:CanonicalStyle" xmi:id="_YwVksYWEEeCaGbqIADRCnA"/>
     <element xmi:type="uml:Class" href="mailSystem.uml#_YvvHwIWEEeCaGbqIADRCnA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YwVksoWEEeCaGbqIADRCnA" x="410" y="225" width="256" height="266"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YwVksoWEEeCaGbqIADRCnA" x="410" y="225" width="256" height="376"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_ZBipcIWEEeCaGbqIADRCnA" type="2001" fontName="Ubuntu">
     <children xmi:type="notation:DecorationNode" xmi:id="_ZBipc4WEEeCaGbqIADRCnA" type="5003">
@@ -206,6 +242,18 @@
         <element xmi:type="uml:Property" href="mailSystem.uml#_Y7Sb8IY-EeCW9uV22dMqXg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Y7poUYY-EeCW9uV22dMqXg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_P-XToIm0EeCXL8QzrnolOQ" type="3001">
+        <element xmi:type="uml:Property" href="mailSystem.uml#_P-HcAIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P-XToYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_enx0EIm0EeCXL8QzrnolOQ" type="3001">
+        <element xmi:type="uml:Property" href="mailSystem.uml#_endrAIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_enx0EYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="__VVPYIm0EeCXL8QzrnolOQ" type="3001">
+        <element xmi:type="uml:Property" href="mailSystem.uml#__VF-0Im0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__VVPYYm0EeCXL8QzrnolOQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_ZPwro4WEEeCaGbqIADRCnA" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_ZPwrpIWEEeCaGbqIADRCnA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_ZPwrpYWEEeCaGbqIADRCnA"/>
@@ -252,6 +300,30 @@
         <element xmi:type="uml:Operation" href="mailSystem.uml#_Pzn-sIcAEeCQ3NvXKx6KbA"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Pz2oMYcAEeCQ3NvXKx6KbA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_ERBGQIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_EQzD0Im1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ERBGQYm1EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_FiqUUIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_FidgAIm1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_FiqUUYm1EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_HMh1IIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_HMUZwIm1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HMh1IYm1EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_LFV5wIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_LFHQQIm1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LFV5wYm1EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MH7_MIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_MHpEQIm1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MH7_MYm1EeCXL8QzrnolOQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QTuDIIm1EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_QTgnwIm1EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QTuDIYm1EeCXL8QzrnolOQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_ZPx5wYWEEeCaGbqIADRCnA" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_ZPx5woWEEeCaGbqIADRCnA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_ZPx5w4WEEeCaGbqIADRCnA"/>
@@ -265,7 +337,7 @@
     </children>
     <styles xmi:type="notation:CanonicalStyle" xmi:id="_ZPwEkYWEEeCaGbqIADRCnA"/>
     <element xmi:type="uml:Class" href="mailSystem.uml#_ZPUmwIWEEeCaGbqIADRCnA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZPwEkoWEEeCaGbqIADRCnA" x="20" y="295" width="256" height="301"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZPwEkoWEEeCaGbqIADRCnA" x="20" y="295" width="256" height="456"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_I7RU4IcCEeCpr8axwzlp1A" type="2004" fontName="Sans">
     <children xmi:type="notation:DecorationNode" xmi:id="_I7RU44cCEeCpr8axwzlp1A" type="5006">
@@ -363,6 +435,37 @@
     <element xmi:type="uml:Class" href="mailSystem.uml#_TDynkIcDEeCjT73z3qyq-w"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TEX2YocDEeCjT73z3qyq-w" x="410" y="150"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_UBMP4Im0EeCXL8QzrnolOQ" type="2001" fontName="Sans">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UBM28Im0EeCXL8QzrnolOQ" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_UBRIYIm0EeCXL8QzrnolOQ" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_UBM28Ym0EeCXL8QzrnolOQ" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UBNeAIm0EeCXL8QzrnolOQ" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UBNeAYm0EeCXL8QzrnolOQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UBNeAom0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UBNeA4m0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_UBNeBIm0EeCXL8QzrnolOQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UBNeBYm0EeCXL8QzrnolOQ" type="7002">
+      <children xmi:type="notation:Node" xmi:id="_XL54YIm0EeCXL8QzrnolOQ" type="3002">
+        <element xmi:type="uml:Operation" href="mailSystem.uml#_XLsdAIm0EeCXL8QzrnolOQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XL54YYm0EeCXL8QzrnolOQ"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UBNeBom0EeCXL8QzrnolOQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UBNeB4m0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UBNeCIm0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_UBNeCYm0EeCXL8QzrnolOQ"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UBNeCom0EeCXL8QzrnolOQ" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UBNeC4m0EeCXL8QzrnolOQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UBNeDIm0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UBNeDYm0EeCXL8QzrnolOQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_UBNeDom0EeCXL8QzrnolOQ"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_UBMP4Ym0EeCXL8QzrnolOQ"/>
+    <element xmi:type="uml:Class" href="mailSystem.uml#_UA6jEIm0EeCXL8QzrnolOQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UBMP4om0EeCXL8QzrnolOQ" x="410" y="675"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WdGWwYWEEeCaGbqIADRCnA"/>
   <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_WdGWwoWEEeCaGbqIADRCnA"/>
   <styles xmi:type="notation:FilteringStyle" xmi:id="_WdGWw4WEEeCaGbqIADRCnA"/>
@@ -459,5 +562,18 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VtsCA4cDEeCjT73z3qyq-w" points="[0, 0, -155, 15]$[129, -14, -26, 1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VtvsYIcDEeCjT73z3qyq-w" id="(1.0,0.6021505376344086)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VtvsYYcDEeCjT73z3qyq-w" id="(0.1793103448275862,0.5333333333333333)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Y0bVYIm0EeCXL8QzrnolOQ" type="4002" source="_ZPwEkIWEEeCaGbqIADRCnA" target="_UBMP4Im0EeCXL8QzrnolOQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Y0b8cIm0EeCXL8QzrnolOQ" visible="false" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y0b8cYm0EeCXL8QzrnolOQ" y="40"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Y0b8com0EeCXL8QzrnolOQ" type="6010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y0b8c4m0EeCXL8QzrnolOQ" y="20"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Y0bVYYm0EeCXL8QzrnolOQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Y0bVYom0EeCXL8QzrnolOQ" fontName="Sans"/>
+    <element xmi:type="uml:Dependency" href="mailSystem.uml#_Y0ZgMIm0EeCXL8QzrnolOQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y0bVY4m0EeCXL8QzrnolOQ" points="[-3, 13, -30, -85]$[-85, 62, -112, -36]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Y0fm0Im0EeCXL8QzrnolOQ" id="(0.44140625,0.9588607594936709)"/>
   </edges>
 </notation:Diagram>

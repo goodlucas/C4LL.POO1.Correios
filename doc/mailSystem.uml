@@ -37,6 +37,7 @@
     <ownedAttribute xmi:id="_724vAIb1EeCQ3NvXKx6KbA" name="private Messages inbox" aggregation="composite"/>
     <ownedAttribute xmi:id="_-33zwIb1EeCQ3NvXKx6KbA" name="private Messages trash" aggregation="composite"/>
     <ownedAttribute xmi:id="_BhOboIb2EeCQ3NvXKx6KbA" name="private Server server" aggregation="composite"/>
+    <ownedAttribute xmi:id="_1NBYEImzEeCXL8QzrnolOQ" name="private int nextId" aggregation="composite"/>
     <ownedOperation xmi:id="_uxgMMIY8EeCW9uV22dMqXg" name="Account">
       <ownedParameter xmi:id="_HddvkIcBEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_HdeWoIcBEeCQ3NvXKx6KbA" name="Server server"/>
@@ -60,6 +61,44 @@
     <ownedOperation xmi:id="_rGXisIb2EeCQ3NvXKx6KbA" name="moveToTrash">
       <ownedParameter xmi:id="_SUrwwIcBEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_SUrwwYcBEeCQ3NvXKx6KbA" name="Message message"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7JR7IImzEeCXL8QzrnolOQ" name="int clearTrash">
+      <ownedParameter xmi:id="_9pAs8ImzEeCXL8QzrnolOQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_-nJJIImzEeCXL8QzrnolOQ" name="Message getMessage">
+      <ownedParameter xmi:id="_-3CmUImzEeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_-3CmUYmzEeCXL8QzrnolOQ" name="Integer id"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_AYDtIIm0EeCXL8QzrnolOQ" name="boolean matchFilter">
+      <ownedParameter xmi:id="_AltuoIm0EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_AluVsIm0EeCXL8QzrnolOQ" name="String a"/>
+      <ownedParameter xmi:id="_AluVsYm0EeCXL8QzrnolOQ" name="String b"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_B5GpIIm0EeCXL8QzrnolOQ" name="Messages getMessages">
+      <ownedParameter xmi:id="_C3C4EIm0EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_C3DfIIm0EeCXL8QzrnolOQ" name="Messages list"/>
+      <ownedParameter xmi:id="_C3DfIYm0EeCXL8QzrnolOQ" name="boolean read"/>
+      <ownedParameter xmi:id="_C3DfIom0EeCXL8QzrnolOQ" name="boolean unread"/>
+      <ownedParameter xmi:id="_C3EGMIm0EeCXL8QzrnolOQ" name="String filter"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_FcOKkIm0EeCXL8QzrnolOQ" name="Messages getInbox">
+      <ownedParameter xmi:id="_F2vjYIm0EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_F2wKcIm0EeCXL8QzrnolOQ" name="String filter"/>
+      <ownedParameter xmi:id="_F2wKcYm0EeCXL8QzrnolOQ" name="boolean read"/>
+      <ownedParameter xmi:id="_F2wxgIm0EeCXL8QzrnolOQ" name="boolean unread"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HLAAkIm0EeCXL8QzrnolOQ" name="Messages getTrash">
+      <ownedParameter xmi:id="_HUD18Im0EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_HUD18Ym0EeCXL8QzrnolOQ" name="String filter"/>
+      <ownedParameter xmi:id="_HUEdAIm0EeCXL8QzrnolOQ" name="boolean read"/>
+      <ownedParameter xmi:id="_HUEdAYm0EeCXL8QzrnolOQ" name="boolean unread"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_IV2DEIm0EeCXL8QzrnolOQ" name="boolean equals">
+      <ownedParameter xmi:id="_IgHZYIm0EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_IgHZYYm0EeCXL8QzrnolOQ" name="Object o"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_JfPUEIm0EeCXL8QzrnolOQ" name="int hashCode">
+      <ownedParameter xmi:id="_JqOcEIm0EeCXL8QzrnolOQ" direction="return"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZBNSQIWEEeCaGbqIADRCnA" name="Server" clientDependency="_bMrPsIcCEeCpr8axwzlp1A _VtnJgIcDEeCjT73z3qyq-w">
@@ -85,11 +124,14 @@
       <ownedParameter xmi:id="_2A7nQYcAEeCQ3NvXKx6KbA" name="Message message"/>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA">
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA _Y0ZgMIm0EeCXL8QzrnolOQ">
     <ownedAttribute xmi:id="_UKzIcIY-EeCW9uV22dMqXg" name="private String from" aggregation="composite"/>
-    <ownedAttribute xmi:id="_X0fL8IY-EeCW9uV22dMqXg" name="private String to" aggregation="composite"/>
-    <ownedAttribute xmi:id="_YgqVcIY-EeCW9uV22dMqXg" name="private String text" aggregation="composite"/>
-    <ownedAttribute xmi:id="_Y7Sb8IY-EeCW9uV22dMqXg" name="private Boolean read" aggregation="composite"/>
+    <ownedAttribute xmi:id="_X0fL8IY-EeCW9uV22dMqXg" name="private DestinationList to" aggregation="composite"/>
+    <ownedAttribute xmi:id="_YgqVcIY-EeCW9uV22dMqXg" name="private String content" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Y7Sb8IY-EeCW9uV22dMqXg" name="private boolean isRead" aggregation="composite"/>
+    <ownedAttribute xmi:id="_P-HcAIm0EeCXL8QzrnolOQ" name="private String subject" aggregation="composite"/>
+    <ownedAttribute xmi:id="_endrAIm0EeCXL8QzrnolOQ" name="private int messageId" aggregation="composite"/>
+    <ownedAttribute xmi:id="__VF-0Im0EeCXL8QzrnolOQ" name="private long postDate" aggregation="composite"/>
     <ownedOperation xmi:id="_Vc968IY-EeCW9uV22dMqXg" name="getFrom">
       <ownedParameter xmi:id="_38Jr8IY-EeCW9uV22dMqXg" direction="return"/>
     </ownedOperation>
@@ -125,6 +167,31 @@
       <ownedParameter xmi:id="_S5Y1wIcAEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_S5Y1wYcAEeCQ3NvXKx6KbA" name="Date postDate"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_EQzD0Im1EeCXL8QzrnolOQ" name="void addDestinations">
+      <ownedParameter xmi:id="_Eabg8Im1EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_EacIAIm1EeCXL8QzrnolOQ" name="DestinationList list"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_FidgAIm1EeCXL8QzrnolOQ" name="setSubject">
+      <ownedParameter xmi:id="_F85ZQIm1EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_F86AUIm1EeCXL8QzrnolOQ" name="String subject"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HMUZwIm1EeCXL8QzrnolOQ" name="String getSubject">
+      <ownedParameter xmi:id="_HUnaIIm1EeCXL8QzrnolOQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_LFHQQIm1EeCXL8QzrnolOQ" name="String toStringHeader">
+      <ownedParameter xmi:id="_LMEz4Im1EeCXL8QzrnolOQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_MHpEQIm1EeCXL8QzrnolOQ" name="String toString">
+      <ownedParameter xmi:id="_MPjqIIm1EeCXL8QzrnolOQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_QTgnwIm1EeCXL8QzrnolOQ" name="Message">
+      <ownedParameter xmi:id="_RRUT0Im1EeCXL8QzrnolOQ" direction="return"/>
+      <ownedParameter xmi:id="_RRU64Im1EeCXL8QzrnolOQ" name="String from"/>
+      <ownedParameter xmi:id="_RRU64Ym1EeCXL8QzrnolOQ" name="String to"/>
+      <ownedParameter xmi:id="_RRVh8Im1EeCXL8QzrnolOQ" name="String subject"/>
+      <ownedParameter xmi:id="_RRVh8Ym1EeCXL8QzrnolOQ" name="String content"/>
+      <ownedParameter xmi:id="_RRVh8om1EeCXL8QzrnolOQ" name="Boolean read"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_m3hh0IWEEeCaGbqIADRCnA" supplier="_YapBgIWEEeCaGbqIADRCnA" client="_YvvHwIWEEeCaGbqIADRCnA"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_qd7AwIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
@@ -137,4 +204,10 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_RAwY0IcDEeCjT73z3qyq-w" supplier="_O68i4IcDEeCjT73z3qyq-w" client="_YvvHwIWEEeCaGbqIADRCnA"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_TDynkIcDEeCjT73z3qyq-w" name="ServerException"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_VtnJgIcDEeCjT73z3qyq-w" supplier="_TDynkIcDEeCjT73z3qyq-w" client="_ZBNSQIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UA6jEIm0EeCXL8QzrnolOQ" name="DestinationList (ArrayList&lt;String>)">
+    <ownedOperation xmi:id="_XLsdAIm0EeCXL8QzrnolOQ" name="String toString">
+      <ownedParameter xmi:id="_XXT3IIm0EeCXL8QzrnolOQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Y0ZgMIm0EeCXL8QzrnolOQ" supplier="_UA6jEIm0EeCXL8QzrnolOQ" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
 </uml:Package>
