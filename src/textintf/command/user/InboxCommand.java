@@ -44,8 +44,9 @@ public final class InboxCommand extends TerminalCommand
 			System.out.println("\tCaixa de entrada vazia.");
 			return;
 		}
+		/* Print the count of messages, and then its headers. */
 		if (msgs.size() == 1)
-			System.out.print("\t1 mensagem");
+			System.out.println("\t1 mensagem");
 		else
 			System.out.println("\t" + msgs.size() + " mensagens");
 		Messages.printHeaders(msgs);

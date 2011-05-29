@@ -185,6 +185,9 @@ public class Message {
 				+ "[" + (getIsRead()? "lida": "não lida") + "]";
 	}
 
+	/**
+	 * Convert the message to user readily.
+	 */
 	@Override
 	public String toString() {
 		return "\tDe: " + this.getFrom() + "\n\t" +

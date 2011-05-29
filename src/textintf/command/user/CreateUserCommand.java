@@ -53,7 +53,7 @@ public final class CreateUserCommand extends TerminalCommand implements
 		}
 		/* Get new password */
 		String	password = core.getReader().ask("Senha: ");
-		
+		/* Create the user and add to add it to an account */
 		User	user = new User(name, password);
 		try {
 			new Account(core.getServer(), user);

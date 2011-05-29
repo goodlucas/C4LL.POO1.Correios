@@ -14,6 +14,10 @@ public final class Core {
 	private Account	account = null;
 	private boolean	resumeProgram = true;
 
+	/**
+	 * Constructor for the core class.
+	 * @param server	Instance of server which the application will run.
+	 */
 	Core(Server server) {
 		this.server = server;
 	}

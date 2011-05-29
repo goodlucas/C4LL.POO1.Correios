@@ -24,10 +24,19 @@ public abstract class TerminalCommand {
 		isValid = true;
 	}
 	
-	public void invalidade() {
+	/**
+	 * Invalidate a command. This method is called when the parameter parsing
+	 * gone wrong, then the instance can't be execute()'d. Before the parsing
+	 * the instance should be validated or revalidated calling init().
+	 */
+	public void invalidate() {
 		isValid = false;
 	}
 	
+	/**
+	 * @return	Whether the instance is marked as valid. If valid, means the
+	 * 			instance has valid parameters (parsed sucessfully).
+	 */
 	public boolean isValid() {
 		return isValid;
 	}

@@ -73,7 +73,12 @@ public class Reader {
 	}
 	
 	/**
-	 * Proccess a readed line.
+	 * Proccess a readed line. The first word is the command name, the others
+	 * should be processed as options and parameters to the command. After
+	 * find a terminal command in the command collection that the getName
+	 * equals to the received command, the instance of the terminal command
+	 * will re-initialize the parameters and call the parameter parser.
+	 * If and error to parse occur, the instace will be invalidated.
 	 * @param list	Command line splitted by spaces into tokens.
 	 * @return	Instance of TerminalCommand. (see readCommand)
 	 */
@@ -92,7 +97,7 @@ public class Reader {
 					new JCommander(tc, list.toArray(arg));
 				} catch (ParameterException p) {
 					System.out.println("** Erro  " + p.getMessage());
-					tc.invalidade();
+					tc.invalidate();
 				}
 				return tc;
 			}

@@ -37,7 +37,7 @@ public final class DeleteCommand extends TerminalCommand implements
 		}
 		for (Integer id: ids) {
 			Message m = core.getAccount().getMessage(id);
-			
+			/* Try to move the message to the trash. */
 			try {
 				core.getAccount().moveToTrash(m);
 				System.out.println("\tMensagem com id " + id + " movida para"

@@ -13,7 +13,7 @@ public final class Main {
 	public static void main(String[] args) {
 		Server			server = new Server("unicentro.br");		
 		TextInterface	intf = new TextInterface(server);
-		
+		/* Populate the server with some accounts */
 		try {
 			new Account(server, new User("jimmy", ""));
 			new Account(server, new User("purio", ""));
