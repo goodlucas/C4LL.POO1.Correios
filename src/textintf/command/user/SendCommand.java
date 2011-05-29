@@ -1,6 +1,9 @@
 package textintf.command.user;
 
+import server.ServerException;
 import textintf.Core;
+
+import accounts.Message;
 
 import com.beust.jcommander.Parameter;
 import textintf.command.*;
@@ -26,7 +29,16 @@ public final class SendCommand extends TerminalCommand
 
 	@Override
 	public void execute(Core core) {
-		// TODO send a message
+		try {
+			Message	m = new Message(core.getAccount().getLoginName(), null,
+				core.getReader().ask("Assunto: "), 
+				core.getReader().ask("Conteúdo: \n"), false);
+			m.addDestinations(destinations.toDestinationList());
+			core.getAccount().send(m);
+			System.out.println("Mensagem criada com sucesso!");
+		} catch (ServerException e) {
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 
 	@Override

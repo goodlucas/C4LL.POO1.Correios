@@ -23,10 +23,6 @@ public final class InboxCommand extends TerminalCommand
 			description = "Mostrar mensagens lidas da caixa de entrada.")
 	public boolean read;
 
-	@Parameter(names = {"-a", "--all"}, 
-			description = "Mostrar todas as mensagens da caixa de entrada.")
-	public boolean all;
-
 	@Override
 	public String getName() {
 		return "inbox";
@@ -58,6 +54,5 @@ public final class InboxCommand extends TerminalCommand
 		filtros.clear();
 		unread = false;
 		read = false;
-		all = false;
 	}
 }

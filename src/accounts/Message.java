@@ -49,7 +49,7 @@ public class Message {
 	 * @param content	Message content.
 	 * @param read		Whether the message should be marked as read or not.
 	 */
-	public Message(String from, String to, String content, String subject, 
+	public Message(String from, String to, String subject, String content, 
 			Boolean read) throws ServerException {
 		this.to = new DestinationList();
 		if (to != null)
@@ -89,8 +89,18 @@ public class Message {
 	 */
 	public void addDestination(String loginName) throws ServerException {
 		if (to.contains(loginName))
-			throw new ServerException("Destino duplicado: " + loginName);
+			throw new ServerException("Destino duplicado (" + loginName + ")");
 		this.to.add(loginName);
+	}
+	
+	/**
+	 * Add various destinations to the message.
+	 * @param list	Destination list.
+	 * @throws ServerException	Duplicate user.
+	 */
+	public void addDestinations(DestinationList list) throws ServerException {
+		for (String dest: list)
+			addDestination(dest);
 	}
 
 	/**
