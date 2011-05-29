@@ -19,7 +19,7 @@ public final class InboxCommand extends TerminalCommand
 	@Parameter(names = {"-u", "--unread"}, 
 			description = "Mostrar mensagens não lidas da caixa de entrada.")
 	public boolean unread;
-	
+		
 	@Parameter(names = {"-r", "--read"}, 
 			description = "Mostrar mensagens lidas da caixa de entrada.")
 	public boolean read;
@@ -47,15 +47,11 @@ public final class InboxCommand extends TerminalCommand
 			System.out.println("\tCaixa de entrada vazia.");
 			return;
 		}
-		System.out.println("\t" + msgs.size() 
-				+ " mensage" + (msgs.size() == 1? "m": "ns"));
-		for (Message m: msgs) {
-			/* %id - %from - %subject - %date - [%read] */
-			System.out.println("\t" + m.getMessageId() + " - "
-					+ m.getFrom() + " - " + m.getSubject() + " - " 
-					+ m.getPostDate() + " - "
-					+ "[" + (m.getIsRead()? "lida": "não lida") + "]");
-		}
+		if (msgs.size() == 1)
+			System.out.print("\t1 mensagem");
+		else
+			System.out.println("\t" + msgs.size() + " mensagens");
+		Messages.print(msgs);
 	}
 
 	@Override

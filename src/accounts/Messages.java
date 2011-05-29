@@ -10,5 +10,8 @@ import java.util.ArrayList;
  */
 @SuppressWarnings("serial")
 public final class Messages extends ArrayList<Message> {
-	/* Empty bodie due aliased class */
+	public static void print(Messages messageList) {
+		for (Message m: messageList)
+			System.out.println(m);
+	}
 }

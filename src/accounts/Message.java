@@ -164,4 +164,12 @@ public class Message {
 	public int getMessageId() {
 		return messageId;
 	}
+	
+	@Override
+	public String toString() {
+		/* %id - %from - %subject - %date - [%read] */
+		return "\t" + getMessageId() + " - " + getFrom() + " - " + getSubject() 
+				+ " - "	+ getPostDate() + " - "
+				+ "[" + (getIsRead()? "lida": "não lida") + "]";
+	}
 }
