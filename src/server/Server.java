@@ -61,6 +61,7 @@ public class Server {
 			throw new ServerException("Conta com mesmo login já existe.");
         }
         accounts.put(loginName, a);
+        welcomeNotification(a.getLoginName());
 	}
 	
 	/**
@@ -132,5 +133,26 @@ public class Server {
 		} catch (ServerException e) {
 			// Ignore exceptions.
 		}
+	}
+	
+	/**
+	 * Send a wellcome message to the inbox of the new user at the moment of 
+	 * the account creation. 
+	 * @param a
+	 * 		The new user signed
+	 */
+	private void welcomeNotification(String a) {
+		String msg = ("Bem vindo ao PostOffice! Esperamos que desfrute das"
+				+ "várias funcionalidades do sistema!");
+
+		Message message;
+		try {
+			message = new Message("Servidor", a, 
+					msg, "Boas Vindas", false);
+			post(message);
+		} catch (ServerException e) {
+			//igonre exception
+		}
+
 	}
 }
