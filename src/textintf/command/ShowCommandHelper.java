@@ -56,8 +56,10 @@ public final class ShowCommandHelper {
 			if (help != null) {
 				/* If user is not logged, will be printed only commands that
 				 * the user can actually execute.
+				 * If user is logged, will be printed commands that don't
+				 * are hidden by the hideHelpForLoggedUser.
 				 */
-				if (core.isLogged() 
+				if ((core.isLogged() && !tc.hideHelpForLoggedUser())
 						|| (!core.isLogged() && tc.allowUnloggedUser())) {
 					System.out.println("\t" + name + "\t" + help);
 				}

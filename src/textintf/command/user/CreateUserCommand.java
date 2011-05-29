@@ -69,4 +69,9 @@ public final class CreateUserCommand extends TerminalCommand implements
 	public void setDefaultParameters() {
 		newName.clear();
 	}
+	
+	@Override
+	public boolean hideHelpForLoggedUser() {
+		return true;
+	}
 }

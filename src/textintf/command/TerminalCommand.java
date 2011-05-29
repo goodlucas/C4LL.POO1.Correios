@@ -48,4 +48,13 @@ public abstract class TerminalCommand {
 	public boolean allowUnloggedUser() {
 		return false;
 	}
+	
+	/**
+	 * Hide the command on the help message when the user is logged.
+	 * @return	Whether the command should the showed on the help when the
+	 * 			user is logged.
+	 */
+	public boolean hideHelpForLoggedUser() {
+		return false;
+	}
 }

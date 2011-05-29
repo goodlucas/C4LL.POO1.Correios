@@ -61,4 +61,9 @@ public class LoginCommand extends TerminalCommand
 	public void setDefaultParameters() {
 		loginName.clear();
 	}
+	
+	@Override
+	public boolean hideHelpForLoggedUser() {
+		return true;
+	}
 }
