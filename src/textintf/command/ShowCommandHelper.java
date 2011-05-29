@@ -65,6 +65,6 @@ public final class ShowCommandHelper {
 				}
 			}
 		}
-		// TODO : Should print an empty line at end? Just like usage()
+		System.out.println("");
 	}
 }
