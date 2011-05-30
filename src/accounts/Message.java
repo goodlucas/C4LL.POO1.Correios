@@ -1,10 +1,8 @@
 package accounts;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import server.ServerException;
-import util.DateDiff;
 import util.DateString;
 
 
@@ -174,10 +172,7 @@ public class Message {
 	 * @return	Elapsed time since the message was received.
 	 */
 	private String getPostDateElapsedTime() {
-		int value = DateDiff.getDateDiff(Calendar.SECOND, 
-				getPostDate(), new Date());
-		return String.valueOf(value) + " segundos.";
-		// TODO : retornar minutos.. horas..
+		return DateString.elapsedTime(getPostDate(), new Date());
 	}
 
 	/**

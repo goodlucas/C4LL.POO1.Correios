@@ -13,7 +13,7 @@ import textintf.command.*;
  */
 public final class SendCommand extends TerminalCommand 
 	implements ICommand, IHasParameters {
-	@Parameter(description = "Lista de contas para enviar.")
+	@Parameter(description = "Passe a lista de contas para enviar separadas por espaço.")
 	public StringParameter destinations = new StringParameter();
 
 	@Override
@@ -30,10 +30,18 @@ public final class SendCommand extends TerminalCommand
 	@Override
 	public void execute(Core core) {
 		try {
+			String	to = null;
+			
+			if (destinations.isEmpty()) 
+				to = core.getReader().askNotEmpty("Destino (apenas um): ", 
+						"Defina o destinatário.");
 			Message	m = new Message(core.getAccount().getLoginName(), null,
 				core.getReader().ask("Assunto: "), 
 				core.getReader().ask("Conteúdo: \n"), false);
-			m.addDestinations(destinations.toDestinationList());
+			if (destinations.isEmpty())
+				m.addDestinations(destinations.toDestinationList());
+			else
+				m.addDestination(to);
 			core.getAccount().send(m);
 			System.out.println("Mensagem criada com sucesso!");
 		} catch (ServerException e) {
