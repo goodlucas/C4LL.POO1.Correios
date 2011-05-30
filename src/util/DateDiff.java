@@ -4,14 +4,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-
-//Class got from:
-//http://jstatcom.svn.sourceforge.net/viewvc/jstatcom/jstatcom/java/com/jstatcom/util/DateDiff.java?revision=1&view=markup
 /**
  * Helper class for computing the difference of two dates in years, months,
  * weeks or days. The estimates are precise for ranges up to 2000 years. The
  * method takes care of corrections for leap seconds.
- *  
+ * http://jstatcom.svn.sourceforge.net 
  */
 public class DateDiff {
     // set some constants that allow pretty accurate estimates over
