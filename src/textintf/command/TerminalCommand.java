@@ -1,5 +1,7 @@
 package textintf.command;
 
+import textintf.Core;
+
 import com.beust.jcommander.Parameter;
 
 /**
@@ -42,14 +44,6 @@ public abstract class TerminalCommand {
 	}
 	
 	/**
-	 * Get instance as ICommandName to allow get information about the class.
-	 * @return The instance with Interface casting.
-	 */
-	public ICommand getCommand() {
-		return (ICommand) this;
-	}
-	
-	/**
 	 * Allow to receive the option --help. Override this method returning false,
 	 * to block --help option. When not allowed, a message saying that there
 	 * is no help for the command should be showed.
@@ -76,4 +70,24 @@ public abstract class TerminalCommand {
 	public boolean hideHelpForLoggedUser() {
 		return false;
 	}
+	
+	/**
+	 * @return	The command name.
+	 */
+	public abstract String getName();
+	
+	/**
+	 * @return	Brief explanation of what the command does.
+	 */
+	public abstract String getHelp();	
+	
+	/**
+	 * Command execution. When user type the command relationed to the class,
+	 * all parameters are valid, and if allowUnloggedUser() allow the run,
+	 * the method execute() will be called.
+	 * @param core	Instance to the TextInterface. Information like
+	 * 					the server and the console reader can be accessed.
+	 */	
+	public abstract void execute(Core core);
+	
 }

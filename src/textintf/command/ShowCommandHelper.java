@@ -17,11 +17,11 @@ public final class ShowCommandHelper {
 	 */
 	public static void showHelp(String cmd) {
 		for (TerminalCommand tc: CommandCollection.COMMANDS) {
-			if (tc.getCommand().getName().equals(cmd)) {
+			if (tc.getName().equals(cmd)) {
 				if (tc.allowHelpOption()) {
 					try {
 						JCommander	jcd = new JCommander(tc, "--help");
-						jcd.setProgramName(tc.getCommand().getName());
+						jcd.setProgramName(tc.getName());
 						jcd.usage();
 					} catch (ParameterException p) {
 						return;
@@ -50,8 +50,8 @@ public final class ShowCommandHelper {
 		System.out.println("Para ver a ajuda de um comando, use a opção --help");
 		System.out.println("Exemplo: " + getExample());
 		for (TerminalCommand tc: CommandCollection.COMMANDS) {
-			String	name = tc.getCommand().getName();
-			String	help = tc.getCommand().getHelp();
+			String	name = tc.getName();
+			String	help = tc.getHelp();
 			
 			if (help != null) {
 				/* If user is not logged, will be printed only commands that

@@ -6,7 +6,7 @@ import textintf.command.*;
 /**
  * Help command. Show all available commands in the terminal.
  */
-public class HelpCommand extends TerminalCommand implements ICommand {
+public class HelpCommand extends TerminalCommand {
 	@Override
 	public String getName() {
 		return "help";

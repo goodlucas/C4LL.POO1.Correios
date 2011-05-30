@@ -11,7 +11,7 @@ import com.beust.jcommander.Parameter;
  * Text terminal trash command. Handle messages in the trash.
  */
 public final class TrashCommand extends TerminalCommand 
-	implements ICommand, IHasParameters {
+	implements IHasParameters {
 	@Parameter(description = "Filtro de mensagem")
 	public StringParameter filter = new StringParameter();
 

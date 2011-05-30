@@ -13,7 +13,6 @@ public class Account {
 	private	Messages	trash = new Messages();
 	private Server		server;
 	private	User		loggedUser;
-	private	int			nextId = 1;
 	
 	/**
 	 * @param server	Server which the account should be registered.
@@ -46,7 +45,7 @@ public class Account {
 		if (server == null)
 			throw new AccountException("Não há servidor para a nova conta.");
 		this.server = server;
-		server.createAccount(this);
+		server.renameAccount(this);
 	}
 	
 	/**
@@ -82,7 +81,6 @@ public class Account {
 	 * Add a message to the inbox. This method is called from the server.
 	 */
 	public void addToInbox(Message message) {
-		message.setMessageId(nextId++);
 		message.setPostDate(new Date());
 		inbox.add(message);
 	}

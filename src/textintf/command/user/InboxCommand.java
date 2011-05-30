@@ -11,7 +11,7 @@ import com.beust.jcommander.Parameter;
  * Text terminal inbox command. Handle messages in the inbox.
  */
 public final class InboxCommand extends TerminalCommand 
-	implements ICommand, IHasParameters {
+	implements IHasParameters {
 	@Parameter(description = "Definir um filtro para a listagem")
 	public StringParameter filtros = new StringParameter();
 	

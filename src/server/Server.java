@@ -60,8 +60,8 @@ public class Server {
 	 * @param a	The account to be created.
 	 * @throws ServerException If an account with the same name already was
 	 * 							created in the server.
-	 */
-	public void createAccount(Account a) throws ServerException {
+	 */ 
+	public void renameAccount(Account a) throws ServerException {
 		String	loginName = a.getUser().getLoginName();
 		
         if (accounts.containsKey(loginName)) {

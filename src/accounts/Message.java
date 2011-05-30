@@ -12,9 +12,15 @@ import util.DateString;
  */
 public class Message {
 	/**
+	 * Internal counter to the message id.
+	 */
+	private static int	countId = 1;
+
+	/**
 	 * Message id. The id is the identification of the message in an account.
 	 */
-	private int			messageId;
+	private int	messageId;
+	
 	/**
 	 * Sender user's login name.
 	 */
@@ -39,7 +45,8 @@ public class Message {
 	/**
 	 * Store whether the message is marked as read or not.
 	 */
-	private Boolean		isRead;
+	private Boolean		isRead;	
+	// FIXME : Quando um usuário lê, em outras contas fica marcado como lido.
 
 	/**
 	 * 
@@ -59,7 +66,7 @@ public class Message {
 		setContent(content);
 		setIsRead(read);
 		setSubject(subject);
-		setMessageId(0);
+		messageId = countId++;
 	}
 
 	/**
@@ -175,13 +182,6 @@ public class Message {
 		return DateString.elapsedTime(getPostDate(), new Date());
 	}
 
-	/**
-	 * Set message identification for an account.
-	 * @param messageId	The new message id.
-	 */
-	public void setMessageId(int messageId) {
-		this.messageId = messageId;
-	}
 
 	/**
 	 * @return Account message identification. Zero when not defined.
@@ -209,7 +209,7 @@ public class Message {
 				"Para: " + getDestinations().toString() + "\n\t" + 
 				"Assunto: " + getSubject() + "\n\t" + 
 				"Recebimento: " + getPostDateString() + "\n\t" +
-				"Tempo Decorrido: " + getPostDateElapsedTime() + "\n\t" + // TODO : date diff
+				"Tempo Decorrido: " + getPostDateElapsedTime() + "\n\t" + 
 				"Conteúdo: \n\t" + getContent() + "\n"; 
 	}
 }

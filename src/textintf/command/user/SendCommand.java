@@ -12,7 +12,7 @@ import textintf.command.*;
  * Text terminal send command. Send a message for one or more accounts.
  */
 public final class SendCommand extends TerminalCommand 
-	implements ICommand, IHasParameters {
+	implements IHasParameters {
 	@Parameter(description = "Passe a lista de contas para enviar separadas por espaço.")
 	public StringParameter destinations = new StringParameter();
 
@@ -38,7 +38,7 @@ public final class SendCommand extends TerminalCommand
 			Message	m = new Message(core.getAccount().getLoginName(), null,
 				core.getReader().ask("Assunto: "), 
 				core.getReader().ask("Conteúdo: \n"), false);
-			if (destinations.isEmpty())
+			if (!destinations.isEmpty())
 				m.addDestinations(destinations.toDestinationList());
 			else
 				m.addDestination(to);

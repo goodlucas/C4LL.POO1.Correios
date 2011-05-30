@@ -15,7 +15,7 @@ import com.beust.jcommander.Parameter;
  * Text terminal read command. Read a message by its ID.
  */
 public final class ReadCommand extends TerminalCommand 
-	implements ICommand, IHasParameters {
+	implements IHasParameters {
 	@Parameter(description = "Número da mensagem. Aceita mais de um.")
 	public List<Integer> ids = new ArrayList<Integer>();
 

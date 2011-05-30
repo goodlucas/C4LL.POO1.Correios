@@ -11,8 +11,7 @@ import com.beust.jcommander.Parameter;
 /**
  * Text terminal login command. Handle the login command, with password support.
  */
-public class LoginCommand extends TerminalCommand 
-	implements ICommand, IHasParameters {
+public class LoginCommand extends TerminalCommand implements IHasParameters {
 	@Parameter(description = "Nome do usuário")
 	public StringParameter loginName = new StringParameter();
 	

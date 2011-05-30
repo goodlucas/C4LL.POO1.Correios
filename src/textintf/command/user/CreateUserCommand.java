@@ -13,7 +13,7 @@ import textintf.command.*;
  *  Text terminal create user command. Create a new account and user.
  */
 public final class CreateUserCommand extends TerminalCommand implements
-		ICommand, IHasParameters {
+		IHasParameters {
 	@Parameter(description = "Nome do usuário")
 	public StringParameter newName = new StringParameter();
 	

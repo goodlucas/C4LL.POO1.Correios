@@ -72,7 +72,7 @@ public final class TextInterface {
 					"esta operação.");
 			suggestHelp();
 		} else {
-			cmd.getCommand().execute(core);
+			cmd.execute(core);
 		}
 	}
 	
@@ -96,7 +96,7 @@ public final class TextInterface {
 			return;
 		/* Received --help option */
 		if (cmd.help) {
-			ShowCommandHelper.showHelp(cmd.getCommand().getName());
+			ShowCommandHelper.showHelp(cmd.getName());
 			return;
 		}
 		/* When reached here, the command should be processed */
