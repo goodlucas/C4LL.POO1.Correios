@@ -75,6 +75,14 @@
       <ownedParameter xmi:id="_SmauUIjgEeCfIPu_T2vwCQ" direction="return"/>
       <ownedParameter xmi:id="_SmbVYIjgEeCfIPu_T2vwCQ" name="ArrayList list"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_2zwKYIspEeCQ-6HoJc7DHw" name="String askNotEmpty">
+      <ownedParameter xmi:id="_-jut0IspEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_-jvU4IspEeCQ-6HoJc7DHw" name="String message"/>
+      <ownedParameter xmi:id="_-jvU4YspEeCQ-6HoJc7DHw" name="String errorMessage"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__zjW8IspEeCQ-6HoJc7DHw" name="String getNextLine">
+      <ownedParameter xmi:id="_D2F_UIsqEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_fli3MIjgEeCfIPu_T2vwCQ" supplier="_7EeG8IjfEeCfIPu_T2vwCQ" client="_JD09wIjgEeCfIPu_T2vwCQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_gI3msIjgEeCfIPu_T2vwCQ" supplier="_mBbK8IjfEeCfIPu_T2vwCQ" client="_JD09wIjgEeCfIPu_T2vwCQ"/>

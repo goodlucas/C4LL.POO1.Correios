@@ -20,12 +20,12 @@
       <ownedParameter xmi:id="_TkIPcIf-EeCPspAmOW-LxA" direction="return"/>
       <ownedParameter xmi:id="_TkIPcYf-EeCPspAmOW-LxA" name="String loginName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_LSn4wIY8EeCW9uV22dMqXg" name="getLoginName">
-      <ownedParameter xmi:id="_UgRuoIf-EeCPspAmOW-LxA" direction="return"/>
+    <ownedOperation xmi:id="_LSn4wIY8EeCW9uV22dMqXg" name="String getLoginName">
+      <ownedParameter xmi:id="_awvLkIspEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_PRgwMIY8EeCW9uV22dMqXg" name="operation2"/>
-    <ownedOperation xmi:id="_PvRdwIf-EeCPspAmOW-LxA" name="getPassword">
-      <ownedParameter xmi:id="_Q0y7YIf-EeCPspAmOW-LxA" direction="return"/>
+    <ownedOperation xmi:id="_PvRdwIf-EeCPspAmOW-LxA" name="String getPassword">
+      <ownedParameter xmi:id="_bpPg4IspEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_Rc4PEIf-EeCPspAmOW-LxA" name="setPassword">
       <ownedParameter xmi:id="_STmbsIf-EeCPspAmOW-LxA" direction="return"/>
@@ -37,7 +37,7 @@
     <ownedAttribute xmi:id="_724vAIb1EeCQ3NvXKx6KbA" name="private Messages inbox" aggregation="composite"/>
     <ownedAttribute xmi:id="_-33zwIb1EeCQ3NvXKx6KbA" name="private Messages trash" aggregation="composite"/>
     <ownedAttribute xmi:id="_BhOboIb2EeCQ3NvXKx6KbA" name="private Server server" aggregation="composite"/>
-    <ownedAttribute xmi:id="_1NBYEImzEeCXL8QzrnolOQ" name="private int nextId" aggregation="composite"/>
+    <ownedAttribute xmi:id="_1NBYEImzEeCXL8QzrnolOQ" name="private int idCount" aggregation="composite"/>
     <ownedOperation xmi:id="_uxgMMIY8EeCW9uV22dMqXg" name="Account">
       <ownedParameter xmi:id="_HddvkIcBEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_HdeWoIcBEeCQ3NvXKx6KbA" name="Server server"/>
@@ -47,8 +47,8 @@
       <ownedParameter xmi:id="_JPkmYIcBEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_JPlNcIcBEeCQ3NvXKx6KbA" name="Message message"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_mJQvgIb2EeCQ3NvXKx6KbA" name="getUser">
-      <ownedParameter xmi:id="_OEvlkIcBEeCQ3NvXKx6KbA" direction="return"/>
+    <ownedOperation xmi:id="_mJQvgIb2EeCQ3NvXKx6KbA" name="User getUser">
+      <ownedParameter xmi:id="_P_PX4IspEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_npOtcIb2EeCQ3NvXKx6KbA" name="setUser">
       <ownedParameter xmi:id="_PJBtEIcBEeCQ3NvXKx6KbA" direction="return"/>
@@ -100,6 +100,16 @@
     <ownedOperation xmi:id="_JfPUEIm0EeCXL8QzrnolOQ" name="int hashCode">
       <ownedParameter xmi:id="_JqOcEIm0EeCXL8QzrnolOQ" direction="return"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_i2if8IsnEeCQ-6HoJc7DHw" name="String getLoginName">
+      <ownedParameter xmi:id="_nPtfoIsnEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_tZPpsIsnEeCQ-6HoJc7DHw" name="setServer">
+      <ownedParameter xmi:id="_t0sPkIsnEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_t0s2oIsnEeCQ-6HoJc7DHw" name="Server server"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9iaFoIsnEeCQ-6HoJc7DHw" name="boolean isTrashEmpty">
+      <ownedParameter xmi:id="_9uYFEIsnEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZBNSQIWEEeCaGbqIADRCnA" name="Server" clientDependency="_bMrPsIcCEeCpr8axwzlp1A _VtnJgIcDEeCjT73z3qyq-w">
     <ownedAttribute xmi:id="_n55bIIcAEeCQ3NvXKx6KbA" name="private AccountMap accounts" aggregation="composite"/>
@@ -112,8 +122,8 @@
       <ownedParameter xmi:id="_vus0MIcAEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_vus0MYcAEeCQ3NvXKx6KbA" name="String serverName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_ysCIAIcAEeCQ3NvXKx6KbA" name="getServerName">
-      <ownedParameter xmi:id="_uLSzYIeSEeCDHLH1FWRyFg" direction="return"/>
+    <ownedOperation xmi:id="_ysCIAIcAEeCQ3NvXKx6KbA" name="String getServerName">
+      <ownedParameter xmi:id="_pGZfAIsoEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_0Z8bUIcAEeCQ3NvXKx6KbA" name="createAccount">
       <ownedParameter xmi:id="_0ivyAIcAEeCQ3NvXKx6KbA" direction="return"/>
@@ -122,6 +132,31 @@
     <ownedOperation xmi:id="_13VmYIcAEeCQ3NvXKx6KbA" name="post">
       <ownedParameter xmi:id="_2A7nQIcAEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_2A7nQYcAEeCQ3NvXKx6KbA" name="Message message"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7AyaQIsjEeCQ-6HoJc7DHw" name="addAccount">
+      <ownedParameter xmi:id="__cM1oIsjEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="__cNcsIsjEeCQ-6HoJc7DHw" name="Account a"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_RdxksIskEeCQ-6HoJc7DHw" name="Account getAccount">
+      <ownedParameter xmi:id="_TRLfMIsoEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_TRLfMYsoEeCQ-6HoJc7DHw" name="String loginName"/>
+      <ownedParameter xmi:id="_TRMGQIsoEeCQ-6HoJc7DHw" name="String password"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kq1PcIskEeCQ-6HoJc7DHw" name="String getNotificationName">
+      <ownedParameter xmi:id="_Z3DnAIsoEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_oip1kIskEeCQ-6HoJc7DHw" name="String getUserAddress">
+      <ownedParameter xmi:id="_XqBuwIsoEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_XqBuwYsoEeCQ-6HoJc7DHw" name="String loginName"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8PLqkIskEeCQ-6HoJc7DHw" name="notificationFailure">
+      <ownedParameter xmi:id="_8xuW8IskEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_8xuW8YskEeCQ-6HoJc7DHw" name="String sender"/>
+      <ownedParameter xmi:id="_8xuW8oskEeCQ-6HoJc7DHw" name="String userNameFailure"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__h5_kIskEeCQ-6HoJc7DHw" name="notificationWelcome">
+      <ownedParameter xmi:id="_AB2q8IslEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_AB2q8YslEeCQ-6HoJc7DHw" name="String a"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZPUmwIWEEeCaGbqIADRCnA" name="Message" clientDependency="_qd7AwIWEEeCaGbqIADRCnA _Y0ZgMIm0EeCXL8QzrnolOQ">
@@ -132,29 +167,30 @@
     <ownedAttribute xmi:id="_P-HcAIm0EeCXL8QzrnolOQ" name="private String subject" aggregation="composite"/>
     <ownedAttribute xmi:id="_endrAIm0EeCXL8QzrnolOQ" name="private int messageId" aggregation="composite"/>
     <ownedAttribute xmi:id="__VF-0Im0EeCXL8QzrnolOQ" name="private long postDate" aggregation="composite"/>
-    <ownedOperation xmi:id="_Vc968IY-EeCW9uV22dMqXg" name="getFrom">
-      <ownedParameter xmi:id="_38Jr8IY-EeCW9uV22dMqXg" direction="return"/>
+    <ownedAttribute xmi:id="_crb6gIslEeCQ-6HoJc7DHw" name="private int messageId" aggregation="composite"/>
+    <ownedOperation xmi:id="_Vc968IY-EeCW9uV22dMqXg" name="String getFrom">
+      <ownedParameter xmi:id="_8G0b8IsoEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_uI30AIY-EeCW9uV22dMqXg" name="setFrom">
       <ownedParameter xmi:id="_F9BQUIbcEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_F9B3YIbcEeCQ3NvXKx6KbA" name="String loginName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_uk9TEIY-EeCW9uV22dMqXg" name="getDestinations">
-      <ownedParameter xmi:id="_dhdAoIcAEeCQ3NvXKx6KbA" direction="return"/>
+    <ownedOperation xmi:id="_uk9TEIY-EeCW9uV22dMqXg" name="DestinationList getDestinations">
+      <ownedParameter xmi:id="_6L1V8IsoEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_6sOm4IY-EeCW9uV22dMqXg" name="addDestination">
       <ownedParameter xmi:id="_g1ngEIcAEeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_g1ngEYcAEeCQ3NvXKx6KbA" name="String loginName"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_CyMBYIY_EeCW9uV22dMqXg" name="getContent">
-      <ownedParameter xmi:id="_xBWkUIb_EeCQ3NvXKx6KbA" direction="return"/>
+    <ownedOperation xmi:id="_CyMBYIY_EeCW9uV22dMqXg" name="String getContent">
+      <ownedParameter xmi:id="_2ExZ8IsoEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_C5JlAIY_EeCW9uV22dMqXg" name="setContent">
       <ownedParameter xmi:id="_yfG7wIb_EeCQ3NvXKx6KbA" direction="return"/>
       <ownedParameter xmi:id="_yfHi0Ib_EeCQ3NvXKx6KbA" name="String content"/>
     </ownedOperation>
-    <ownedOperation xmi:id="_DAh_YIY_EeCW9uV22dMqXg" name="getIsRead">
-      <ownedParameter xmi:id="_5XDrAIb_EeCQ3NvXKx6KbA" direction="return"/>
+    <ownedOperation xmi:id="_DAh_YIY_EeCW9uV22dMqXg" name="Boolean getIsRead">
+      <ownedParameter xmi:id="_9Tki8IsoEeCQ-6HoJc7DHw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:id="_DEbA4IY_EeCW9uV22dMqXg" name="setIsRead">
       <ownedParameter xmi:id="_6eTm8Ib_EeCQ3NvXKx6KbA" direction="return"/>
@@ -192,6 +228,22 @@
       <ownedParameter xmi:id="_RRVh8Ym1EeCXL8QzrnolOQ" name="String content"/>
       <ownedParameter xmi:id="_RRVh8om1EeCXL8QzrnolOQ" name="Boolean read"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_bZ9EgIslEeCQ-6HoJc7DHw" name="String getPostDateString">
+      <ownedParameter xmi:id="_CFwfkIspEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8XxJYIslEeCQ-6HoJc7DHw" name="String getPostDateElapsedTime">
+      <ownedParameter xmi:id="_C1bB8IspEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_AEvKYIsmEeCQ-6HoJc7DHw" name="int getMessageId">
+      <ownedParameter xmi:id="_ESWS8IspEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_CrntEIsmEeCQ-6HoJc7DHw" name="setMessageId">
+      <ownedParameter xmi:id="_C4lLAIsmEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_C4lLAYsmEeCQ-6HoJc7DHw" name="int id"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_K8_tYIsmEeCQ-6HoJc7DHw" name="Message clone">
+      <ownedParameter xmi:id="_LS99YIsmEeCQ-6HoJc7DHw" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_m3hh0IWEEeCaGbqIADRCnA" supplier="_YapBgIWEEeCaGbqIADRCnA" client="_YvvHwIWEEeCaGbqIADRCnA"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_qd7AwIWEEeCaGbqIADRCnA" supplier="_YvvHwIWEEeCaGbqIADRCnA" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
@@ -210,4 +262,19 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_Y0ZgMIm0EeCXL8QzrnolOQ" supplier="_UA6jEIm0EeCXL8QzrnolOQ" client="_ZPUmwIWEEeCaGbqIADRCnA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_XJ-AkIsmEeCQ-6HoJc7DHw" name="Messages" clientDependency="_Y_btYIsmEeCQ-6HoJc7DHw">
+    <ownedOperation xmi:id="_lqcncIsmEeCQ-6HoJc7DHw" name="printHeaders">
+      <ownedParameter xmi:id="_mKFJwIsmEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_mKFJwYsmEeCQ-6HoJc7DHw" name="Messages messageList"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_oCe10IsmEeCQ-6HoJc7DHw" name="print">
+      <ownedParameter xmi:id="_oXmKMIsmEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_oXmxQIsmEeCQ-6HoJc7DHw" name="Message message"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_r_uHcIsmEeCQ-6HoJc7DHw" name="print">
+      <ownedParameter xmi:id="_sM95QIsmEeCQ-6HoJc7DHw" direction="return"/>
+      <ownedParameter xmi:id="_sM95QYsmEeCQ-6HoJc7DHw" name="Messages messageList"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Y_btYIsmEeCQ-6HoJc7DHw" supplier="_ZPUmwIWEEeCaGbqIADRCnA" client="_XJ-AkIsmEeCQ-6HoJc7DHw"/>
 </uml:Package>
