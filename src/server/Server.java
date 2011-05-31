@@ -61,7 +61,7 @@ public class Server {
 	 * @throws ServerException If an account with the same name already was
 	 * 							created in the server.
 	 */ 
-	public void renameAccount(Account a) throws ServerException {
+	public void addAccount(Account a) throws ServerException {
 		String	loginName = a.getUser().getLoginName();
 		
         if (accounts.containsKey(loginName)) {

@@ -50,7 +50,7 @@ public class Account {
 		if (server == null)
 			throw new AccountException("Não há servidor para a nova conta.");
 		this.server = server;
-		server.renameAccount(this);
+		server.addAccount(this);
 	}
 	
 	/**
