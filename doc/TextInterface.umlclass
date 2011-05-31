@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_O-_nQIfFEeCPspAmOW-LxA" type="UMLClass" name="TextInterface.umlclass" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_O-_nQIfFEeCPspAmOW-LxA" type="UMLClass" name="TextInterface.umlclass" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_PQe_4IfFEeCPspAmOW-LxA" type="2014" fontName="Sans">
     <children xmi:type="notation:DecorationNode" xmi:id="_PQfm8IfFEeCPspAmOW-LxA" type="5020"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_PQfm8YfFEeCPspAmOW-LxA" type="5041"/>
@@ -145,18 +145,6 @@
     <element xmi:type="uml:Package" href="TextInterface.uml#_X2TmMIfFEeCPspAmOW-LxA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X2nvQofFEeCPspAmOW-LxA" x="260" y="65" width="386" height="251"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_rJP2gIfFEeCPspAmOW-LxA" type="2010" fontName="Sans">
-    <children xmi:type="notation:DecorationNode" xmi:id="_rJQdkIfFEeCPspAmOW-LxA" type="5012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_rJQdkYfFEeCPspAmOW-LxA" y="5"/>
-    </children>
-    <element xmi:type="uml:Interface" href="TextInterface.uml#_rJDpQIfFEeCPspAmOW-LxA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rJP2gYfFEeCPspAmOW-LxA" x="700" y="265"/>
-  </children>
-  <children xmi:type="notation:Shape" xmi:id="_0_-rEIfFEeCPspAmOW-LxA" type="2018" fontName="Sans" fillColor="13369343" lineColor="6737151">
-    <children xmi:type="notation:DecorationNode" xmi:id="_0__SIIfFEeCPspAmOW-LxA" type="5030"/>
-    <element xmi:type="uml:Comment" href="TextInterface.uml#_0_9c8IfFEeCPspAmOW-LxA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_-rEYfFEeCPspAmOW-LxA" x="685" y="140" width="211" height="82"/>
-  </children>
   <children xmi:type="notation:Shape" xmi:id="_LchK4IjJEeCfIPu_T2vwCQ" type="2016" fontName="Sans">
     <children xmi:type="notation:DecorationNode" xmi:id="_LchK44jJEeCfIPu_T2vwCQ" type="5026"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_Lchx8IjJEeCfIPu_T2vwCQ" type="7033">
@@ -240,21 +228,6 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_xS1D4ofFEeCPspAmOW-LxA" fontName="Sans"/>
     <element xmi:type="uml:Dependency" href="TextInterface.uml#_xSz1wIfFEeCPspAmOW-LxA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xS1D44fFEeCPspAmOW-LxA" points="[62, 26, -235, -79]$[254, 135, -43, 30]"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_z69jwIfFEeCPspAmOW-LxA" type="4001" source="_k3lEIIfFEeCPspAmOW-LxA" target="_rJP2gIfFEeCPspAmOW-LxA">
-    <children xmi:type="notation:DecorationNode" xmi:id="_z6-K0IfFEeCPspAmOW-LxA" type="6018">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_z6-K0YfFEeCPspAmOW-LxA" y="40"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_z69jwYfFEeCPspAmOW-LxA" fontName="Sans"/>
-    <element xmi:type="uml:Generalization" href="TextInterface.uml#_z63dIIfFEeCPspAmOW-LxA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_z69jwofFEeCPspAmOW-LxA" points="[25, -2, -96, 3]$[122, -12, 1, -7]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_z7ERcIfFEeCPspAmOW-LxA" id="(0.8493975903614458,0.6166666666666667)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_9x83AIfFEeCPspAmOW-LxA" type="4019" source="_0_-rEIfFEeCPspAmOW-LxA" target="_rJP2gIfFEeCPspAmOW-LxA">
-    <styles xmi:type="notation:FontStyle" xmi:id="_9x83AYfFEeCPspAmOW-LxA" fontName="Sans"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9x83AofFEeCPspAmOW-LxA" points="[0, 0, 104, -35]$[-101, 28, 3, -7]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9yAhYIfFEeCPspAmOW-LxA" id="(0.450261780104712,1.0)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_zJuVYIjIEeCfIPu_T2vwCQ" type="4002">
     <children xmi:type="notation:DecorationNode" xmi:id="_zJuVZIjIEeCfIPu_T2vwCQ" visible="false" type="6001">
