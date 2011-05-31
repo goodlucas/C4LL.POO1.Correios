@@ -9,18 +9,16 @@ import util.DateString;
 /**
  * Message information. It will store information about from where and to whom
  * the message is, the content, the post date, and if the message was read.
+ * When a message is sent to the server, the server will dispatch a copy, copy
+ * got calling the clone event, to each account get its very message. This 
+ * allows to each account mark a message as read, and set an id without conflits
+ * to another accounts.
  */
-public class Message {
-	/**
-	 * Internal counter to the message id.
-	 */
-	private static int	countId = 1;
-
+public class Message implements Cloneable {
 	/**
 	 * Message id. The id is the identification of the message in an account.
 	 */
-	private int	messageId;
-	
+	private int	messageId = 0;	
 	/**
 	 * Sender user's login name.
 	 */
@@ -46,7 +44,6 @@ public class Message {
 	 * Store whether the message is marked as read or not.
 	 */
 	private Boolean		isRead;	
-	// FIXME : Quando um usuário lê, em outras contas fica marcado como lido.
 
 	/**
 	 * 
@@ -66,7 +63,6 @@ public class Message {
 		setContent(content);
 		setIsRead(read);
 		setSubject(subject);
-		messageId = countId++;
 	}
 
 	/**
@@ -182,12 +178,20 @@ public class Message {
 		return DateString.elapsedTime(getPostDate(), new Date());
 	}
 
-
 	/**
 	 * @return Account message identification. Zero when not defined.
 	 */
 	public int getMessageId() {
 		return messageId;
+	}
+	
+	/**
+	 * Set an ID to the message. This is known as the index of a message
+	 * in one account. If never called, the default message id is zero. 
+	 * @param id	New message ID.
+	 */
+	public void setMessageId(int id) {
+		messageId = id;
 	}
 	
 	/**
@@ -211,5 +215,19 @@ public class Message {
 				"Recebimento: " + getPostDateString() + "\n\t" +
 				"Tempo Decorrido: " + getPostDateElapsedTime() + "\n\t" + 
 				"Conteúdo: \n\t" + getContent() + "\n"; 
+	}
+	
+	/**
+	 * Clone the instance to another message. This method is called when the
+	 * same message is sent to more than one user, then each user receives
+	 * its very own message instance. If clone fails, the received parameter
+	 * will be returned without return any errors.
+	 */
+	public Message clone() {
+		try {
+			return (Message) super.clone();
+		} catch (CloneNotSupportedException e) {
+			return this;
+		}
 	}
 }

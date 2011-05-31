@@ -13,6 +13,7 @@ public class Account {
 	private	Messages	trash = new Messages();
 	private Server		server;
 	private	User		loggedUser;
+	private	int			idCount = 1; /* Store the next message id. */
 	
 	/**
 	 * @param server	Server which the account should be registered.
@@ -82,6 +83,7 @@ public class Account {
 	 */
 	public void addToInbox(Message message) {
 		message.setPostDate(new Date());
+		message.setMessageId(idCount++);
 		inbox.add(message);
 	}
 
@@ -120,10 +122,11 @@ public class Account {
 	 * @return	The message when found, otherwise null.
 	 */
 	public Message getMessage(Integer id) {
-		for (Message m: inbox)
-			if (m.getMessageId() == id)
-				return m;
-		return null;
+		try {
+			return inbox.get(id - 1);
+		} catch (IndexOutOfBoundsException e) {
+			return null;
+		}
 	}
 	
 	/**

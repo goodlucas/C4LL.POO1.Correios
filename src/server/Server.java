@@ -109,11 +109,11 @@ public class Server {
 		for (String dest: destinations) {
 			if (accounts.containsKey(dest)) {
 				Account acc = accounts.get(dest);
-				acc.addToInbox(message);
+				acc.addToInbox(message.clone());
 			} else {
 				errors.add(dest);
 			}		
-		}
+		} 
 		/* Notify errors */
 		for (String userFailure: errors) {
 			notificationFailure(message.getFrom(), userFailure);
