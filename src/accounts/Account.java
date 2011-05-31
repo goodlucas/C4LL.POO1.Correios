@@ -13,9 +13,11 @@ public class Account {
 	private	Messages	trash = new Messages();
 	private Server		server;
 	private	User		loggedUser;
-	private	int			idCount = 1; /* Store the next message id. */
+	private	int			idCount = 1; 		/* Store the next message id. */
 	
 	/**
+	 * Construction of an account. This constructor creates an account and
+	 * add itself to the server account listing.
 	 * @param server	Server which the account should be registered.
 	 * @param user		User information of the account.
 	 * @throws ServerException	
@@ -26,7 +28,9 @@ public class Account {
 		setUser(user);
 		setServer(server);
 	}
+	
 	/**
+	 * Return que user login name used when the account was created.
 	 * @return	The login name of associated user to the account.
 	 */
 	public String getLoginName() {
@@ -50,6 +54,7 @@ public class Account {
 	}
 	
 	/**
+	 * Get user information.S
 	 * @return The instance to the user information.
 	 */
 	public User getUser() {

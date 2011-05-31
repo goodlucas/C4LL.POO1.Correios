@@ -72,6 +72,8 @@ public abstract class TerminalCommand {
 	}
 	
 	/**
+	 * Get the command name. This name is the command that use should type 
+	 * to invoke que execute method.
 	 * @return	The command name.
 	 */
 	public abstract String getName();
