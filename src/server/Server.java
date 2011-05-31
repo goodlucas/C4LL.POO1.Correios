@@ -60,8 +60,8 @@ public class Server {
 	 * @param a	The account to be created.
 	 * @throws ServerException If an account with the same name already was
 	 * 							created in the server.
-	 */
-	public void createAccount(Account a) throws ServerException {
+	 */ 
+	public void renameAccount(Account a) throws ServerException {
 		String	loginName = a.getUser().getLoginName();
 		
         if (accounts.containsKey(loginName)) {
@@ -109,11 +109,11 @@ public class Server {
 		for (String dest: destinations) {
 			if (accounts.containsKey(dest)) {
 				Account acc = accounts.get(dest);
-				acc.addToInbox(message);
+				acc.addToInbox(message.clone());
 			} else {
 				errors.add(dest);
 			}		
-		}
+		} 
 		/* Notify errors */
 		for (String userFailure: errors) {
 			notificationFailure(message.getFrom(), userFailure);

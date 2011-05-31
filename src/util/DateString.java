@@ -15,31 +15,28 @@ public class DateString {
 		return dfm.format(a);
 	}
 	
+	/**
+	 * Get elapsed time between a and b.
+	 * @param a	Start time
+	 * @param b	End time
+	 * @return	String elapsed time between a and b.
+	 */
 	public static String elapsedTime(Date a, Date b) {
 		ArrayList<String> result = new ArrayList<String>();
-		int hour = DateDiff.getDateDiff(Calendar.HOUR, a, b);
-		int min = DateDiff.getDateDiff(Calendar.MINUTE, a, b) - hour*60;
-		int sec = DateDiff.getDateDiff(Calendar.SECOND, a, b) - hour*60*60 - min*60;
+		int[]	elapsed = {DateDiff.getDateDiff(Calendar.HOUR, a, b),
+							DateDiff.getDateDiff(Calendar.MINUTE, a, b),
+							DateDiff.getDateDiff(Calendar.SECOND, a, b)};
+		String[] sing = {"hora",  "minuto",  "segundo"};
+		String[] plur = {"horas", "minutos", "segundos"};
 		
-		if (hour > 0) {
-			if (hour == 1)
-				result.add(hour + " hora");
-			else
-				result.add(hour + " horas");
-		}
-		if (min > 0) {
-			if (min == 1)
-				result.add(min + " minuto");
-			else
-				result.add(min + " minutos");
-		}
-		if (sec > 0) {
-			if (sec == 1)
-				result.add(sec + " segundo");
-			else
-				result.add(sec + " segundos");
-		}	
+		elapsed[1] -= elapsed[0] * 60;
+		elapsed[2] -= elapsed[0] * 120 + elapsed[1] * 60;		
+		for (int i = 0; i < 3; i++)
+			if (elapsed[i] > 0)
+				if (elapsed[i] == 1)
+					result.add(elapsed[i] + " " + sing[i]);
+				else
+					result.add(elapsed[i] + " " + plur[i]);
 		return StringUtils.joinList(result, " ");
 	}
-	
 }

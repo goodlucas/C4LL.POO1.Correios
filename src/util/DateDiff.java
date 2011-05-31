@@ -8,7 +8,11 @@ import java.util.GregorianCalendar;
  * Helper class for computing the difference of two dates in years, months,
  * weeks or days. The estimates are precise for ranges up to 2000 years. The
  * method takes care of corrections for leap seconds.
+<<<<<<< HEAD
  * http://jstatcom.svn.sourceforge.net 
+=======
+ *  http://jstatcom.svn.sourceforge.net
+>>>>>>> refs/heads/paulo
  */
 public class DateDiff {
     // set some constants that allow pretty accurate estimates over

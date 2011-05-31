@@ -13,9 +13,11 @@ public class Account {
 	private	Messages	trash = new Messages();
 	private Server		server;
 	private	User		loggedUser;
-	private	int			nextId = 1;
+	private	int			idCount = 1; 		/* Store the next message id. */
 	
 	/**
+	 * Construction of an account. This constructor creates an account and
+	 * add itself to the server account listing.
 	 * @param server	Server which the account should be registered.
 	 * @param user		User information of the account.
 	 * @throws ServerException	
@@ -26,7 +28,9 @@ public class Account {
 		setUser(user);
 		setServer(server);
 	}
+	
 	/**
+	 * Return que user login name used when the account was created.
 	 * @return	The login name of associated user to the account.
 	 */
 	public String getLoginName() {
@@ -46,10 +50,11 @@ public class Account {
 		if (server == null)
 			throw new AccountException("Não há servidor para a nova conta.");
 		this.server = server;
-		server.createAccount(this);
+		server.renameAccount(this);
 	}
 	
 	/**
+	 * Get user information.S
 	 * @return The instance to the user information.
 	 */
 	public User getUser() {
@@ -82,8 +87,8 @@ public class Account {
 	 * Add a message to the inbox. This method is called from the server.
 	 */
 	public void addToInbox(Message message) {
-		message.setMessageId(nextId++);
 		message.setPostDate(new Date());
+		message.setMessageId(idCount++);
 		inbox.add(message);
 	}
 
@@ -122,10 +127,11 @@ public class Account {
 	 * @return	The message when found, otherwise null.
 	 */
 	public Message getMessage(Integer id) {
-		for (Message m: inbox)
-			if (m.getMessageId() == id)
-				return m;
-		return null;
+		try {
+			return inbox.get(id - 1);
+		} catch (IndexOutOfBoundsException e) {
+			return null;
+		}
 	}
 	
 	/**

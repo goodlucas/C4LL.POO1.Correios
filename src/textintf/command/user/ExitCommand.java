@@ -6,7 +6,7 @@ import textintf.command.*;
 /**
  * Exit command. Finalize program.
  */
-public class ExitCommand extends TerminalCommand implements ICommand {
+public class ExitCommand extends TerminalCommand {
 	@Override
 	public String getName() {
 		return "exit";

@@ -3,7 +3,7 @@ package textintf.command.user;
 import textintf.Core;
 import textintf.command.*;
 
-public final class LogoutCommand extends TerminalCommand implements ICommand {
+public final class LogoutCommand extends TerminalCommand {
 	@Override
 	public String getName() {
 		return "logout";
